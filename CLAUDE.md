@@ -1,0 +1,2 @@
+- Always use mcp tools over standard tools, specifically:
+  - Use mcp__git__* tools instead of Bash for git operations
