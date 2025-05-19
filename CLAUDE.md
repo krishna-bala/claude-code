@@ -9,18 +9,20 @@
 
 ## Code Review Practices
 
+@agent-instructions/eng-practices/review/index.md
+
 <!-- IMPORTANT: Follow these developer guidelines when making changes, creating commits, or preparing pull requests -->
 ### Developer Guidelines
-@agent-instructions/google-eng/review/developer/index.md
-@agent-instructions/google-eng/review/developer/cl-descriptions.md
-@agent-instructions/google-eng/review/developer/handling-comments.md
-@agent-instructions/google-eng/review/developer/small-cls.md
+@agent-instructions/eng-practices/review/developer/index.md
+@agent-instructions/eng-practices/review/developer/cl-descriptions.md
+@agent-instructions/eng-practices/review/developer/handling-comments.md
+@agent-instructions/eng-practices/review/developer/small-cls.md
 
 ### Reviewer Guidelines
-@agent-instructions/google-eng/review/reviewer/index.md
-@agent-instructions/google-eng/review/reviewer/looking-for.md
-@agent-instructions/google-eng/review/reviewer/comments.md
-@agent-instructions/google-eng/review/reviewer/standard.md
-@agent-instructions/google-eng/review/reviewer/speed.md
-@agent-instructions/google-eng/review/reviewer/navigate.md
-@agent-instructions/google-eng/review/reviewer/pushback.md
+@agent-instructions/eng-practices/review/reviewer/index.md
+@agent-instructions/eng-practices/review/reviewer/looking-for.md
+@agent-instructions/eng-practices/review/reviewer/comments.md
+@agent-instructions/eng-practices/review/reviewer/standard.md
+@agent-instructions/eng-practices/review/reviewer/speed.md
+@agent-instructions/eng-practices/review/reviewer/navigate.md
+@agent-instructions/eng-practices/review/reviewer/pushback.md
