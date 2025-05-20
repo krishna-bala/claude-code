@@ -1,46 +1,60 @@
-Now entering Deep Understanding Mode...
+Your task is to pause and engage in deep understanding of the current problem or request before proceeding with implementation.
+This understanding phase should unpack complexity and establish clear fundamentals that will guide all subsequent work.
+Apply extended thinking to achieve an intuitive grasp of the essence without rushing to solutions.
 
-**Deep Understanding Mode (根回し - Nemawashi Phase)**
+Instructions:
 
-Purpose:
-- Create space (間, ma) for understanding to emerge
-- Lay careful groundwork for all that follows
-- Achieve complete understanding (grokking) of the true need
-- Unpack complexity (desenrascar) without rushing to solutions
+1. Prepare your deep understanding analysis:
+    In <deep_understanding_analysis> tags inside your thinking block, organize your thoughts.
+    In this section:
+      a) Define all key terms precisely
+      b) Identify explicit and implicit needs
+      c) Clarify all assumptions
+      d) Establish clear boundaries and constraints
 
-Expected Behaviors:
-- Show determination (sisu) in questioning assumptions
-- Practice careful attention to context (taarof)
-- Hold space for ambiguity until clarity emerges
-- Work to achieve intuitive grasp (aperçu) of core issues
+    Consider each of the following aspects:
+      - Core Terminology: What do we mean by [key terms]?
+      - Stakeholders: Who will use, maintain, or be affected by this?
+      - Success Criteria: What defines success objectively?
+      - Constraints: What technical, resource, or contextual limitations exist?
+      - Cultural Context: What systemic or cultural factors matter?
+      - Potential Misunderstandings: Where might confusion arise?
 
-Core Questions:
-- What do we mean by [key terms]?
-- What explicit and implicit needs exist?
-- Who are the stakeholders?
-- What defines success?
-- What constraints exist?
-- What cultural/contextual factors matter?
+2. Present your understanding:
+    After your preparation, present your understanding using the following markdown format:
 
-Understanding is Complete When:
-- Core terms are clearly defined
-- Explicit and implicit needs are surfaced
-- Scope is well-bounded
-- Success criteria are clear
-- Stakeholders are identified
-- Achieve aperçu - intuitive grasp of essence
+# Deep Understanding Analysis
 
-Return to Understanding When:
-- New assumptions surface
-- Implicit needs emerge
-- Context shifts
-- Understanding feels incomplete
+## Core Terminology
+- **[Term 1]**: [Clear definition]
+- **[Term 2]**: [Clear definition]
+- **[Term 3]**: [Clear definition]
 
-Explicit Permissions:
-- Push back on vague terms
-- Question assumptions
-- Request clarification
-- Challenge problem framing
-- Take time for proper Nemawashi
+## Needs Assessment
+- **Explicit Needs**: [Clearly stated requirements]
+- **Implicit Needs**: [Underlying needs that weren't directly stated]
+- **Out-of-Scope**: [What's explicitly out of scope]
 
-Now, ask for your prompt.
+## Stakeholder Analysis
+- **Primary Users**: [Who will directly use this]
+- **Secondary Users**: [Who will be indirectly affected]
+- **Maintainers**: [Who will maintain this solution]
+
+## Success Criteria
+- **Functional Requirements**: [What must it do]
+- **Non-functional Requirements**: [How well must it perform]
+- **Boundaries**: [Where the solution begins and ends]
+
+## Constraints & Context
+- **Technical Constraints**: [Technical limitations]
+- **Resource Constraints**: [Time, budget, personnel limitations]
+- **Cultural/Contextual Factors**: [Relevant environmental factors]
+
+## Clarification Needs
+- **Assumptions Made**: [List assumptions that need validation]
+- **Open Questions**: [Questions that need answers]
+- **Potential Misunderstandings**: [Areas where confusion might exist]
+
+Ensure your analysis is thorough, precise, and nuanced. If any section lacks information, indicate this explicitly with "Insufficient information" and list the specific questions needed to fill these gaps.
+
+Only when this deep understanding phase is complete should you proceed to solution design or implementation.
