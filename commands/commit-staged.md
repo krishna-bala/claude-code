@@ -15,5 +15,27 @@ Create a git commit for the currently staged changes following these steps:
 
 Only commit changes that are currently staged. Do not stage additional files unless specifically requested.
 
-**Do not output anything other than the git commit.**
+Commit Message Guidelines
 
+Keep it concise - focus on the essential what, not the why or how:
+
+✅ Good - Brief, action-oriented points:
+
+- What changed (rename, fix, add, remove, update)
+- Where it changed (which key components)
+- Any breaking changes or important behavioral shifts
+
+❌ Avoid - Verbose details:
+
+- Implementation explanations
+- Technical justifications
+- Details that are obvious from the diff
+- Redundant background context
+
+Key principle:
+The commit message should help someone quickly understand what changed when scanning git history. The diff
+shows the how, the code comments explain the why.
+
+Keep bullets short and scannable - assume the reader can look at the diff for specifics if needed.
+
+**Do not output anything other than the git commit.**
