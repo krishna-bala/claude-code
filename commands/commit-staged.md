@@ -6,36 +6,42 @@ Create a git commit for the currently staged changes following these steps:
 2. **Check git diff --staged** to review what will be committed
 3. **Check recent commit history** with `git log --oneline -10` to understand the commit message style
 4. **Analyze the staged changes** and write a clear, meaningful commit message that:
-   - Follows the `.gitmessage` template format: `<type>[optional scope]: <description>`
+   - Follows the `.gitmessage` template format: `<type>(<scope>): <description>`
+   - Uses forward slash notation for scope (e.g., `planner/mast_transition`, `detection/types`)
    - Uses appropriate commit types (fix, feat, docs, refactor, test, style, perf, build, ci)
-   - Explains the "why" not just the "what"
-   - Is concise but descriptive
+   - Subject line: Brief (4-8 words), action-oriented, factual description
+   - Body (when needed): Terse but complete explanation of what was done
+   - Bullet points (for complex changes): Start with action verbs, technical specifics only
+   - Optional footers: `Bug: <ticket>` and/or `Test: <command>` when applicable
    - Does NOT include "Generated with Claude Code" or "Co-Authored-By: Claude" footers
 5. **Create the commit** using the proper format from the git message template
 
 Only commit changes that are currently staged. Do not stage additional files unless specifically requested.
 
-Commit Message Guidelines
+## Commit Message Style Guidelines
 
-Keep it concise - focus on the essential what, not the why or how:
+**Structure**: `<type>(<scope>): <brief description>`
 
-✅ Good - Brief, action-oriented points:
+**Subject Line**:
+- Brief (4-8 words), action-oriented, factual
+- Examples: "Fix compilation errors", "Add design document", "Refactor API with context struct"
 
-- What changed (rename, fix, add, remove, update)
-- Where it changed (which key components)
-- Any breaking changes or important behavioral shifts
+**Body** (when needed):
+- **Simple changes**: Single line explanation only
+- **Complex changes**: Paragraph + bullet points for technical specifics
+- Action-oriented language: "Introduces", "Implements", "Updates", "Replaces"
+- Technical focus: what was built/changed, not why or benefits
 
-❌ Avoid - Verbose details:
+**Bullet Points** (for complex changes):
+- Start with action verbs: "Introduce", "Change", "Replace", "Add"
+- Technical specifics without justification
+- No sub-bullets or extensive detail
 
-- Implementation explanations
-- Technical justifications
-- Details that are obvious from the diff
-- Redundant background context
+**Examples**:
+- `fix(planner/mast_transition): Fix compilation errors`
+- `refactor(planner/safe_travel): Update API`
+- `docs(planner/mast_transitions): Add design document for refactoring`
 
-Key principle:
-The commit message should help someone quickly understand what changed when scanning git history. The diff
-shows the how, the code comments explain the why.
-
-Keep bullets short and scannable - assume the reader can look at the diff for specifics if needed.
+**Optional Footers**: `Bug: <ticket>`, `Test: <command>`
 
 **Do not output anything other than the git commit.**

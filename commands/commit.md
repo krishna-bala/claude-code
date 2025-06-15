@@ -12,11 +12,46 @@ Create a git commit by helping the user select which changes to include:
 5. **Ask the user** which specific files or changes should be included in this commit
 6. **Stage the requested files** using `git add` for the files the user specified
 7. **Analyze the staged changes** and write a clear, meaningful commit message that:
-   - Follows the `.gitmessage` template format: `<type>[optional scope]: <description>`
+   - Follows the `.gitmessage` template format: `<type>(<scope>): <description>`
+   - Uses forward slash notation for scope (e.g., `planner/mast_transition`, `detection/types`)
    - Uses appropriate commit types (fix, feat, docs, refactor, test, style, perf, build, ci)
-   - Explains the "why" not just the "what"
-   - Is concise but descriptive
+   - Subject line: Brief (4-8 words), action-oriented, factual description
+   - Body (when needed): Terse but complete explanation of what was done
+   - Bullet points (for complex changes): Start with action verbs, technical specifics only
+   - Optional footers: `Bug: <ticket>` and/or `Test: <command>` when applicable
    - Does NOT include "🤖 Generated with Claude Code" or "Co-Authored-By: Claude" footers
 8. **Create the commit** using the proper format from the git message template
 
+## Commit Message Style Guidelines
+
+**Structure**: `<type>(<scope>): <brief description>`
+
+**Subject Line**:
+
+- Brief (4-8 words), action-oriented, factual
+- Examples: "Fix compilation errors", "Add design document", "Refactor API with context struct"
+
+**Body** (when needed):
+
+- **Simple changes**: Single line explanation only
+- **Complex changes**: Paragraph + bullet points for technical specifics
+- Action-oriented language: "Introduces", "Implements", "Updates", "Replaces"
+- Technical focus: what was built/changed, not why or benefits
+
+**Bullet Points** (for complex changes):
+
+- Start with action verbs: "Introduce", "Change", "Replace", "Add"
+- Technical specifics without justification
+- No sub-bullets or extensive detail
+
+**Examples**:
+
+- `fix(planner/mast_transition): Fix compilation errors`
+- `refactor(planner/safe_travel): Update API`
+- `docs(planner/mast_transitions): Add design document for refactoring`
+
+**Optional Footers**: `Bug: <ticket>`, `Test: <command>`
+
+**Do not output anything other than the git commit.**
 If there are no changes to commit, inform the user that the working directory is clean.
+
