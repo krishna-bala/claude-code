@@ -1,60 +1,49 @@
-Your task is to pause and engage in deep understanding of the current problem or request before proceeding with implementation.
-This understanding phase should unpack complexity and establish clear fundamentals that will guide all subsequent work.
-Apply extended thinking to achieve an intuitive grasp of the essence without rushing to solutions.
+Pause for deep understanding before implementation. Unpack complexity and establish fundamentals to guide subsequent work.
 
-Instructions:
+## Process
 
-1. Prepare your deep understanding analysis:
-    In <deep_understanding_analysis> tags inside your thinking block, organize your thoughts.
-    In this section:
-      a) Define all key terms precisely
-      b) Identify explicit and implicit needs
-      c) Clarify all assumptions
-      d) Establish clear boundaries and constraints
+1. **Analysis Preparation** (in thinking block):
+   - Define key terms precisely
+   - Identify explicit and implicit needs  
+   - Clarify assumptions and constraints
+   - Consider stakeholders, success criteria, cultural context
 
-    Consider each of the following aspects:
-      - Core Terminology: What do we mean by [key terms]?
-      - Stakeholders: Who will use, maintain, or be affected by this?
-      - Success Criteria: What defines success objectively?
-      - Constraints: What technical, resource, or contextual limitations exist?
-      - Cultural Context: What systemic or cultural factors matter?
-      - Potential Misunderstandings: Where might confusion arise?
+2. **Present Understanding** using structured format:
 
-2. Present your understanding:
-    After your preparation, present your understanding using the following markdown format:
+## Output Format
 
+```markdown
 # Deep Understanding Analysis
 
 ## Core Terminology
-- **[Term 1]**: [Clear definition]
-- **[Term 2]**: [Clear definition]
-- **[Term 3]**: [Clear definition]
+- **[Term]**: [Clear definition]
 
-## Needs Assessment
-- **Explicit Needs**: [Clearly stated requirements]
-- **Implicit Needs**: [Underlying needs that weren't directly stated]
-- **Out-of-Scope**: [What's explicitly out of scope]
+## Needs Assessment  
+- **Explicit**: [Stated requirements]
+- **Implicit**: [Underlying needs]
+- **Out-of-Scope**: [Excluded items]
 
-## Stakeholder Analysis
-- **Primary Users**: [Who will directly use this]
-- **Secondary Users**: [Who will be indirectly affected]
-- **Maintainers**: [Who will maintain this solution]
+## Stakeholders
+- **Primary Users**: [Direct users]
+- **Secondary**: [Indirectly affected]
+- **Maintainers**: [Who maintains solution]
 
 ## Success Criteria
-- **Functional Requirements**: [What must it do]
-- **Non-functional Requirements**: [How well must it perform]
-- **Boundaries**: [Where the solution begins and ends]
+- **Functional**: [What it must do]
+- **Non-functional**: [Performance requirements]
+- **Boundaries**: [Solution scope limits]
 
 ## Constraints & Context
-- **Technical Constraints**: [Technical limitations]
-- **Resource Constraints**: [Time, budget, personnel limitations]
-- **Cultural/Contextual Factors**: [Relevant environmental factors]
+- **Technical**: [Technical limitations]
+- **Resource**: [Time/budget/personnel limits]
+- **Cultural**: [Environmental factors]
 
 ## Clarification Needs
-- **Assumptions Made**: [List assumptions that need validation]
-- **Open Questions**: [Questions that need answers]
-- **Potential Misunderstandings**: [Areas where confusion might exist]
+- **Assumptions**: [Require validation]
+- **Open Questions**: [Need answers]
+- **Potential Issues**: [Confusion areas]
+```
 
-Ensure your analysis is thorough, precise, and nuanced. If any section lacks information, indicate this explicitly with "Insufficient information" and list the specific questions needed to fill these gaps.
+**Note**: If information is insufficient, explicitly state and list required questions.
 
-Only when this deep understanding phase is complete should you proceed to solution design or implementation.
+Only proceed to implementation after completing this analysis.
