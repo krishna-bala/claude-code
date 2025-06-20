@@ -108,16 +108,19 @@ This ensures that future work sessions have accurate, up-to-date context and tha
 **When you need specific guidance, request these resources:**
 
 ### Git & Code Review
+
 - **Making commits**: "Reference commit guidance" → loads @commands/commit-staged.md or @commands/commit.md
-- **Pull requests**: "Reference PR guidance" → loads @commands/pr-description.md or @commands/pr-review.md  
+- **Pull requests**: "Reference PR guidance" → loads @commands/pr-description.md or @commands/pr-review.md
 - **Code review standards**: "Reference code review practices" → loads @practices/code-review.md
 
 ### Development Practices
+
 - **Testing approach**: "Reference testing guidance" → loads @core/tdd.md or @core/testing.md
 - **Documentation work**: "Reference documentation philosophy" → loads @core/documentation.md
 - **New CLAUDE.md files**: "Reference CLAUDE.md template" → loads @core/claude-md-template.md
 
 ### Analysis & Planning
+
 - **Complex problems**: Use `/deep-understanding` command
 - **Session reflection**: Use `/reflect` command
 - **Context optimization**: Use `/optimize-context` command
@@ -137,3 +140,9 @@ This ensures that future work sessions have accurate, up-to-date context and tha
 **Testing**: @core/testing.md - Testing strategies and patterns
 **Template**: @core/claude-md-template.md - Template for new CLAUDE.md files
 **Code Review**: @practices/code-review.md - Engineering practices and review guidelines
+
+## Server Operations
+
+- Use the filesystem mcp server for read / write / list operations when possible
+- Use the time mcp server `mcp__time__get_current_time` for generating timestamps in files and filenames
+
