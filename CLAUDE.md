@@ -25,7 +25,7 @@
 - **Style**: Follows established style guides
 - **Documentation**: Updated relevant documentation
 
-**Detailed Guidelines**: @practices/code-review.md
+**Detailed Guidelines**: `context/code-review.md`
 
 ## Interaction Guidelines
 
@@ -41,7 +41,7 @@
 
 ## Test Driven Development (TDD)
 
-Read `core/tdd.md` for full instructions.
+Read `context/tdd.md` for full instructions.
 
 ## Documentation Strategy
 
@@ -75,19 +75,19 @@ Each `CLAUDE.md` should include:
 
 Create additional markdown files that can be referenced in `CLAUDE.md` files to help maintain context:
 
-- **architecture.md**: System design and component relationships
-- **patterns.md**: Code patterns, conventions, and best practices
-- **workflows.md**: Common development workflows and procedures
-- **decisions.md**: Architectural decision records (ADRs)
-- **testing.md**: Testing strategies and frameworks used
-- **deployment.md**: Build, deployment, and environment setup
-- **plan-{feature}.md**: Feature-specific development plans, roadmaps, and task prioritization (e.g., `plan-auth.md`, `plan-optimization.md`)
+- `architecture.md`: System design and component relationships
+- `patterns.md`: Code patterns, conventions, and best practices
+- `workflows.md`: Common development workflows and procedures
+- `decisions.md`: Architectural decision records (ADRs)
+- `testing.md`: Testing strategies and frameworks used
+- `deployment.md`: Build, deployment, and environment setup
+- `plan-{feature}.md`: Feature-specific development plans, roadmaps, and task prioritization (e.g., `plan-auth.md`, `plan-optimization.md`)
 
-Reference these files in `CLAUDE.md` using the `@path/to/file.md` syntax to ensure the agent can quickly access relevant context when resuming work.
+Reference these files in `CLAUDE.md` using the `path/to/file.md` syntax to ensure the agent can quickly access relevant context when resuming work.
 
 ## Documentation Workflow
 
-Follow the documentation philosophy, @core/documentation.md
+Follow the documentation philosophy, `context/documentation.md`
 
 ### Continuous Documentation Updates
 
@@ -107,42 +107,48 @@ This ensures that future work sessions have accurate, up-to-date context and tha
 
 **When you need specific guidance, request these resources:**
 
-### Git & Code Review
+### Context Loading Commands
 
-- **Making commits**: "Reference commit guidance" → loads @commands/commit-staged.md or @commands/commit.md
-- **Pull requests**: "Reference PR guidance" → loads @commands/pr-description.md or @commands/pr-review.md
-- **Code review standards**: "Reference code review practices" → loads @practices/code-review.md
+- **TDD Principles**: `/load-tdd`
+- **Testing Practices**: `/load-testing`
+- **Documentation**: `/load-documentation`
+- **CLAUDE.md Template**: `/load-claude-template`
+- **Code Review**: `/load-code-review`
+- **Commit Guidelines**: `/load-commit`
+- **Pull Request**: `/load-pr`
+- **Interaction Guidelines**: `/load-interaction`
 
-### Development Practices
+### Git Operation Commands
 
-- **Testing approach**: "Reference testing guidance" → loads @core/tdd.md or @core/testing.md
-- **Documentation work**: "Reference documentation philosophy" → loads @core/documentation.md
-- **New CLAUDE.md files**: "Reference CLAUDE.md template" → loads @core/claude-md-template.md
+- **Interactive Staging**: `/git-stage`
+- **Commit Staged**: `/git-commit`
+- **Interactive Commit**: `/git-commit-interactive`
+- **PR Description**: `/git-pr-description`
+- **PR Review**: `/git-pr-review`
 
-### Analysis & Planning
+### Analysis Commands
 
-- **Complex problems**: Use `/deep-understanding` command
-- **Session reflection**: Use `/reflect` command
-- **Context optimization**: Use `/optimize-context` command
+- **Deep Understanding**: `/analyze-deep`
+- **Session Reflection**: `/analyze-reflect` 
+- **Context Optimization**: `/analyze-context`
+- **Conversation Summary**: `/analyze-compact`
 
-**Usage Pattern**: Ask me to "Reference [topic] guidance" or use slash commands to load relevant context only when needed.
+**Usage Pattern**: Use slash commands to load specific context as needed. Commands can be chained sequentially (e.g., `/load-tdd` → `/load-testing` → work on tests).
 
 ### Directory Structure
 
-- **commands/**: Slash commands available via `/` in Claude Code
-- **core/**: Essential development guidelines and templates
-- **practices/**: Engineering best practices and code review guidelines
+- `commands/`: Slash commands available via `/` in Claude Code
+- `context/`: Essential development guidelines, templates, and best practices
 
 ### Key Resources
 
-**Documentation**: @core/documentation.md - Philosophy for organizing docs
-**TDD**: @core/tdd.md - Test-driven development principles  
-**Testing**: @core/testing.md - Testing strategies and patterns
-**Template**: @core/claude-md-template.md - Template for new CLAUDE.md files
-**Code Review**: @practices/code-review.md - Engineering practices and review guidelines
+**Documentation**: `context/documentation.md` - Philosophy for organizing docs
+**TDD**: `context/tdd.md` - Test-driven development principles  
+**Testing**: `context/testing.md` - Testing strategies and patterns
+**Template**: `context/claude-md-template.md` - Template for new CLAUDE.md files
+**Code Review**: `context/code-review.md` - Engineering practices and review guidelines
 
 ## Server Operations
 
 - Use the filesystem mcp server for read / write / list operations when possible
 - Use the time mcp server `mcp__time__get_current_time` for generating timestamps in files and filenames
-
