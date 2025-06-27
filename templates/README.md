@@ -13,6 +13,10 @@ Reusable templates for consistent project setup and documentation.
 - **Command Template**: @command-template.md - Create slash commands
 - **Module Template**: @module-template.md - Project module structure
 
+### Session Management
+- **Session File**: @session-file.md - Development session template
+- **Session Summary**: @session-summary.md - Session end summary template
+
 ## Usage
 
 1. Copy template content

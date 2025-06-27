@@ -9,6 +9,7 @@ Universal development workflows and patterns for Claude Code.
 - **Project Setup**: @project-setup.md - Initialize .claude/ in projects
 - **Context Loading**: @context-loading-patterns.md - Organize specs effectively
 - **Memory Framework**: @memory-framework-guide.md - Use the framework effectively
+- **Session Management**: @session-management.md - Track development sessions and context
 
 ## Usage Patterns
 

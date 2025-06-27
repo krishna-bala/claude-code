@@ -15,6 +15,13 @@ This environment uses a practical memory system with organized specs, guides, an
 - **Initialize Project**: `/init-project` - Set up .claude/ structure in projects
 - **List Specs**: `/list-specs` - Show available specs in current project
 
+### Session Management
+- **Start Session**: `/session-start [name]` - Begin development session tracking
+- **Update Session**: `/session-update [notes]` - Record progress and changes
+- **End Session**: `/session-end` - Generate comprehensive session summary
+- **Current Session**: `/session-current` - View active session status
+- **List Sessions**: `/session-list` - See all development sessions
+
 ### Framework Resources
 - **Guides**: `@guides/README.md` - Development workflows and patterns
 - **Templates**: `@templates/README.md` - Reusable templates for projects

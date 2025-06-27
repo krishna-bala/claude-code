@@ -15,7 +15,8 @@ Run from project root to create Claude Code memory framework structure.
 
 2. **Create Directory Structure**
    ```bash
-   mkdir -p .claude/{specs,guides,templates}
+   mkdir -p .claude/{specs,guides,templates,sessions}
+   touch .claude/sessions/.current-session
    ```
 
 3. **Generate Project CLAUDE.md**
@@ -71,8 +72,10 @@ Loads:
 │   └── README.md       # Spec index
 ├── guides/
 │   └── README.md       # Guide index
-└── templates/
-    └── README.md       # Template index
+├── templates/
+│   └── README.md       # Template index
+└── sessions/           # Development sessions
+    └── .current-session # Active session tracker
 ```
 
 ### Detected Configuration
@@ -85,7 +88,8 @@ Loads:
 1. Edit `.claude/CLAUDE.md` with project specifics
 2. Add language standards: `[suggested spec]`
 3. Document architecture in guides/
-4. Commit `.claude/` to version control
+4. Start first session: `/session-start [session-name]`
+5. Commit `.claude/` to version control
 
 ### Recommended Specs
 Based on your project:
@@ -97,4 +101,6 @@ Based on your project:
 
 - `/load-context` - Load project context
 - `/list-specs` - Show available specs
+- `/session-start` - Begin first development session
 - `@guides/project-setup.md` - Detailed setup guide
+- `@guides/session-management.md` - Session workflow guide

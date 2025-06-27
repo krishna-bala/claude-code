@@ -57,6 +57,21 @@ Load these based on what you're working on:
 - **API Reference**: @docs/api/README.md
 - **Deployment**: @docs/deployment.md
 
+## Session Management
+
+### Development Sessions
+- **Start session**: `/session-start [description]` - Begin tracking work
+- **Update session**: `/session-update [notes]` - Record progress
+- **End session**: `/session-end` - Generate comprehensive summary
+- **View current**: `/session-current` - Check active session
+- **List sessions**: `/session-list` - See all past sessions
+
+### Session Best Practices
+- Start sessions for features, bugs, or major refactoring
+- Update regularly with meaningful progress notes
+- End sessions before switching focus areas
+- Reference past sessions for related work
+
 ## Quick Reference
 
 ### Common Tasks
