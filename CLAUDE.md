@@ -23,9 +23,9 @@ This environment uses a practical memory system with organized specs, guides, an
 - **List Sessions**: `/session-list` - See all development sessions
 
 ### Framework Resources
-- **Guides**: `@guides/README.md` - Development workflows and patterns
-- **Templates**: `@templates/README.md` - Reusable templates for projects
-- **Framework Docs**: `@context/memory-framework.md` - Complete framework documentation
+- **Guides**: @guides/README.md - Development workflows and patterns
+- **Templates**: @templates/README.md - Reusable templates for projects
+- **Framework Docs**: @context/memory-framework.md - Complete framework documentation
 
 ## Context Loading (Lazy Loading)
 
