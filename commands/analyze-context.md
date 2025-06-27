@@ -1,3 +1,5 @@
+# Analyze Context
+
 Analyze and optimize CLAUDE.md context for the current project following proven efficiency patterns.
 
 ## Assessment Process

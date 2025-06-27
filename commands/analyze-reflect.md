@@ -1,3 +1,5 @@
+# Analyze Reflect
+
 Your task is to pause and provide a structured reflection on the current state of the conversation and project context.
 This reflection should summarize key points, progress, insights, and next steps based on the information available to you.
 Apply extending thinking to provide a comprehensive overview of the situation.

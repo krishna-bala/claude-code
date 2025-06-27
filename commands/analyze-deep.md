@@ -1,3 +1,5 @@
+# Analyze Deep
+
 Pause for deep understanding before implementation. Unpack complexity and establish fundamentals to guide subsequent work.
 
 ## Process

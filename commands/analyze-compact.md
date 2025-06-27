@@ -1,3 +1,5 @@
+# Analyze Compact
+
 Create detailed conversation summary capturing user requests, technical details, and context essential for continuing development work.
 
 ## Analysis Process
