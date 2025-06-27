@@ -1,5 +1,50 @@
 # CLAUDE.md
 
+## Memory Framework Architecture
+
+This environment uses a practical memory system with organized specs, guides, and templates for consistent development across projects.
+
+### Framework Overview
+
+- **Global (~/.claude/)**: Universal tools, commands, and workflows
+- **Project (<project>/.claude/)**: Language specs, architecture, and project patterns
+
+### Quick Access
+- **Standards Check**: `/check-standards` - Validate code against project specs
+- **Smart Loading**: `/load-context` - Load relevant guidance based on file types
+- **Initialize Project**: `/init-project` - Set up .claude/ structure in projects
+- **List Specs**: `/list-specs` - Show available specs in current project
+
+### Framework Resources
+- **Guides**: `@guides/README.md` - Development workflows and patterns
+- **Templates**: `@templates/README.md` - Reusable templates for projects
+- **Framework Docs**: `@context/memory-framework.md` - Complete framework documentation
+
+## Context Loading (Lazy Loading)
+
+Load specific context when needed for tasks. Before performing actions, check if relevant context is loaded:
+
+### Git Operations
+- **Before commits**: Load `@context/git-commit-guidelines.md`
+- **Before PRs**: Load `@context/pr-guidelines.md`
+- **Branch creation**: Check Git Conventions section above
+
+### Code Standards
+- **Before editing**: `/load-context` to load project specs
+- **Code review**: `/check-standards` to validate against specs
+- **New files**: Load relevant language spec from `project/.claude/specs/`
+
+### Development Tasks
+- **Testing**: Load `@context/testing.md` or `@context/tdd.md`
+- **Debugging**: Load `@guides/debugging-workflows.md`
+- **Documentation**: Load `@context/documentation.md`
+
+### How to Load Context
+1. Check if you have the needed knowledge
+2. Use @-reference to load specific file (remove backticks)
+3. Apply loaded guidelines to current task
+4. Note: Context persists only for current session
+
 ## Git Conventions
 
 - Always prefix branch names with `krishna.<descriptive-name>`. When context exists (like a ticket number, API name, or module name), use `krishna.<context-identifier>.<descriptive-name>`
