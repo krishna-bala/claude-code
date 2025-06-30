@@ -13,6 +13,7 @@ Systematic approaches to identify and resolve issues efficiently.
 ## General Debugging Process
 
 ### 1. Reproduce and Isolate
+
 ```bash
 # Verify the issue is reproducible
 # Document exact steps to reproduce
@@ -20,17 +21,20 @@ Systematic approaches to identify and resolve issues efficiently.
 ```
 
 ### 2. Gather Information
+
 - Error messages and stack traces
 - Recent changes (git log/diff)
 - System state and environment
 - Related logs and outputs
 
 ### 3. Form Hypothesis
+
 - What changed recently?
 - What assumptions might be wrong?
 - What's the simplest explanation?
 
 ### 4. Test Systematically
+
 - Start with most likely causes
 - Change one variable at a time
 - Document what you've tried
@@ -39,6 +43,7 @@ Systematic approaches to identify and resolve issues efficiently.
 ## Language-Specific Patterns
 
 ### Shell/Bash Debugging
+
 ```bash
 # Enable debug mode
 set -x  # Print commands
@@ -52,6 +57,7 @@ bash -x script.sh
 ```
 
 ### Python Debugging
+
 ```python
 # Use pdb for interactive debugging
 import pdb; pdb.set_trace()
@@ -64,6 +70,7 @@ assert isinstance(obj, expected_type)
 ```
 
 ### Configuration Debugging
+
 - Validate syntax (JSON/YAML validators)
 - Check file permissions and paths
 - Verify environment variable expansion
@@ -72,16 +79,19 @@ assert isinstance(obj, expected_type)
 ## Common Issues
 
 ### Path Problems
+
 - Use absolute paths for debugging
 - Check `$PATH` and working directory
 - Verify file exists and is readable
 
 ### Permission Issues
+
 - Check file ownership: `ls -la`
 - Verify execute permissions: `chmod +x`
 - Test with different user/sudo
 
 ### Environment Differences
+
 - Compare working vs broken environments
 - Check installed versions
 - Verify dependencies present
@@ -98,3 +108,4 @@ assert isinstance(obj, expected_type)
 - @context/testing.md - Testing strategies
 - Project-specific debugging guides
 - Language-specific error handling
+
