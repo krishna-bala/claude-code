@@ -9,7 +9,9 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(gh repo view:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "mcp__time__get_current_time",
+      "mcp__filesystem__create_directory"
     ],
     "deny": []
   }
