@@ -1,16 +1,16 @@
-# Session End
+# Session Summarize
 
-End the current development session with a comprehensive summary.
+Create a comprehensive summary of the current development session with searchable tags.
 
 ## Usage
 
-Generates a thorough session summary and closes the active session, providing complete documentation for future reference.
+Generates a thorough session summary with searchable tags, allowing the session to be closed or continued later via `/session-load`.
 
 ## Process
 
 1. **Verify Active Session**
    - Check `.claude/sessions/.current-session` for active session
-   - If no active session, inform user there's nothing to end
+   - If no active session, inform user there's nothing to summarize
    - Load session file for analysis
 
 2. **Calculate Session Metrics**
@@ -18,8 +18,9 @@ Generates a thorough session summary and closes the active session, providing co
    - Calculate total session duration
    - Count updates and major milestones
 
-3. **Generate Comprehensive Summary**
+3. **Generate Comprehensive Summary with Tags**
    ```markdown
+   <session-summary>
    ## Session Summary - [End Timestamp]
    
    **Duration**: [Total time] ([Start time] → [End time])
@@ -83,11 +84,16 @@ Generates a thorough session summary and closes the active session, providing co
    - **Architecture**: [How components relate]
    - **Testing**: [How to test changes]
    - **Deployment**: [How to deploy changes]
+   
+   ### Keywords
+   [Searchable tags: technology, feature-area, problem-type, etc.]
+   </session-summary>
    ```
 
-4. **Close Session**
-   - Clear `.claude/sessions/.current-session` file (don't delete, just empty)
-   - Confirm session documentation is complete
+4. **Session Options**
+   - Ask user: Close session or keep active for continuation
+   - If closing: Clear `.claude/sessions/.current-session` file
+   - If keeping active: Leave session available for `/session-load`
 
 5. **Archive Session**
    - Ensure session file is properly saved
@@ -104,34 +110,33 @@ Analyzes entire session:
 ## Output Format
 
 ```markdown
-## Session Completed ✅
+## Session Summarized ✅
 
 **Session**: [Session name]
 **Duration**: [Total time]
 **File**: `.claude/sessions/[filename].md`
-**Summary**: [Brief overview of accomplishments]
+**Status**: [Closed/Active for continuation]
 
 ### Key Outcomes
 - [Major accomplishment 1]
 - [Major accomplishment 2]
 - [Major accomplishment 3]
 
-### Documentation
-The complete session has been documented with:
-- [X] Git changes summary
-- [X] Todo completion tracking  
-- [X] Technical decisions
-- [X] Issues and solutions
-- [X] Future work recommendations
+### Searchable Summary
+A tagged summary has been added to enable efficient context searching:
+- **Keywords**: [technology, feature-area, problem-type]
+- **Searchable**: Agents can find this session via `<session-summary>` tags
+- **Context Loading**: Load just the summary without full session details
 
 ### Next Steps
-- Review session file for completeness
-- Reference this session for related future work
-- Start new session with `/session-start [name]`
+- **Continue**: `/session-load [session-name]` to resume work
+- **Reference**: Search sessions by keywords for related context
+- **New Work**: `/session-start [name]` for different focus area
 ```
 
 ## Related Commands
 
 - `/session-start` - Start a new session
+- `/session-load` - Resume/continue this session
 - `/session-list` - View all past sessions
 - `/session-current` - Check if session is active
