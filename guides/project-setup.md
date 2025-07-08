@@ -39,7 +39,26 @@ Based on project technologies:
 - Tool configurations (docker, ci/cd)
 - API conventions
 
-### 4. Document Architecture
+### 4. Configure Hooks (Optional)
+
+Set up automation hooks for the project:
+
+```bash
+# Interactive setup
+/setup-hooks formatter
+
+# Or manually create .claude/settings.json
+cp ~/.claude/templates/project-hooks-template.json .claude/settings.json
+```
+
+Common hooks:
+
+- Auto-formatting on save
+- Linting with auto-fix
+- Git auto-staging
+- Operation logging
+
+### 5. Document Architecture
 
 Create guides for:
 
@@ -53,6 +72,7 @@ Create guides for:
 project/
 └── .claude/
     ├── CLAUDE.md           # Project context (<200 lines)
+    ├── settings.json       # Hook configuration (optional)
     ├── specs/              # Standards and requirements
     │   ├── README.md       # Spec navigation
     │   ├── api-spec.md     # API conventions
@@ -116,6 +136,8 @@ project/
 ## Related Resources
 
 - @templates/project-claude-md.md - CLAUDE.md template
+- @templates/project-hooks-template.json - Hook configuration template
+- @guides/hooks-and-automation.md - Hook system documentation
 - @guides/context-loading-patterns.md - Organize specs
 - @context/documentation.md - Doc philosophy
-
+- @commands/setup-hooks.md - Automated hook setup

@@ -26,6 +26,10 @@ Core guidelines and standards for Claude Code development.
 - **Documentation Strategy**: `documentation-strategy.md` - Creating and maintaining docs
 - **CLAUDE.md Template**: `claude-md-template.md` - Template for project CLAUDE.md files
 
+### Automation & Tooling
+
+- **Hooks & Automation**: `hooks-automation.md` - Claude Code hook system and patterns
+
 ## Usage Patterns
 
 1. **Task Recognition**: Read relevant context based on task type
@@ -40,4 +44,4 @@ Core guidelines and standards for Claude Code development.
 - **Framework understanding** → `memory-framework.md`
 - **Code reviews** → `code-review.md`
 - **How to interact** → `interaction-guidelines.md`
-
+- **Automation setup** → `hooks-automation.md`

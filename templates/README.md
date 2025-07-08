@@ -20,6 +20,10 @@ Reusable templates for consistent project setup and documentation.
 - **M-ADR Full**: `madr-template.md` - Complete decision record template for complex decisions
 - **M-ADR Minimal**: `madr-template-minimal.md` - Simple decision record template
 
+### Automation
+
+- **Project Hooks**: `project-hooks-template.json` - Hook configuration for formatting, linting, and git integration
+
 ### Session Management
 
 - **Session File**: `session-file.md` - Development session template
@@ -38,4 +42,3 @@ Reusable templates for consistent project setup and documentation.
 - Include examples where helpful
 - Provide size guidance
 - Reference related resources
-
