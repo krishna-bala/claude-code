@@ -35,12 +35,20 @@ The framework provides persistent, context-aware memory for Claude Code through:
 
 ## Agent Exploration
 
-### How It Works
+### How @-References Work
+
+`@file.md` syntax triggers the agent to **read the entire file** dynamically (not inline substitution).
+
+Advanced syntax support:
+- `@file.md` - Read entire file
+- `@file.md#L123-456` - Read specific line ranges
+
+### Context Loading Strategy
 
 1. `CLAUDE.md` contains context catalog with file paths
-2. Agent reads `CLAUDE.md` and available resource indexes
-3. Before tasks, agent checks if relevant context is needed
-4. Agent reads specific files as needed based on task relevance
+2. Auto-loaded catalogs provide discovery without loading heavy content
+3. Agent reads specific files as needed based on task relevance
+4. Catalog/index pattern enables selective precision loading
 
 ### Example Flow
 
@@ -73,11 +81,13 @@ Agent:
 
 ### Optimization Strategies
 
-1. Assume user-level references by default (`~/.claude/`)
-2. Project-level paths will be prefixed with `<project>/.claude`
-3. Split large files into focused topics
-4. Archive verbose content
-5. Progressive disclosure (quick ref → details)
+1. **Catalog/Index Pattern**: Use @-loaded catalogs for discovery, detailed files for content
+2. **Base Context Budget**: Keep auto-loaded catalogs lightweight (guides, templates, context READMEs)
+3. **Selective Reading**: Catalogs enable efficient discovery without loading heavy content
+4. **Line Range Precision**: Use `@file.md#L123-456` for surgical context loading
+5. **Progressive Disclosure**: Quick ref → detailed guidelines → specific sections
+6. **File Organization**: Split large files into focused topics
+7. **Archive Strategy**: Move verbose content to separate files
 
 ## File Organization
 
