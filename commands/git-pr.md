@@ -1,8 +1,9 @@
-# Git PR - Generate structured pull request descriptions and checklists
+## Generate structured pull request descriptions and checklists with comprehensive documentation.
 
 Create comprehensive PR documentation with titles, descriptions, and review checklists. Include any additional context after the command like `/git-pr This PR adds dark mode support to the dashboard`.
 
 **Read context from:**
+
 - `~/.claude/context/pr-guidelines.md`
 - `~/.claude/context/git-commit-guidelines.md`
 
@@ -54,18 +55,21 @@ Related to #456
 ## Review Readiness Checklist
 
 ### Code Quality
+
 - [ ] Code follows project standards
 - [ ] No commented-out code
 - [ ] Proper error handling
 - [ ] Adequate test coverage
 
 ### Documentation
+
 - [ ] Code comments where needed
 - [ ] README updated if required
 - [ ] API docs updated
 - [ ] CHANGELOG entry added
 
 ### Testing
+
 - [ ] All tests pass
 - [ ] New tests for new features
 - [ ] Edge cases covered

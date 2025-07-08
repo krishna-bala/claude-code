@@ -1,12 +1,14 @@
-# Git Commit - Enhanced staging and atomic commit workflow
+## Enhanced staging and atomic commit workflow with interactive evaluation.
 
 Interactive staging evaluation and commit workflow prioritizing atomic changes. For pre-staged evaluation, add context like `/git-commit I've already staged some changes. Evaluate and commit if they are a cohesive changeset`.
 
 **Read context from:**
+
 - `~/.claude/context/git-commit-guidelines.md`
 - `~/.claude/context/pr-guidelines.md`
 
 Handles both scenarios:
+
 1. **Fresh staging**: Analyze working directory and stage cohesive changes
 2. **Pre-staged evaluation**: Review staged changes and commit if atomic
 

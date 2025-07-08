@@ -1,6 +1,4 @@
-# Analyze - Unpack complexity, clarify requirements, and establish fundamentals
-
-Pause for deep understanding before implementation.
+## Unpack complexity, clarify requirements, and establish fundamentals before implementation.
 
 ## Process
 

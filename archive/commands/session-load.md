@@ -135,4 +135,3 @@ Session loading allows you to:
 - `/session-current` - View active session status
 - `/session-end` - End current session
 - `/session-list` - List all sessions
-

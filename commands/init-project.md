@@ -1,27 +1,31 @@
-# Init Project - Set up .claude/ directory structure for context-aware development
+## Set up .claude/ directory structure for context-aware development in the current project.
 
 Initialize project memory framework with CLAUDE.md, specs, and guides directories. Run from project root to create the memory framework structure.
 
 ## Process
 
 1. **Check Existing Structure**
+
    - Look for existing `.claude/` directory
    - Detect project type and technologies
    - Identify build tools and frameworks
 
 2. **Create Directory Structure**
+
    ```bash
    mkdir -p .claude/{specs,guides,templates,sessions}
    touch .claude/sessions/.current-session
    ```
 
 3. **Generate Project CLAUDE.md**
+
    - Use template from `@templates/project-claude-md.md`
    - Auto-detect build/test commands
    - Include detected tech stack
    - Add references to relevant specs
 
 4. **Create Initial Specs**
+
    - Add README.md to specs directory
    - Suggest language-specific standards
    - Include relevant tool configurations
@@ -34,6 +38,7 @@ Initialize project memory framework with CLAUDE.md, specs, and guides directorie
 ## Context Loading
 
 Loads:
+
 - `@templates/project-claude-md.md` - Project template
 - `@templates/spec-template.md` - For creating specs
 - `@guides/project-setup.md` - Setup guidance
@@ -41,17 +46,20 @@ Loads:
 ## Detection Rules
 
 ### Language Detection
+
 - Python: `requirements.txt`, `setup.py`, `*.py`
 - JavaScript/Node: `package.json`, `*.js`
 - TypeScript: `tsconfig.json`, `*.ts`
 - Go: `go.mod`, `*.go`
 
 ### Framework Detection
+
 - React: `package.json` contains "react"
 - Django: `manage.py`, `settings.py`
 - Express: `package.json` contains "express"
 
 ### Tool Detection
+
 - Docker: `Dockerfile`, `docker-compose.yml`
 - CI/CD: `.github/workflows/`, `.gitlab-ci.yml`
 
@@ -62,16 +70,18 @@ Loads:
 
 ### Created Structure
 ```
+
 .claude/
-├── CLAUDE.md           # Project context
+├── CLAUDE.md # Project context
 ├── specs/
-│   └── README.md       # Spec index
+│ └── README.md # Spec index
 ├── guides/
-│   └── README.md       # Guide index
+│ └── README.md # Guide index
 ├── templates/
-│   └── README.md       # Template index
-└── sessions/           # Development sessions
-    └── .current-session # Active session tracker
+│ └── README.md # Template index
+└── sessions/ # Development sessions
+└── .current-session # Active session tracker
+
 ```
 
 ### Detected Configuration
