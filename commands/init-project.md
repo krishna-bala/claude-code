@@ -1,10 +1,6 @@
-# Initialize Project
+# Init Project - Set up .claude/ directory structure for context-aware development
 
-Set up `.claude/` directory structure for a project to enable context-aware development.
-
-## Usage
-
-Run from project root to create Claude Code memory framework structure.
+Initialize project memory framework with CLAUDE.md, specs, and guides directories. Run from project root to create the memory framework structure.
 
 ## Process
 

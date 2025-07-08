@@ -1,8 +1,14 @@
-# Git Commit
+# Git Commit - Enhanced staging and atomic commit workflow
 
-Generate a git commit strategy for repository changes. **Prioritize atomic commits** - each commit should represent a single logical change.
+Interactive staging evaluation and commit workflow prioritizing atomic changes. For pre-staged evaluation, add context like `/git-commit I've already staged some changes. Evaluate and commit if they are a cohesive changeset`.
 
-Read `context/git-commit-guidelines.md` for detailed formatting rules and atomic commit principles.
+**Read context from:**
+- `~/.claude/context/git-commit-guidelines.md`
+- `~/.claude/context/pr-guidelines.md`
+
+Handles both scenarios:
+1. **Fresh staging**: Analyze working directory and stage cohesive changes
+2. **Pre-staged evaluation**: Review staged changes and commit if atomic
 
 ## Process
 
