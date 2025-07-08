@@ -96,4 +96,3 @@ Load these based on what you're working on:
 - Key patterns: 10-30 lines
 - Structure diagram: 10-20 lines
 - References: 10-20 lines
-

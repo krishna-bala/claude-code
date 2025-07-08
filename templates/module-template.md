@@ -121,4 +121,3 @@ describe('[ModuleName]', () => {
 ## Usage
 
 Copy relevant sections when creating new modules. Remove sections that don't apply. Follow project-specific patterns.
-

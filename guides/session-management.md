@@ -267,4 +267,3 @@ Sessions use the MCP time server for accuracy:
 - **Templates**: `@templates/session-file.md`, `@templates/session-summary.md`
 - **Framework**: `@context/memory-framework.md` - Overall framework integration
 - **Project Setup**: `@guides/project-setup.md` - Including sessions in projects
-

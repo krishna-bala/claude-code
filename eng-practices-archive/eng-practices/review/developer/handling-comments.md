@@ -1,7 +1,5 @@
 # How to handle reviewer comments
 
-
-
 When you've sent a CL out for review, it's likely that your reviewer will
 respond with several comments on your CL. Here are some useful things to know
 about handling reviewer comments.

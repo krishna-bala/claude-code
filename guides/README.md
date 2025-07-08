@@ -28,4 +28,3 @@ Each guide follows:
 - **Related**: Cross-references to other resources
 
 Keep guides focused (50-150 lines) and actionable.
-

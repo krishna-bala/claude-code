@@ -1,18 +1,18 @@
 {
-  "permissions": {
-    "allow": [
-      "mcp__filesystem__list_allowed_directories",
-      "mcp__filesystem__read_file",
-      "mcp__filesystem__list_directory",
-      "mcp__filesystem__directory_tree",
-      "mcp__filesystem__read_multiple_files",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(gh repo view:*)",
-      "Bash(gh api:*)",
-      "mcp__time__get_current_time",
-      "mcp__filesystem__create_directory"
-    ],
-    "deny": []
-  }
+"permissions": {
+"allow": [
+"mcp__filesystem__list_allowed_directories",
+"mcp__filesystem__read_file",
+"mcp__filesystem__list_directory",
+"mcp__filesystem__directory_tree",
+"mcp__filesystem__read_multiple_files",
+"Bash(ls:*)",
+"Bash(cat:*)",
+"Bash(gh repo view:*)",
+"Bash(gh api:*)",
+"mcp__time__get_current_time",
+"mcp__filesystem__create_directory"
+],
+"deny": []
+}
 }

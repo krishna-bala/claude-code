@@ -41,4 +41,3 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 - Focus on the core problem, options considered, and chosen solution
 - Include key consequences but don't over-analyze
 - Perfect for technical implementation choices, tool selections, or process decisions
-

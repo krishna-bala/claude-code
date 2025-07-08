@@ -1,7 +1,5 @@
 # Handling pushback in code reviews
 
-
-
 Sometimes a developer will push back on a code review. Either they will disagree
 with your suggestion or they will complain that you are being too strict in
 general.
@@ -26,7 +24,7 @@ resulting code quality improvement justifies the additional work requested.
 
 Sometimes it takes a few rounds of explaining a suggestion before it really
 sinks in. Just make sure to always stay [polite](comments.md#courtesy) and let
-the developer know that you *hear* what they're saying, you just don't *agree*.
+the developer know that you _hear_ what they're saying, you just don't _agree_.
 
 ## Upsetting Developers {#upsetting_developers}
 
@@ -44,14 +42,14 @@ insistence on code quality.
 A common source of push back is that developers (understandably) want to get
 things done. They don't want to go through another round of review just to get
 this CL in. So they say they will clean something up in a later CL, and thus you
-should LGTM *this* CL now. Some developers are very good about this, and will
+should LGTM _this_ CL now. Some developers are very good about this, and will
 immediately write a follow-up CL that fixes the issue. However, experience shows
 that as more time passes after a developer writes the original CL, the less
 likely this clean up is to happen. In fact, usually unless the developer does
-the clean up *immediately* after the present CL, it never happens. This isn't
+the clean up _immediately_ after the present CL, it never happens. This isn't
 because developers are irresponsible, but because they have a lot of work to do
 and the cleanup gets lost or forgotten in the press of other work. Thus, it is
-usually best to insist that the developer clean up their CL *now*, before the
+usually best to insist that the developer clean up their CL _now_, before the
 code is in the codebase and "done." Letting people "clean things up later" is a
 common way for codebases to degenerate.
 

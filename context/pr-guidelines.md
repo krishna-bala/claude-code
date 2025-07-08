@@ -108,4 +108,3 @@ Related to #456
 - @context/code-review.md for review standards
 - @commands/git-pr-description.md for PR workflow
 - Project-specific PR templates in .claude/
-

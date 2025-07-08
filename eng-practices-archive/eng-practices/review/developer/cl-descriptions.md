@@ -1,7 +1,5 @@
 # Writing good CL descriptions
 
-
-
 A CL description is a public record of change, and it is important that it
 communicates:
 
@@ -22,7 +20,7 @@ relevance but without the specifics handy. If all the important information is
 in the code and not the description, it's going to be a lot harder for them to
 locate your CL.
 
-And then, after they find the CL, will they be able to understand *why* the
+And then, after they find the CL, will they be able to understand _why_ the
 change was made? Reading source code may reveal what the software is doing but
 it may not reveal why it exists, which can make it harder for future developers
 to know whether they can move
@@ -35,15 +33,15 @@ including yourself!
 
 <a id="firstline"></a> <!-- Keep previous permalink to avoid breaking old links. -->
 
-*   Short summary of what is being done.
-*   Complete sentence, written as though it was an order.
-*   Follow by empty line.
+- Short summary of what is being done.
+- Complete sentence, written as though it was an order.
+- Follow by empty line.
 
 The **first line** of a CL description should be a short summary of
-*specifically* **what** *is being done by the CL*, followed by a blank line.
+_specifically_ **what** _is being done by the CL_, followed by a blank line.
 This is what appears in version control history summaries, so it should be
 informative enough that future code searchers don't have to read your CL or its
-whole description to understand what your CL actually *did* or how it differs
+whole description to understand what your CL actually _did_ or how it differs
 from other CLs. That is, the first line should stand alone, allowing readers to
 skim through code history much faster.
 
@@ -79,12 +77,12 @@ Even small CLs deserve a little attention to detail. Put the CL in context.
 "Fix bug" is an inadequate CL description. What bug? What did you do to fix it?
 Other similarly bad descriptions include:
 
--   "Fix build."
--   "Add patch."
--   "Moving code from A to B."
--   "Phase 1."
--   "Add convenience functions."
--   "kill weird URLs."
+- "Fix build."
+- "Add patch."
+- "Moving code from A to B."
+- "Phase 1."
+- "Add convenience functions."
+- "kill weird URLs."
 
 Some of those are real CL descriptions. Although short, they do not provide
 enough useful information.
@@ -128,7 +126,7 @@ Example:
 The first line describes what the CL does and how this is a change from the
 past. The rest of the description talks about the specific implementation, the
 context of the CL, that the solution isn't ideal, and possible future direction.
-It also explains *why* this change is being made.
+It also explains _why_ this change is being made.
 
 ### Small CL that needs some context
 
@@ -143,7 +141,7 @@ Example:
 > refactoring tools being worked on currently.
 
 The first sentence describes what's actually being done. The rest of the
-description explains *why* the change is being made and gives the reviewer a lot
+description explains _why_ the change is being made and gives the reviewer a lot
 of context.
 
 ## Using tags {#tags}
@@ -153,10 +151,10 @@ be supported by tools or just used by team convention.
 
 For example:
 
--   "[tag]"
--   "[a longer tag]"
--   "#tag"
--   "tag:"
+- "[tag]"
+- "[a longer tag]"
+- "#tag"
+- "tag:"
 
 Using tags is optional.
 
@@ -166,7 +164,7 @@ the first line, as this can obscure the content.
 
 Examples with and without tags:
 
-``` {.good}
+```{.good}
 // Tags are okay in the first line if kept short.
 [banana] Peel the banana before eating.
 
@@ -185,7 +183,7 @@ Peel the banana before eating.
 > #banana #apple
 ```
 
-``` {.bad}
+```{.bad}
 // Too many tags (or tags that are too long) overwhelm the first line.
 //
 // Instead, consider whether the tags can be moved into the description body

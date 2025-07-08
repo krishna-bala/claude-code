@@ -48,4 +48,3 @@ def test_should_transfer_funds():
 - Brittle coupling to data formats or UI details
 
 **Goal**: Sustainable test suite providing confidence without maintenance burden.
-

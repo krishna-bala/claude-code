@@ -5,6 +5,7 @@
 ## Organization Patterns
 
 **Structure**:
+
 ```
 docs/
 ├── README.md     # Navigation hub
@@ -13,13 +14,14 @@ docs/
 
 {component}/docs/ # Component-specific
 ├── README.md     # Overview
-├── api-reference/# Technical specs  
+├── api-reference/# Technical specs
 └── guides/       # How-to instructions
 ```
 
 **Document Types**:
+
 - README.md: Navigation and overview
-- {topic}.md: Single-purpose explanations  
+- {topic}.md: Single-purpose explanations
 - CLAUDE.md: Development context
 - CHANGELOG.md: Progress tracking
 
@@ -32,6 +34,7 @@ docs/
 ## When to Split
 
 Split documents when they:
+
 - Exceed ~200 lines
 - Serve multiple audiences
 - Mix content types (vision + implementation + procedures)
@@ -47,7 +50,7 @@ Split documents when they:
 ## Benefits
 
 1. **Quick Understanding**: Find relevant info fast
-2. **Easy Maintenance**: Update specific areas independently  
+2. **Easy Maintenance**: Update specific areas independently
 3. **Better Git History**: Isolated change tracking
 4. **Scalable**: Pattern grows with project
 5. **Developer-Friendly**: Context-specific guidance

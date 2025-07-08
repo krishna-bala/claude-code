@@ -1,7 +1,5 @@
 # What to look for in a code review
 
-
-
 Note: Always make sure to take into account
 [The Standard of Code Review](standard.md) when considering each of these
 points.
@@ -26,7 +24,7 @@ thinking about edge cases, looking for concurrency problems, trying to think
 like a user, and making sure that there are no bugs that you see just by reading
 the code.
 
-You *can* validate the CL if you want—the time when it's most important for a
+You _can_ validate the CL if you want—the time when it's most important for a
 reviewer to check a CL's behavior is when it has a user-facing impact, such as a
 **UI change**. It's hard to understand how some changes will impact a user when
 you're just reading the code. For changes like that, you can have the developer
@@ -55,7 +53,7 @@ A particular type of complexity is **over-engineering**, where developers have
 made the code more generic than it needs to be, or added functionality that
 isn't presently needed by the system. Reviewers should be especially vigilant
 about over-engineering. Encourage developers to solve the problem they know
-needs to be solved *now*, not the problem that the developer speculates *might*
+needs to be solved _now_, not the problem that the developer speculates _might_
 need to be solved in the future. The future problem should be solved once it
 arrives and you can see its actual shape and requirements in the physical
 universe.
@@ -89,7 +87,7 @@ becomes hard to read.
 
 Did the developer write clear comments in understandable English? Are all of the
 comments actually necessary? Usually comments are useful when they **explain
-why** some code exists, and should not be explaining *what* some code is doing.
+why** some code exists, and should not be explaining _what_ some code is doing.
 If the code isn't clear enough to explain itself, then the code should be made
 simpler. There are some exceptions (regular expressions and complex algorithms
 often benefit greatly from comments that explain what they're doing, for
@@ -100,7 +98,7 @@ It can also be helpful to look at comments that were there before this CL. Maybe
 there is a TODO that can be removed now, a comment advising against this change
 being made, etc.
 
-Note that comments are different from *documentation* of classes, modules, or
+Note that comments are different from _documentation_ of classes, modules, or
 functions, which should instead express the purpose of a piece of code, how it
 should be used, and how it behaves when used.
 
@@ -152,13 +150,13 @@ missing, ask for it.
 
 ## Every Line {#every-line}
 
-In the general case, look at *every* line of code that you have been assigned to
+In the general case, look at _every_ line of code that you have been assigned to
 review. Some things like data files, generated code, or large data structures
 you can scan over sometimes, but don't scan over a human-written class,
 function, or block of code and assume that what's inside of it is okay.
 Obviously some code deserves more careful scrutiny than other code&mdash;that's
 a judgment call that you have to make&mdash;but you should at least be sure that
-you *understand* what all the code is doing.
+you _understand_ what all the code is doing.
 
 If it's too hard for you to read the code and this is slowing down the review,
 then you should let the developer know that
@@ -178,9 +176,9 @@ concurrency, accessibility, internationalization, etc.
 What if it doesn't make sense for you to review every line? For example, you are
 one of multiple reviewers on a CL and may be asked:
 
-*   To review only certain files that are part of a larger change.
-*   To review only certain aspects of the CL, such as the high-level design,
-    privacy or security implications, etc.
+- To review only certain files that are part of a larger change.
+- To review only certain aspects of the CL, such as the high-level design,
+  privacy or security implications, etc.
 
 In these cases, note in a comment which parts you reviewed. Prefer giving
 [LGTM with comments](speed.md#lgtm-with-comments)
@@ -219,19 +217,19 @@ tell a developer what they did right than to tell them what they did wrong.
 
 In doing a code review, you should make sure that:
 
--   The code is well-designed.
--   The functionality is good for the users of the code.
--   Any UI changes are sensible and look good.
--   Any parallel programming is done safely.
--   The code isn't more complex than it needs to be.
--   The developer isn't implementing things they *might* need in the future but
-    don't know they need now.
--   Code has appropriate unit tests.
--   Tests are well-designed.
--   The developer used clear names for everything.
--   Comments are clear and useful, and mostly explain *why* instead of *what*.
--   Code is appropriately documented (generally in g3doc).
--   The code conforms to our style guides.
+- The code is well-designed.
+- The functionality is good for the users of the code.
+- Any UI changes are sensible and look good.
+- Any parallel programming is done safely.
+- The code isn't more complex than it needs to be.
+- The developer isn't implementing things they _might_ need in the future but
+  don't know they need now.
+- Code has appropriate unit tests.
+- Tests are well-designed.
+- The developer used clear names for everything.
+- Comments are clear and useful, and mostly explain _why_ instead of _what_.
+- Code is appropriately documented (generally in g3doc).
+- The code conforms to our style guides.
 
 Make sure to review **every line** of code you've been asked to review, look at
 the **context**, make sure you're **improving code health**, and compliment

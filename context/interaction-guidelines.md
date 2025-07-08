@@ -12,4 +12,3 @@ Core principles for how Claude should approach user requests and development tas
 - Recognize when simple requests can be addressed directly
 - When assumptions must be made, make them explicit
 - Prioritize early course correction over perfect first attempts
-

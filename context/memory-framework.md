@@ -40,6 +40,7 @@ The framework provides persistent, context-aware memory for Claude Code through:
 `@file.md` syntax triggers the agent to **read the entire file** dynamically (not inline substitution).
 
 Advanced syntax support:
+
 - `@file.md` - Read entire file
 - `@file.md#L123-456` - Read specific line ranges
 

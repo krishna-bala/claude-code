@@ -7,6 +7,7 @@ A simple, effective memory system using Markdown files that Claude Code can read
 ## Directory Structure
 
 ### Global Configuration (~/.claude/)
+
 Located at `/home/krishna/.dotfiles/claude` (symlinked from `~/.claude`)
 
 ```
@@ -34,6 +35,7 @@ Located at `/home/krishna/.dotfiles/claude` (symlinked from `~/.claude`)
 ```
 
 ### Project-Specific Configuration (<project>/.claude/)
+
 Each project maintains its own `.claude/` directory:
 
 ```
@@ -55,15 +57,18 @@ Each project maintains its own `.claude/` directory:
 ## Core Principles
 
 ### 1. Context-Aware Loading
+
 - Load specs based on file types being worked on
 - Reference guides when specific problems are detected
 - Use commands to trigger appropriate workflows
 
 ### 2. Separation of Concerns
+
 - Global: Universal tools, commands, and workflows
 - Project: Language specs, architecture, and project-specific patterns
 
 ### 3. Progressive Disclosure
+
 - Start with essentials in main CLAUDE.md
 - Load detailed guidance on demand
 - Keep token usage manageable
@@ -73,23 +78,27 @@ Each project maintains its own `.claude/` directory:
 ### Phase 1: Update Global Configuration
 
 1. **Update CLAUDE.md** to reflect the memory framework:
+
    - Add section explaining global vs project separation
    - Document how to use specs/guides/templates
    - Reference context-aware loading principles
 
 2. **Create global guides/ directory**:
+
    - `guides/README.md` - Guide index
    - `guides/debugging-workflows.md` - General debugging approaches
    - `guides/project-setup.md` - Setting up project .claude/ directories
    - `guides/context-loading-patterns.md` - Organizing specs best practices
 
 3. **Create global templates/ directory**:
+
    - `templates/README.md` - Template index
    - `templates/project-claude-md.md` - Project CLAUDE.md template
    - `templates/spec-template.md` - Creating new spec files
    - `templates/guide-template.md` - Creating new guide files
 
 4. **Add framework-supporting commands**:
+
    - `commands/check-standards.md` - Validate against project specs
    - `commands/suggest-improvements.md` - Context-aware suggestions
    - `commands/load-context.md` - Smart context loading
@@ -115,18 +124,22 @@ When working on a specific project:
 # [Language/Tool] Standards
 
 ## Quick Reference
+
 - Key principles (3-5 bullet points)
 - Common patterns
 - Critical do's and don'ts
 
 ## Detailed Guidelines
+
 - Comprehensive standards
 - Examples and counter-examples
 - Integration with other tools
 
 ## Context Triggers
+
 When to reference this spec:
-- File patterns: *.cpp, *.h
+
+- File patterns: _.cpp, _.h
 - Common scenarios: optimization, memory management
 - Problem indicators: build errors, memory leaks
 ```
@@ -137,15 +150,18 @@ When to reference this spec:
 # [Workflow Name]
 
 ## When to Use
+
 - Specific triggering situations
 - Problem indicators
 
 ## Process
+
 1. Step-by-step approach
 2. Decision points
 3. Common variations
 
 ## Tools and Commands
+
 - Relevant slash commands
 - External tools
 - Integration points
@@ -157,15 +173,18 @@ When to reference this spec:
 # [Command Description]
 
 ## Usage
+
 Brief description
 
 ## Process
+
 1. Analyze context
 2. Load relevant specs/guides
 3. Perform analysis
 4. Present results
 
 ## Context Loading
+
 - Always load: [files]
 - Conditionally load based on file types
 ```
@@ -219,12 +238,14 @@ claude
 ### ✅ Completed
 
 1. **Updated global CLAUDE.md** with:
+
    - Memory framework architecture section
    - Context loading (lazy loading) instructions
    - Framework resources with backtick-wrapped references
    - Quick access commands
 
 2. **Created guides/ directory** with:
+
    - README.md - Guide index
    - debugging-workflows.md - Systematic debugging
    - project-setup.md - Project initialization
@@ -232,6 +253,7 @@ claude
    - memory-framework-guide.md - User guide
 
 3. **Created templates/ directory** with:
+
    - README.md - Template index
    - project-claude-md.md - Project CLAUDE.md template
    - spec-template.md - Specification template
@@ -240,6 +262,7 @@ claude
    - module-template.md - Module structure template
 
 4. **Added framework commands**:
+
    - check-standards.md - Validate against specs
    - suggest-improvements.md - Context-aware suggestions
    - load-context.md - Smart context loading
@@ -254,11 +277,13 @@ claude
 ### Key Improvements Made
 
 1. **Lazy Loading Implementation**
+
    - Used backticks in CLAUDE.md to prevent auto-loading
    - Clear instructions for when to load specific context
    - Git operations trigger appropriate guideline loading
 
 2. **Token Efficiency**
+
    - Kept all files under 200 lines
    - Used progressive disclosure pattern
    - Clear separation of concerns
@@ -286,6 +311,7 @@ claude
 ### Usage Instructions
 
 To use the framework:
+
 1. Global context is already active via ~/.claude/CLAUDE.md
 2. For new projects: Run `/init-project` from project root
 3. For existing projects: Manually create `.claude/` structure

@@ -93,4 +93,3 @@ When to use: [Situation]
 - Language: `python-standards.md`, `javascript-standards.md`
 - Tools: `docker-practices.md`, `git-conventions.md`
 - Architecture: `api-design.md`, `microservices.md`
-

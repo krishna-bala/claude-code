@@ -5,20 +5,25 @@ Best practices for organizing and loading specs, guides, and context efficiently
 ## Core Principles
 
 ### 1. Progressive Loading
+
 - Start with minimal context
 - Load details on demand
 - Use triggers for automatic loading
 - Keep baseline under 5K tokens
 
 ### 2. File-Type Triggers
+
 Map file extensions to relevant specs:
+
 - `*.py` → python-standards.md
 - `*.js, *.ts` → javascript-standards.md
 - `BUILD, *.bazel` → bazel-practices.md
 - `Dockerfile` → docker-practices.md
 
 ### 3. Problem-Based Loading
+
 Load guides based on:
+
 - Error patterns
 - Task types
 - User queries
@@ -27,10 +32,12 @@ Load guides based on:
 ## Loading Strategies
 
 ### Automatic Context Loading
+
 ```markdown
 # In commands/load-context.md
 
 ## Process
+
 1. Detect active file types
 2. Check for .claude/ directory
 3. Load relevant specs
@@ -38,6 +45,7 @@ Load guides based on:
 ```
 
 ### Manual Loading Patterns
+
 ```bash
 # Load specific context
 @specs/python-standards.md
@@ -50,10 +58,12 @@ Load guides based on:
 ```
 
 ### Conditional Loading
+
 ```markdown
 # In project CLAUDE.md
 
 ## Context Loading
+
 - Working on API? Load @specs/api-spec.md
 - Debugging? Use @guides/debugging-workflows.md
 - New feature? Reference @guides/architecture.md
@@ -62,6 +72,7 @@ Load guides based on:
 ## Organization Patterns
 
 ### Hierarchical Specs
+
 ```
 specs/
 ├── README.md              # Navigation
@@ -77,16 +88,21 @@ specs/
 ```
 
 ### Cross-References
+
 Use consistent linking:
+
 ```markdown
 ## Related Specs
+
 - Python testing: @specs/language/python.md#testing
 - API patterns: @specs/project/api.md
 - Debug workflow: @guides/debugging-workflows.md
 ```
 
 ### Token Budget Management
+
 Structure for efficiency:
+
 - Quick reference: 50-100 tokens
 - Detailed section: 200-500 tokens
 - Examples: Move to separate files
@@ -95,24 +111,29 @@ Structure for efficiency:
 ## Anti-Patterns to Avoid
 
 ### Over-Loading
+
 ❌ Loading all specs on startup
 ✅ Load based on current task
 
 ### Duplication
+
 ❌ Copying content between specs
 ✅ Reference shared concepts
 
 ### Deep Nesting
+
 ❌ `specs/lang/python/testing/unit/fixtures.md`
 ✅ `specs/python-testing.md`
 
 ### Monolithic Files
+
 ❌ One 1000-line spec file
 ✅ Multiple focused 100-line files
 
 ## Implementation Examples
 
 ### Smart Command Loading
+
 ```bash
 /load-context
 
@@ -123,14 +144,18 @@ Structure for efficiency:
 ```
 
 ### Project CLAUDE.md
+
 ```markdown
 ## Active Specs
+
 - @specs/python-standards.md (backend)
 - @specs/react-patterns.md (frontend)
 - @specs/api-design.md (interfaces)
 
 ## Conditional Loading
+
 Working on specific areas? Load:
+
 - Database: @specs/database-patterns.md
 - Auth: @guides/authentication.md
 ```

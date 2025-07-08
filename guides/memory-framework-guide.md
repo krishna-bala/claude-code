@@ -5,6 +5,7 @@ How to effectively use the Claude Code Memory Framework for persistent, organize
 ## Framework Overview
 
 The memory framework provides:
+
 - **Persistent Context**: Specs and guides that persist across sessions
 - **Smart Loading**: Context-aware loading based on your work
 - **Clear Organization**: Separation of global tools and project knowledge
@@ -13,6 +14,7 @@ The memory framework provides:
 ## Quick Start
 
 ### 1. Understand the Structure
+
 ```
 ~/.claude/                  # Global (this directory)
 ├── commands/              # Slash commands
@@ -29,6 +31,7 @@ project/.claude/           # Project-specific
 ### 2. Common Workflows
 
 #### Starting a New Project
+
 ```bash
 cd my-project
 /init-project              # Creates .claude/ structure
@@ -36,6 +39,7 @@ cd my-project
 ```
 
 #### Working with Existing Project
+
 ```bash
 /load-context              # Loads relevant specs
 /list-specs               # Shows available specs
@@ -43,6 +47,7 @@ cd my-project
 ```
 
 #### Adding New Standards
+
 1. Create spec file in `project/.claude/specs/`
 2. Use @templates/spec-template.md
 3. Add to specs/README.md index
@@ -51,17 +56,20 @@ cd my-project
 ## Effective Usage Patterns
 
 ### Context Loading Strategy
+
 1. **Automatic**: Based on file types
 2. **Manual**: Load specific specs with @-references
 3. **Conditional**: Based on task or problem
 
 ### Writing Good Specs
+
 - **Quick Reference**: 3-5 key points upfront
 - **Examples**: Show good and bad patterns
 - **Triggers**: When to load this spec
 - **Size**: 50-200 lines per file
 
 ### Organizing Projects
+
 ```
 # Simple project
 .claude/
@@ -82,21 +90,25 @@ cd my-project
 ## Best Practices
 
 ### 1. Keep Context Fresh
+
 - Update specs with codebase
 - Archive outdated content
 - Review quarterly
 
 ### 2. Optimize Token Usage
+
 - CLAUDE.md < 200 lines
 - Reference detailed docs
 - Use progressive loading
 
 ### 3. Maintain Consistency
+
 - Follow templates
 - Use standard structure
 - Cross-reference clearly
 
 ### 4. Version Control
+
 - Commit .claude/ directory
 - Track changes with git
 - Document decisions
@@ -104,6 +116,7 @@ cd my-project
 ## Common Use Cases
 
 ### Code Review
+
 ```bash
 /check-standards           # Validate against specs
 # Reviews current changes against:
@@ -113,6 +126,7 @@ cd my-project
 ```
 
 ### Debugging Session
+
 ```bash
 /load-context debugging    # Loads debug guides
 # Provides:
@@ -122,6 +136,7 @@ cd my-project
 ```
 
 ### New Feature Development
+
 1. Review architecture guides
 2. Check relevant specs
 3. Follow project patterns
@@ -130,16 +145,19 @@ cd my-project
 ## Troubleshooting
 
 ### Specs Not Loading
+
 - Check .claude/ exists in project
 - Verify file paths correct
 - Ensure proper @-references
 
 ### Too Much Context
+
 - Split large specs
 - Use progressive loading
 - Archive verbose content
 
 ### Outdated Information
+
 - Regular review cycle
 - Update with code changes
 - Remove obsolete specs
@@ -147,15 +165,20 @@ cd my-project
 ## Advanced Features
 
 ### Cross-Project Specs
+
 Reference shared standards:
+
 ```markdown
 # In project CLAUDE.md
+
 @~/.claude/guides/debugging-workflows.md
 @../shared-specs/api-standards.md
 ```
 
 ### Dynamic Loading
+
 Commands can intelligently load based on:
+
 - Current git changes
 - Error patterns
 - File modifications

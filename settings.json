@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(wc:*)",
+      "Bash(cat:*)",
+      "Bash(gh repo view:*)",
+      "Bash(gh api:*)",
+      "Bash(rg:*)",
+      "Read(file_path:*)",
+      "Read",
+      "mcp__time__get_current_time"
+    ],
+    "deny": []
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[JSON HOOK] Claude notification received!' >> ~/claude-hooks-test.log && date >> ~/claude-hooks-test.log && cat | jq -r '.notification_message // .message // \"No message found\"' >> ~/claude-hooks-test.log && echo '---' >> ~/claude-hooks-test.log"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/format.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/format.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/format.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

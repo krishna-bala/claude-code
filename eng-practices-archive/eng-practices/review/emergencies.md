@@ -4,8 +4,6 @@ Sometimes there are emergency CLs that must pass through the entire code review
 process as quickly as
 possible.
 
-
-
 ## What Is An Emergency? {#what}
 
 An emergency CL would be a **small** change that: allows a major launch to
@@ -14,7 +12,7 @@ production, handles a pressing legal issue, closes a major security hole, etc.
 
 In emergencies we really do care about the speed of the entire code review
 process, not just the [speed of response](reviewer/speed.md). In this case
-*only*, the reviewer should care more about the speed of the review and the
+_only_, the reviewer should care more about the speed of the review and the
 correctness of the code (does it actually resolve the emergency?) than anything
 else. Also (perhaps obviously) such reviews should take priority over all other
 code reviews, when they come up.
@@ -24,19 +22,19 @@ again and give them a [more thorough review](reviewer/looking-for.md).
 
 ## What Is NOT An Emergency? {#not}
 
-To be clear, the following cases are *not* an emergency:
+To be clear, the following cases are _not_ an emergency:
 
--   Wanting to launch this week rather than next week (unless there is some
-    actual [hard deadline](#deadlines) for launch such as a partner agreement).
--   The developer has worked on a feature for a very long time and they really
-    want to get the CL in.
--   The reviewers are all in another timezone where it is currently nighttime or
-    they are away on an off-site.
--   It is the end of the day on a Friday and it would just be great to get this
-    CL in before the developer leaves for the weekend.
--   A manager says that this review has to be complete and the CL checked in
-    today because of a [soft (not hard) deadline](#deadlines).
--   Rolling back a CL that is causing test failures or build breakages.
+- Wanting to launch this week rather than next week (unless there is some
+  actual [hard deadline](#deadlines) for launch such as a partner agreement).
+- The developer has worked on a feature for a very long time and they really
+  want to get the CL in.
+- The reviewers are all in another timezone where it is currently nighttime or
+  they are away on an off-site.
+- It is the end of the day on a Friday and it would just be great to get this
+  CL in before the developer leaves for the weekend.
+- A manager says that this review has to be complete and the CL checked in
+  today because of a [soft (not hard) deadline](#deadlines).
+- Rolling back a CL that is causing test failures or build breakages.
 
 And so on.
 
@@ -45,13 +43,13 @@ And so on.
 A hard deadline is one where **something disastrous would happen** if you miss
 it. For example:
 
--   Submitting your CL by a certain date is necessary for a contractual
-    obligation.
--   Your product will completely fail in the marketplace if not released by a
-    certain date.
--   Some hardware manufacturers only ship new hardware once a year. If you miss
-    the deadline to submit code to them, that could be disastrous, depending on
-    what type of code you're trying to ship.
+- Submitting your CL by a certain date is necessary for a contractual
+  obligation.
+- Your product will completely fail in the marketplace if not released by a
+  certain date.
+- Some hardware manufacturers only ship new hardware once a year. If you miss
+  the deadline to submit code to them, that could be disastrous, depending on
+  what type of code you're trying to ship.
 
 Delaying a release for a week is not disastrous. Missing an important conference
 might be disastrous, but often is not.

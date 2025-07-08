@@ -1,7 +1,5 @@
 # Navigating a CL in review
 
-
-
 ## Summary
 
 Now that you know [what to look for](looking-for.md), what's the most efficient
@@ -27,7 +25,7 @@ that you're modifying here, and so we don't want to make any new modifications
 to it right now. How about instead you refactor our new BarWidget class?"
 
 Note that not only did the reviewer reject the current CL and provide an
-alternative suggestion, but they did it *courteously*. This kind of courtesy is
+alternative suggestion, but they did it _courteously_. This kind of courtesy is
 important because we want to show that we respect each other as developers even
 when we disagree.
 
@@ -56,15 +54,15 @@ code under review is going to disappear and not matter anyway.
 There are two major reasons it's so important to send these major design
 comments out immediately:
 
--   Developers often mail a CL and then immediately start new work based on that
-    CL while they wait for review. If there are major design problems in the CL
-    you're reviewing, they're also going to have to re-work their later CL. You
-    want to catch them before they've done too much extra work on top of the
-    problematic design.
--   Major design changes take longer to do than small changes. Developers nearly
-    all have deadlines; in order to make those deadlines and still have quality
-    code in the codebase, the developer needs to start on any major re-work of
-    the CL as soon as possible.
+- Developers often mail a CL and then immediately start new work based on that
+  CL while they wait for review. If there are major design problems in the CL
+  you're reviewing, they're also going to have to re-work their later CL. You
+  want to catch them before they've done too much extra work on top of the
+  problematic design.
+- Major design changes take longer to do than small changes. Developers nearly
+  all have deadlines; in order to make those deadlines and still have quality
+  code in the codebase, the developer needs to start on any major re-work of
+  the CL as soon as possible.
 
 ## Step Three: Look through the rest of the CL in an appropriate sequence {#step_three}
 

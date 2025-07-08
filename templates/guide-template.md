@@ -110,4 +110,3 @@ Changes: [What's different]
 - Workflows: `debugging-workflows.md`, `deployment-process.md`
 - Setup: `project-setup.md`, `environment-config.md`
 - Problem-solving: `performance-tuning.md`, `security-audit.md`
-

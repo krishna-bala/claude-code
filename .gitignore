@@ -1,7 +1,9 @@
 # Credentials and sensitive files
+
 .credentials.json
 
 # Working directories
+
 projects/
 statsig/
 todos/

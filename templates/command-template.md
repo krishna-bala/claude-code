@@ -101,4 +101,3 @@ Output: [Expected result]
 - Analysis: `check-standards.md`, `analyze-dependencies.md`
 - Generation: `init-project.md`, `create-module.md`
 - Validation: `lint-check.md`, `test-coverage.md`
-

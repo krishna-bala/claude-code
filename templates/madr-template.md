@@ -93,4 +93,3 @@ Chosen option: "[option 1]", because [justification. e.g., only option, which me
 - Focus on capturing the reasoning behind the decision
 - Include sufficient context for future understanding
 - Document all seriously considered alternatives
-
