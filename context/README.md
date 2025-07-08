@@ -34,9 +34,10 @@ Core guidelines and standards for Claude Code development.
 
 ## Quick Reference
 
-- **Git operations** → git-commit-guidelines.md, pr-guidelines.md
-- **Testing tasks** → testing.md, tdd.md
-- **Documentation work** → documentation-strategy.md
-- **Framework understanding** → memory-framework.md
-- **Code reviews** → code-review.md
-- **How to interact** → interaction-guidelines.md
+- **Git operations** → `git-commit-guidelines.md`, `pr-guidelines.md`
+- **Testing tasks** → `testing.md`, `tdd.md`
+- **Documentation work** → `documentation-strategy.md`
+- **Framework understanding** → `memory-framework.md`
+- **Code reviews** → `code-review.md`
+- **How to interact** → `interaction-guidelines.md`
+
