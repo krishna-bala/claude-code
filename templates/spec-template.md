@@ -2,7 +2,8 @@
 
 Template for creating specification files. Copy and customize for your standards.
 
-```markdown
+<spec-template>
+
 # [Language/Tool] Standards
 
 Brief description of what this spec covers.
@@ -10,7 +11,7 @@ Brief description of what this spec covers.
 ## Quick Reference
 
 - **Key Principle 1**: Brief explanation
-- **Key Principle 2**: Brief explanation  
+- **Key Principle 2**: Brief explanation
 - **Key Principle 3**: Brief explanation
 - **Critical Don't**: What to avoid
 
@@ -19,11 +20,13 @@ Brief description of what this spec covers.
 ### [Topic 1]
 
 #### Good Practice
+
 ```[language]
 // Example of correct implementation
 ```
 
 #### Bad Practice
+
 ```[language]
 // Example of what to avoid
 ```
@@ -31,6 +34,7 @@ Brief description of what this spec covers.
 ### [Topic 2]
 
 Key points about this topic:
+
 - Point 1
 - Point 2
 - Point 3
@@ -42,7 +46,9 @@ Description and guidelines.
 ## Common Patterns
 
 ### [Pattern Name]
+
 When to use: [Situation]
+
 ```[language]
 // Pattern example
 ```
@@ -55,20 +61,23 @@ When to use: [Situation]
 ## Context Triggers
 
 **Load this spec when:**
-- Working with *.[extension] files
+
+- Working with `\*.[extension]` files
 - [Specific scenario]
 - [Problem indicator]
 
 **Common issues this helps with:**
+
 - [Issue 1]
 - [Issue 2]
 
 ## Related Resources
 
-- `@specs/[related-spec].md` - Related standards
-- `@guides/[related-guide].md` - Implementation guide
+- `specs/[related-spec].md` - Related standards
+- `guides/[related-guide].md` - Implementation guide
 - External: [Official documentation URL]
-```
+
+</spec-template>
 
 ## Customization Guidelines
 
@@ -81,6 +90,7 @@ When to use: [Situation]
 
 ## Example Specs
 
-- Language: python-standards.md, javascript-standards.md
-- Tools: docker-practices.md, git-conventions.md
-- Architecture: api-design.md, microservices.md
+- Language: `python-standards.md`, `javascript-standards.md`
+- Tools: `docker-practices.md`, `git-conventions.md`
+- Architecture: `api-design.md`, `microservices.md`
+

@@ -2,7 +2,8 @@
 
 Template for creating guide files. Copy and customize for your workflows.
 
-```markdown
+<guide-template>
+
 # [Workflow/Process Name]
 
 Brief description of what this guide helps accomplish.
@@ -31,6 +32,7 @@ Brief description of this step.
 ```
 
 Key points:
+
 - Important detail
 - Common variation
 - Potential issue
@@ -40,6 +42,7 @@ Key points:
 Description and details.
 
 Decision point:
+
 - If [condition], then [action A]
 - If [other condition], then [action B]
 
@@ -49,22 +52,26 @@ Final steps and verification.
 
 ## Common Variations
 
-### [Variation Name]
+### [Variation Name 1]
+
 When: [Specific scenario]
 Changes: [What's different]
 
-### [Variation Name]
+### [Variation Name 2]
+
 When: [Specific scenario]
 Changes: [What's different]
 
 ## Troubleshooting
 
 ### [Problem 1]
+
 **Symptoms**: What you'll see
 **Cause**: Why it happens
 **Solution**: How to fix
 
 ### [Problem 2]
+
 **Symptoms**: What you'll see
 **Cause**: Why it happens
 **Solution**: How to fix
@@ -86,7 +93,8 @@ Changes: [What's different]
 - `@guides/[related-guide].md` - Related workflow
 - `@specs/[related-spec].md` - Standards to follow
 - `/[command]` - Relevant slash command
-```
+
+</guide-template>
 
 ## Customization Guidelines
 
@@ -99,6 +107,7 @@ Changes: [What's different]
 
 ## Example Guides
 
-- Workflows: debugging-workflows.md, deployment-process.md
-- Setup: project-setup.md, environment-config.md
-- Problem-solving: performance-tuning.md, security-audit.md
+- Workflows: `debugging-workflows.md`, `deployment-process.md`
+- Setup: `project-setup.md`, `environment-config.md`
+- Problem-solving: `performance-tuning.md`, `security-audit.md`
+

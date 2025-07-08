@@ -2,7 +2,8 @@
 
 Template for creating slash commands. Copy and customize.
 
-```markdown
+<command-template>
+
 # [Command Name]
 
 Brief description of what this command does.
@@ -14,11 +15,13 @@ When to use this command and expected outcome.
 ## Process
 
 1. **[Step 1 Name]**
+
    - Action to perform
    - What to check or analyze
    - Expected result
 
 2. **[Step 2 Name]**
+
    - Next action
    - Processing or validation
    - Output format
@@ -31,10 +34,12 @@ When to use this command and expected outcome.
 ## Context Loading
 
 Automatically loads:
+
 - `@[file]` - Always needed
 - `@[file]` - For specific functionality
 
 Conditionally loads based on:
+
 - File types present
 - Current git state
 - Error patterns
@@ -42,29 +47,36 @@ Conditionally loads based on:
 
 ## Output Format
 
-```markdown
+<output-format>
+
 ## [Command] Results
 
 ### Section 1
+
 - Finding or result
 - Relevant detail
 
 ### Section 2
+
 - Analysis outcome
 - Recommendations
 
 ### Next Steps
+
 1. Suggested action
 2. Alternative approach
-```
+
+</output-format>
 
 ## Examples
 
 ### Example 1: [Scenario]
+
 Input: [User action or state]
 Output: [Expected result]
 
 ### Example 2: [Scenario]
+
 Input: [User action or state]
 Output: [Expected result]
 
@@ -72,7 +84,8 @@ Output: [Expected result]
 
 - `/[command]` - Related functionality
 - `/[command]` - Often used together
-```
+
+</command-template>
 
 ## Customization Guidelines
 
@@ -85,6 +98,7 @@ Output: [Expected result]
 
 ## Example Commands
 
-- Analysis: check-standards.md, analyze-dependencies.md
-- Generation: init-project.md, create-module.md
-- Validation: lint-check.md, test-coverage.md
+- Analysis: `check-standards.md`, `analyze-dependencies.md`
+- Generation: `init-project.md`, `create-module.md`
+- Validation: `lint-check.md`, `test-coverage.md`
+

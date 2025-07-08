@@ -2,7 +2,8 @@
 
 Template for consistent module/component structure in projects.
 
-```markdown
+<module-template>
+
 # [Module Name] Structure
 
 Template for creating new [module type] in this project.
@@ -26,6 +27,7 @@ Template for creating new [module type] in this project.
 ## File Templates
 
 ### [Main File Template]
+
 ```[language]
 /**
  * [Module Name]
@@ -45,6 +47,7 @@ export class [ModuleName] {
 ```
 
 ### [Test File Template]
+
 ```[language]
 /**
  * Tests for [Module Name]
@@ -61,6 +64,7 @@ describe('[ModuleName]', () => {
 ```
 
 ### [Config File Template]
+
 ```[language]
 {
     "name": "[module-name]",
@@ -97,13 +101,14 @@ describe('[ModuleName]', () => {
 ## Checklist
 
 - [ ] Directory structure created
-- [ ] README.md updated
+- [ ] `README.md` updated
 - [ ] Core implementation
 - [ ] Unit tests added
 - [ ] Integration tests added
 - [ ] Documentation complete
 - [ ] Code review passed
-```
+
+</module-template>
 
 ## Customization Guidelines
 
@@ -116,3 +121,4 @@ describe('[ModuleName]', () => {
 ## Usage
 
 Copy relevant sections when creating new modules. Remove sections that don't apply. Follow project-specific patterns.
+
