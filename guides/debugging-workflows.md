@@ -105,7 +105,6 @@ assert isinstance(obj, expected_type)
 
 ## Related Resources
 
-- @context/testing.md - Testing strategies
+- `context/testing.md` - Testing strategies
 - Project-specific debugging guides
 - Language-specific error handling
-

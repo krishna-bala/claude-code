@@ -1,6 +1,6 @@
 # Project Setup Guide
 
-Initialize and configure .claude/ directories for projects.
+Initialize and configure `<project>/.claude/` directories for projects.
 
 ## When to Use
 
@@ -12,6 +12,7 @@ Initialize and configure .claude/ directories for projects.
 ## Quick Setup Process
 
 ### 1. Initialize Structure
+
 ```bash
 # Run from project root
 /init-project
@@ -21,21 +22,27 @@ mkdir -p .claude/{specs,guides,templates}
 ```
 
 ### 2. Create Project CLAUDE.md
-Use @templates/project-claude-md.md as starting point:
+
+Use `templates/project-claude-md.md` as starting point:
+
 - Essential commands (build, test, lint)
 - Key architectural patterns
 - Technology stack references
 - Links to detailed docs
 
 ### 3. Add Relevant Specs
+
 Based on project technologies:
+
 - `specs/README.md` - Spec index
 - Language standards (python, javascript, etc.)
 - Tool configurations (docker, ci/cd)
 - API conventions
 
 ### 4. Document Architecture
+
 Create guides for:
+
 - `guides/architecture.md` - System design
 - `guides/development.md` - Dev workflow
 - `guides/deployment.md` - Release process
@@ -60,18 +67,21 @@ project/
 ## Best Practices
 
 ### Content Guidelines
+
 - Keep CLAUDE.md under 200 lines
 - One concept per spec file
 - Action-oriented guides
 - Version control everything
 
 ### Maintenance
+
 - Update docs with code changes
 - Review quarterly for relevance
 - Archive outdated content
 - Track with git history
 
 ### Integration
+
 - Reference global guides when applicable
 - Extend rather than duplicate
 - Link between related docs
@@ -80,6 +90,7 @@ project/
 ## Common Patterns
 
 ### Monorepo Projects
+
 ```
 .claude/
 ├── CLAUDE.md              # Root context
@@ -91,6 +102,7 @@ project/
 ```
 
 ### Multi-Language Projects
+
 - Separate specs by language
 - Common guides for workflows
 - Shared templates for consistency
@@ -106,3 +118,4 @@ project/
 - @templates/project-claude-md.md - CLAUDE.md template
 - @guides/context-loading-patterns.md - Organize specs
 - @context/documentation.md - Doc philosophy
+
