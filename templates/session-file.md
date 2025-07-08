@@ -11,8 +11,9 @@ Template for creating development session files. Used automatically by `/session
 ## Goals
 
 [SESSION_GOALS_LIST]
+
 - [ ] [Goal 1]
-- [ ] [Goal 2] 
+- [ ] [Goal 2]
 - [ ] [Goal 3]
 
 ## Progress
@@ -33,50 +34,61 @@ Template for creating development session files. Used automatically by `/session
 ---
 
 ### Session Update Template
-Use this format for `/session-update` entries:
 
+Use this format for `/session-update` entries:
 ```
+
 ### Update - [TIMESTAMP]
 
 **Elapsed**: [TIME_SINCE_LAST_UPDATE]
 **Summary**: [USER_NOTES_OR_AUTO_SUMMARY]
 
 **Git Changes**:
+
 - Modified: [FILES]
 - Added: [FILES]
 - Deleted: [FILES]
 - Branch: [BRANCH] (commit: [HASH])
 
 **Todo Progress**: [COMPLETED/IN_PROGRESS/PENDING_COUNTS]
+
 - ✓ [COMPLETED_TASKS]
 - ⏳ [IN_PROGRESS_TASKS]
 - 📋 [NEW_TASKS]
 
 **Notes**: [ADDITIONAL_DETAILS]
+
 ```
 
 ### Session Summary Template
 Automatically added by `/session-end`:
 
 ```
+
 ## Session Summary - [END_TIMESTAMP]
 
 **Duration**: [TOTAL_TIME]
 **Updates**: [UPDATE_COUNT]
 
 ### Accomplishments
+
 - [KEY_ACHIEVEMENTS]
 
 ### Git Summary
+
 - Files Changed: [COUNT]
 - Commits Made: [COUNT]
 
 ### Lessons Learned
+
 - [INSIGHTS_AND_DISCOVERIES]
 
 ### Future Work
+
 - [NEXT_STEPS_AND_TODO]
+
 ```
+
 ```
 
 ## Customization Guidelines
