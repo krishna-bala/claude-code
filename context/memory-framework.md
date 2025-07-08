@@ -1,30 +1,29 @@
 # Claude Code Memory Framework
 
-Technical documentation for the memory framework architecture.
+Core architectural concepts for the memory framework.
 
 ## Architecture Overview
 
 The framework provides persistent, context-aware memory for Claude Code through:
 
 - **Hierarchical organization**: Global vs project-specific separation
-- **Lazy loading**: Load context only when needed
-- **Smart triggers**: Automatic loading based on file types and tasks
-- **Token efficiency**: Optimized for context window management
+- **Context Catalog/Index**: Provide paths to additional context for specific areas
+- **Agent Exploration**: Enable agent to explore context catalog based on file types and tasks
+- **Token efficiency**: Minimize context rot and optimize context for relevant tasks
 
 ## Directory Structure
 
-### Global Configuration (~/.claude/)
+### Global Configuration (`~/.claude/`)
 
 ```
 ~/.claude/                     # User-level configuration
-├── CLAUDE.md                  # Main entry point with lazy-load references
-├── commands/                  # Slash commands for actions
+├── CLAUDE.md                  # Main entry point with context catalog
 ├── context/                   # Core development guidelines
 ├── guides/                    # Universal workflows
 └── templates/                 # Reusable project templates
 ```
 
-### Project Configuration (<project>/.claude/)
+### Project Configuration (`<project>/.claude/`)
 
 ```
 <project>/.claude/            # Project-specific configuration
@@ -34,56 +33,51 @@ The framework provides persistent, context-aware memory for Claude Code through:
 └── templates/                # Project templates
 ```
 
-## Lazy Loading Mechanism
+## Agent Exploration
 
 ### How It Works
 
-1. CLAUDE.md contains backtick-wrapped references: `@context/file.md`
-2. Agent reads CLAUDE.md without loading referenced files
+1. `CLAUDE.md` contains context catalog with file paths
+2. Agent reads `CLAUDE.md` and available resource indexes
 3. Before tasks, agent checks if relevant context is needed
-4. Agent removes backticks and loads specific files as needed
+4. Agent reads specific files as needed based on task relevance
 
 ### Example Flow
 
 ```
 User: "Create a git commit"
 Agent:
-1. Checks CLAUDE.md, sees `@context/git-commit-guidelines.md`
+1. Checks CLAUDE.md, sees `context/git-commit-guidelines.md`
 2. Recognizes git operation pending
-3. Loads: @context/git-commit-guidelines.md
+3. Reads: ~/.claude/context/git-commit-guidelines.md
 4. Applies loaded guidelines to commit
 ```
 
-## Context Loading Patterns
+## Context Triggers
 
-### Automatic Triggers
+### Automatic Recognition
 
-- File type detection (\*.py → python-standards.md)
-- Task detection (debugging → debugging-workflows.md)
-- Error patterns (build failure → build-troubleshooting.md)
-- Command usage (/check-standards → relevant specs)
-
-### Manual Loading
-
-- Direct @-reference in conversation
-- Slash commands (/load-context)
-- Explicit user request
+- File type detection (`\*.py` → `python-standards.md`)
+- Task detection (debugging → `debugging-workflows.md`)
+- Error patterns (build failure → `build-troubleshooting.md`)
+- User requests (testing → `testing.md`, `tdd.md`)
 
 ## Token Management
 
 ### Budget Guidelines
 
-- Global CLAUDE.md: <500 tokens
+- Global `CLAUDE.md`: <500 tokens
 - Individual specs/guides: <200 tokens each
-- Project CLAUDE.md: <200 tokens
+- Project `CLAUDE.md`: <200 tokens
 - Total baseline: <5K tokens
 
 ### Optimization Strategies
 
-1. Use backticks to prevent auto-loading
-2. Split large files into focused topics
-3. Archive verbose content
-4. Progressive disclosure (quick ref → details)
+1. Assume user-level references by default (`~/.claude/`)
+2. Project-level paths will be prefixed with `<project>/.claude`
+3. Split large files into focused topics
+4. Archive verbose content
+5. Progressive disclosure (quick ref → details)
 
 ## File Organization
 
@@ -102,38 +96,6 @@ Agent:
 - Troubleshooting
 - Tools and commands
 - 50-150 lines per file
-
-### Commands (Automated Actions)
-
-- Clear process steps
-- Context loading rules
-- Output format
-- 30-80 lines per file
-
-## Implementation Details
-
-### Command Integration
-
-Commands can:
-
-- Detect project structure
-- Load relevant context
-- Apply standards validation
-- Generate structured output
-
-### Cross-References
-
-- Use consistent @-notation
-- Relative paths for project files
-- Absolute paths for global files
-- Backticks for lazy loading
-
-### Version Control
-
-- Commit .claude/ directories
-- Track changes with git
-- Document decisions in commits
-- Regular review cycles
 
 ## Best Practices
 
@@ -161,31 +123,7 @@ Commands can:
 ## Framework Benefits
 
 1. **Persistence**: Context survives across sessions
-2. **Efficiency**: Load only what's needed
+2. **Efficiency**: Read only what's needed
 3. **Scalability**: Grows with project complexity
 4. **Consistency**: Standardized patterns
 5. **Discoverability**: Clear organization
-
-## Extending the Framework
-
-### Adding New Specs
-
-1. Use `@templates/spec-template.md`
-2. Place in appropriate directory
-3. Update index/navigation
-4. Add loading triggers
-
-### Custom Commands
-
-1. Use `@templates/command-template.md`
-2. Define context loading
-3. Implement process steps
-4. Test with various scenarios
-
-## Related Resources
-
-- `@guides/memory-framework-guide.md` - User guide
-- `@guides/project-setup.md` - Project initialization
-- `@guides/context-loading-patterns.md` - Loading strategies
-- `@templates/README.md` - Available templates
-

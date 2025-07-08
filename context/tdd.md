@@ -18,10 +18,10 @@ def test_should_transfer_funds():
     # Given
     account1 = create_account_with_balance(150)
     account2 = create_account_with_balance(20)
-    
+
     # When
     bank.transfer_funds(account1, account2, 100)
-    
+
     # Then
     assert account1.get_balance() == 50
     assert account2.get_balance() == 120
@@ -43,8 +43,9 @@ def test_should_transfer_funds():
 ## Anti-patterns
 
 - Testing private methods or implementation details
-- Test interdependence or execution order coupling  
+- Test interdependence or execution order coupling
 - Logic in tests (conditionals, loops, calculations)
 - Brittle coupling to data formats or UI details
 
 **Goal**: Sustainable test suite providing confidence without maintenance burden.
+
