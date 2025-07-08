@@ -1,47 +1,88 @@
-# Git Commit Staged Changes
+# Git Commit
 
-Create a git commit for the currently staged changes following these steps:
+Generate a git commit strategy for repository changes. **Prioritize atomic commits** - each commit should represent a single logical change.
 
-1. **Check git status** to see all staged and unstaged changes
-2. **Check git diff --staged** to review what will be committed
-3. **Check recent commit history** with `git log --oneline -10` to understand the commit message style
-4. **Analyze the staged changes** and write a clear, meaningful commit message that:
-   - Follows the `.gitmessage` template format: `<type>(<scope>): <description>`
-   - Uses forward slash notation for scope (e.g., `planner/mast_transition`, `detection/types`)
-   - Uses appropriate commit types (fix, feat, docs, refactor, test, style, perf, build, ci)
-   - Subject line: Brief (4-8 words), action-oriented, factual description
-   - Body (when needed): Terse but complete explanation of what was done
-   - Bullet points (for complex changes): Start with action verbs, technical specifics only
-   - Optional footers: `Bug: <ticket>` and/or `Test: <command>` when applicable
-   - Does NOT include "Generated with Claude Code" or "Co-Authored-By: Claude" footers
-5. **Create the commit** using the proper format from the git message template
+Read `context/git-commit-guidelines.md` for detailed formatting rules and atomic commit principles.
 
-Only commit changes that are currently staged. Do not stage additional files unless specifically requested.
+## Process
 
-## Commit Message Style Guidelines
+1. **Check git status** to see all staged, unstaged, and untracked changes
+2. **Check git diff and git diff --staged** to review staged vs. unstaged and untracked changes
+3. **Check recent commit history** with `git log --oneline -10` to understand recent context
+
+4. **Analyze changes and plan commits** (prefer atomic commits):
+
+   - **If staged changes exist**: Review for logical cohesion
+     - Single concern (atomic) → Create single commit
+     - Mixed concerns → Use `git reset` and re-stage logically
+     - Ask: "Does this do exactly one thing?"
+   - **If unstaged changes exist**: Decide staging strategy
+     - Related to staged → Stage with `git add`
+     - Separate concern → Plan follow-up commit
+     - Partial staging → Use `git add -p` for hunks
+   - **If untracked files exist**: Evaluate relevance
+     - Project files → Stage and include
+     - Temp/build files → Ignore or add to `.gitignore`
+
+5. **Generate commit message** following format:
+
+   ```
+   <type>(<scope>): <subject>
+
+   <body>
+
+   <footer>
+   ```
+
+6. **Execute the commit** using proper git command
+
+## Commit Message Guidelines
 
 **Structure**: `<type>(<scope>): <brief description>`
 
+**Types**: `feat`, `fix`, `docs`, `refactor`, `test`, `style`, `perf`, `build`, `ci`, `chore`
+
+**Scope**: Use forward slash notation (e.g., `planner/mast_transition`, `detection/types`)
+
 **Subject Line**:
-- Brief (4-8 words), action-oriented, factual
-- Examples: "Fix compilation errors", "Add design document", "Refactor API with context struct"
+
+- Brief (4-8 words), action-oriented, imperative mood
+- Examples: "Fix compilation errors", "Add design document", "Update API with context struct"
 
 **Body** (when needed):
-- **Simple changes**: Single line explanation only
-- **Complex changes**: Paragraph + bullet points for technical specifics
-- Action-oriented language: "Introduces", "Implements", "Updates", "Replaces"
-- Technical focus: what was built/changed, not why or benefits
 
-**Bullet Points** (for complex changes):
-- Start with action verbs: "Introduce", "Change", "Replace", "Add"
-- Technical specifics without justification
-- No sub-bullets or extensive detail
+- Simple changes: Single line explanation
+- Complex changes: Paragraph + bullet points for technical specifics
+- Action-oriented: "Introduces", "Implements", "Updates", "Replaces"
 
-**Examples**:
-- `fix(planner/mast_transition): Fix compilation errors`
-- `refactor(planner/safe_travel): Update API`
-- `docs(planner/mast_transitions): Add design document for refactoring`
+**Footers** (optional): `Bug: <ticket>`, `Test: <command>`
 
-**Optional Footers**: `Bug: <ticket>`, `Test: <command>`
+**Do NOT include**: "Generated with Claude Code" or "Co-Authored-By: Claude" footers
 
-**Do not output anything other than the git commit.**
+## Atomic Commit Strategy
+
+**Prioritize atomic commits over convenience** - challenge default assumptions:
+
+### When to Break Apart Changes
+
+- **Seemingly related changes**: Ask if they address different concerns (bug fix + refactor, feature + cleanup)
+- **File-based grouping**: Don't commit files together just because they were modified together
+- **Time-based grouping**: Don't commit changes together just because they were made at the same time
+- **"While I'm here" changes**: Separate intentional changes from opportunistic fixes
+
+### When to Complete Atomic Units
+
+- **Partial implementations**: Stage additional unstaged files to make commit logically complete
+- **Incomplete refactors**: Include related changes that make the atomic unit coherent
+- **Missing tests**: Add corresponding test changes to complete the atomic unit
+
+### Strategic Questions
+
+- "Are these changes solving the same problem or different problems?"
+- "Would I want to revert these changes independently?"
+- "Can someone understand this commit without seeing other changes?"
+- "Does this commit leave the code in a logical intermediate state?"
+
+**Default behavior**: Resist committing just because files are staged - reorganize for atomic clarity.
+
+Only commit changes that are currently staged unless specifically requested to stage additional files.
