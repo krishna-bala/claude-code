@@ -50,16 +50,24 @@ Advanced syntax support:
 2. Auto-loaded catalogs provide discovery without loading heavy content
 3. Agent reads specific files as needed based on task relevance
 4. Catalog/index pattern enables selective precision loading
+5. **Repository context** automatically loaded for PR/issue operations
 
 ### Example Flow
 
 ```
 User: "Create a git commit"
 Agent:
-1. Checks CLAUDE.md, sees `context/git-commit-guidelines.md`
+1. Checks CLAUDE.md, sees `docs/git/commit-guidelines.md`
 2. Recognizes git operation pending
-3. Reads: ~/.claude/context/git-commit-guidelines.md
+3. Reads: ~/.claude/docs/git/commit-guidelines.md
 4. Applies loaded guidelines to commit
+
+User: "Review PR #123"
+Agent:
+1. Checks CLAUDE.md, sees `docs/git/repository-management.md`
+2. Recognizes repository operation with PR number
+3. Reads: ~/.claude/docs/git/repository-management.md
+4. Uses gh/glab to fetch PR context and applies review guidelines
 ```
 
 ## Context Triggers
@@ -70,6 +78,7 @@ Agent:
 - Task detection (debugging → `debugging-workflows.md`)
 - Error patterns (build failure → `build-troubleshooting.md`)
 - User requests (testing → `testing.md`, `tdd.md`)
+- **Repository operations** (PR numbers, issue references → `repository-management.md`)
 
 ## Token Management
 

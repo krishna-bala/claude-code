@@ -10,6 +10,7 @@ Context for creating well-structured pull requests.
 2. Review all commits in branch
 3. Run tests and linting
 4. Update documentation if needed
+5. **Check for linked issues** using `gh issue list` or `glab issue list`
 
 ### PR Title Format
 
@@ -103,8 +104,41 @@ Related to #456
 3. Update branch with main if needed
 4. Delete branch after merge
 
+## Repository Context Integration
+
+### Pre-Review Information Gathering
+
+```bash
+# GitHub - Get PR context for review
+gh pr view 123 --json title,body,headRefName,baseRefName,state,reviews,statusCheckRollup
+
+# GitLab - Get MR context for review
+glab mr show 123 --json
+```
+
+### Understanding Linked Issues
+
+```bash
+# GitHub - Find linked issues
+gh issue view $(gh pr view 123 --json body | jq -r '.body' | grep -o '#[0-9]\+' | head -1 | cut -c2-)
+
+# GitLab - Find linked issues
+glab issue show $(glab mr show 123 --json | jq -r '.description' | grep -o '#[0-9]\+' | head -1 | cut -c2-)
+```
+
+### CI Status Checking
+
+```bash
+# GitHub - Check build status
+gh pr checks 123
+
+# GitLab - Check pipeline status
+glab ci status --branch feature-branch
+```
+
 ## Related Resources
 
-- @context/code-review.md for review standards
-- @commands/git-pr-description.md for PR workflow
+- `code-review.md` for review standards
+- `repository-management.md` for CLI integration patterns
+- `commit-guidelines.md` for commit standards
 - Project-specific PR templates in .claude/

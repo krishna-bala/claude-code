@@ -10,21 +10,24 @@ analysis - [Complexity: deep]
 
 ## Tool Usage
 
-- **Primary**: Read (code files), Bash (git operations), TodoRead (check existing tasks), TodoWrite (track review progress)
+- **Primary**: Read (code files), Bash (git operations), **gh/glab (repository context)**, TodoRead (check existing tasks), TodoWrite (track review progress)
+- **Repository**: **gh pr view, gh pr checks, gh issue view** (GitHub) / **glab mr show, glab ci status** (GitLab)
 - **Secondary**: Grep (search patterns), Glob (find files), WebFetch (check external resources)
 - **Avoid**: Edit, Write, MultiEdit (review only, no code changes)
 
 ## Context
 
-- **Files**: `~/.claude/context/code-review.md`, `~/.claude/context/pr-guidelines.md`, `~/.claude/context/git-commit-guidelines.md`
+- **Files**: `~/.claude/docs/git/code-review.md`, `~/.claude/docs/git/pr-guidelines.md`, `~/.claude/docs/git/commit-guidelines.md`, **`~/.claude/docs/git/repository-management.md`**
+- **Platform**: **GitHub/GitLab PR context, CI status, linked issues, review history**
 - **Patterns**: Code quality standards, design principles, security practices, performance considerations
-- **Dependencies**: Project coding standards, team conventions, technology stack requirements
+- **Dependencies**: Project coding standards, team conventions, technology stack requirements, **platform-specific workflows**
 
 Usage:
 
-- `/review source: feature-branch target: main <additional-context>`
-- `/review PR #123 <additional-context>`
-- `/review <local changes description>`
+- `/review PR #123` - **Fetches PR context via gh/glab, analyzes changes with platform metadata**
+- `/review https://github.com/owner/repo/pull/123` - **Direct PR URL review with full context**
+- `/review source: feature-branch target: main <additional-context>` - **Enhanced with repository context**
+- `/review <local changes description>` - **Local changes with repository context if available**
 
 ## Review Focus Areas
 
@@ -66,26 +69,38 @@ Usage:
 
 ## Review Process
 
-1. **Understand the Context**
+1. **Fetch Repository Context**
 
-   - What problem is being solved?
-   - What approach was taken?
-   - Are there any constraints or trade-offs?
+   - Use gh/glab to get PR details, description, linked issues
+   - Check CI status and existing review comments
+   - Understand business context and requirements
 
-2. **Review Changes Systematically**
+2. **Analyze Platform Metadata**
 
-   - Check overall structure first
-   - Review individual changes in detail
-   - Look for patterns and consistency
+   - Review check statuses and build results
+   - Examine existing review feedback
+   - Identify related issues and discussions
 
-3. **Evaluate Against Standards**
+3. **Understand the Context**
+
+   - What problem is being solved? (from linked issues)
+   - What approach was taken? (from PR description)
+   - Are there any constraints or trade-offs? (from comments)
+
+4. **Review Changes Systematically**
+
+   - Check overall structure with platform context
+   - Review individual changes with CI feedback
+   - Look for patterns and consistency with team standards
+
+5. **Evaluate Against Standards**
 
    - Code quality and maintainability
    - Security considerations
    - Performance implications
    - Documentation completeness
 
-4. **Provide Constructive Feedback**
+6. **Provide Constructive Feedback**
    - Be specific and actionable
    - Explain reasoning for suggestions
    - Acknowledge good practices
@@ -148,6 +163,7 @@ Provides comprehensive code review with structured feedback on design, functiona
 ### Overview
 
 - **Scope**: [What was reviewed]
+- **Platform Context**: [PR/MR metadata, linked issues, CI status]
 - **Overall assessment**: [High-level evaluation]
 - **Recommendation**: [Approve/Request changes/Needs discussion]
 
@@ -168,6 +184,7 @@ Provides comprehensive code review with structured feedback on design, functiona
 - **File: [filename]**: [Specific comments]
 - **Security**: [Security-related observations]
 - **Performance**: [Performance considerations]
+- **CI/Platform**: [Build status, check results, platform-specific observations]
 
 ### Next Steps
 
