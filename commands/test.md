@@ -1,12 +1,24 @@
-## Complete testing workflow with TDD practices and comprehensive strategies.
+Complete testing workflow with TDD practices and comprehensive strategies.
 
-Comprehensive testing strategies including unit, integration, and TDD workflows. Specify focus areas like `/test tdd` for TDD cycle or `/test integration` for integration testing.
+---
 
-**Read context from:**
+Comprehensive testing strategies including unit, integration, and TDD workflows. Specify focus areas like `/test tdd` for TDD cycle or `/test integration` for integration testing. Provides systematic approach to testing with framework-specific guidance and best practices.
 
-- `~/.claude/context/testing.md`
-- `~/.claude/context/tdd.md`
-- Auto-detects project test standards
+## Command Type
+
+workflow - [Complexity: medium]
+
+## Tool Usage
+
+- **Primary**: Bash (run tests), TodoRead (check existing tasks), TodoWrite (track testing progress), Read (test files)
+- **Secondary**: Edit (create/modify tests), Grep (search test patterns), Glob (find test files)
+- **Avoid**: Write (unless creating new test files), MultiEdit (prefer targeted test changes)
+
+## Context
+
+- **Files**: `~/.claude/context/testing.md`, `~/.claude/context/tdd.md`, auto-detected project test standards
+- **Patterns**: TDD cycle, testing strategies, framework-specific practices, coverage requirements
+- **Dependencies**: Project test framework, existing test structure, CI/CD integration
 
 ## Testing Workflow
 
@@ -219,3 +231,61 @@ Comprehensive testing strategies including unit, integration, and TDD workflows.
 - Explain complex test scenarios
 - Share testing best practices
 - Maintain test data documentation
+
+## Output
+
+Provides comprehensive testing strategy with implementation guidance, framework-specific approaches, and verification results.
+
+<output-template>
+## Testing Strategy
+
+### Test Plan
+
+- **Scope**: [What will be tested]
+- **Approach**: [Unit/Integration/E2E strategy]
+- **Framework**: [Testing tools and libraries]
+
+### Implementation
+
+- **Tests created**: [List of test files and scenarios]
+- **Coverage**: [Areas covered and gaps]
+- **TDD cycle**: [Red-Green-Refactor progress]
+
+### Execution Results
+
+- **Tests run**: [Number of tests executed]
+- **Results**: [Pass/fail status and details]
+- **Performance**: [Execution time and optimization]
+
+### Quality Assessment
+
+- **Coverage metrics**: [Percentage and critical paths]
+- **Test quality**: [Maintainability and effectiveness]
+- **Recommendations**: [Improvements and next steps]
+
+### Next Steps
+
+- **Additional tests**: [Missing test scenarios]
+- **Refactoring**: [Code improvements needed]
+- **Automation**: [CI/CD integration tasks]
+  </output-template>
+
+## Validation
+
+- Test strategy aligns with project requirements
+- Framework-specific best practices are followed
+- Coverage is comprehensive and meaningful
+- Tests are maintainable and well-structured
+- Results provide actionable insights
+
+## Examples
+
+<example-1>
+**Input**: `/test tdd` for new feature
+**Output**: Guides through TDD cycle with red-green-refactor approach and framework-specific implementation
+</example-1>
+
+<example-2>
+**Input**: `/test integration` for API testing
+**Output**: Creates integration testing strategy with API testing patterns and verification approach
+</example-2>

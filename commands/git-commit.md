@@ -1,11 +1,24 @@
-## Enhanced staging and atomic commit workflow with interactive evaluation.
+Enhanced staging and atomic commit workflow with interactive evaluation.
 
-Interactive staging evaluation and commit workflow prioritizing atomic changes. For pre-staged evaluation, add context like `/git-commit I've already staged some changes. Evaluate and commit if they are a cohesive changeset`.
+---
 
-**Read context from:**
+Interactive staging evaluation and commit workflow prioritizing atomic changes. For pre-staged evaluation, add context like `/git-commit I've already staged some changes. Evaluate and commit if they are a cohesive changeset`. Emphasizes atomic commits and proper staging strategy.
 
-- `~/.claude/context/git-commit-guidelines.md`
-- `~/.claude/context/pr-guidelines.md`
+## Command Type
+
+workflow - [Complexity: medium]
+
+## Tool Usage
+
+- **Primary**: Bash (git operations), TodoRead (check existing tasks), TodoWrite (track commit process)
+- **Secondary**: Read (review changes), Grep (search patterns in diffs)
+- **Avoid**: Edit, Write (commit process only, no code changes)
+
+## Context
+
+- **Files**: `~/.claude/context/git-commit-guidelines.md`, `~/.claude/context/pr-guidelines.md`
+- **Patterns**: Atomic commit strategy, conventional commit format, staging evaluation
+- **Dependencies**: Git repository state, working directory changes, commit history
 
 Handles both scenarios:
 
@@ -93,4 +106,55 @@ Handles both scenarios:
 
 **Default behavior**: Resist committing just because files are staged - reorganize for atomic clarity.
 
-Only commit changes that are currently staged unless specifically requested to stage additional files.
+## Output
+
+Executes git commit with atomic changeset and properly formatted commit message following conventional commit standards.
+
+<output-template>
+## Commit Summary
+
+### Changes Staged
+
+- **Files**: [List of files included]
+- **Change type**: [feat/fix/docs/refactor/etc.]
+- **Scope**: [Area of codebase affected]
+
+### Commit Message
+
+```
+<type>(<scope>): <subject>
+
+<body>
+```
+
+### Validation
+
+- **Atomic**: [Single logical change confirmed]
+- **Complete**: [All related changes included]
+- **Tested**: [Verification approach]
+
+### Next Steps
+
+- **Follow-up commits**: [Related work to be done]
+- **Testing**: [Additional verification needed]
+  </output-template>
+
+## Validation
+
+- Commit contains single logical change (atomic)
+- Commit message follows conventional format
+- All related changes are included
+- Working directory is clean after commit
+- Commit history maintains logical progression
+
+## Examples
+
+<example-1>
+**Input**: `/git-commit I've staged changes to user authentication`
+**Output**: Evaluates staged changes, creates atomic commit with proper message format
+</example-1>
+
+<example-2>
+**Input**: `/git-commit` (fresh staging)
+**Output**: Analyzes working directory, stages cohesive changes, creates atomic commit
+</example-2>

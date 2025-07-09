@@ -1,6 +1,80 @@
-## Intelligent discovery and loading of relevant context files for the current task.
+Intelligent discovery and loading of relevant context files for the current task.
 
-Explore the context catalog and read additional files that help build context around the current task. Optionally specify a task area like `/context debugging` or `/context testing` to focus on specific workflows.
+---
+
+Explore the context catalog and read additional files that help build context around the current task. Optionally specify a task area like `/context debugging` or `/context testing` to focus on specific workflows. This command systematically discovers and loads relevant context to build comprehensive understanding for development tasks.
+
+The **context catalog** refers to the organized collection of context files in `~/.claude/context/`, `~/.claude/guides/`, `~/.claude/templates/`, and project-specific `.claude/` directories that contain development standards, workflows, and patterns.
+
+## Command Type
+
+workflow - [Complexity: medium]
+
+## Tool Usage
+
+- **Primary**: Read (context files), TodoRead (check existing tasks), Glob (discover files), LS (explore structure)
+- **Secondary**: Grep (find patterns), TodoWrite (track context loading)
+- **Avoid**: Edit, Write, MultiEdit (context loading only, no modifications)
+
+## Context
+
+- **Files**: `~/.claude/docs/README.md`, `~/.claude/docs/README.md`, `~/.claude/docs/templates/README.md`, project `.claude/` structure
+- **Patterns**: Task-based context requirements, file type detection, workflow-specific needs
+- **Dependencies**: Project structure, development phase, task complexity
+
+## Process
+
+1. **Analyze Current Situation** - Identify task type, files involved, and context gaps
+2. **Explore Context Catalog** - Read index files and identify relevant areas
+3. **Load Relevant Context** - Priority loading of essential context and task-specific guidance
+4. **Cross-Reference** - Connect related concepts across files
+
+## Output
+
+Loads comprehensive context files and provides summary of discovered resources relevant to current task.
+
+<output-template>
+
+## Context Loaded
+
+### Essential Context
+
+- **Files read**: [List of loaded context files]
+- **Key patterns**: [Relevant standards and workflows]
+- **Related specs**: [Project-specific context]
+
+### Task-Specific Context
+
+- **Workflow guides**: [Relevant process documentation]
+- **Templates**: [Available templates for task]
+- **Examples**: [Reference implementations]
+
+### Next Steps
+
+- **Apply context**: [How to use loaded information]
+- **Missing context**: [Gaps that need attention]
+- **Follow-up**: [Additional context to consider]
+
+</output-template>
+
+## Validation
+
+- Relevant context files are loaded
+- Task-specific guidance is identified
+- Cross-references are established
+- Missing context gaps are noted
+
+## Examples
+
+<example-1>
+**Input**: `/context debugging`
+**Output**: Loads debugging-workflows.md, testing.md, and project-specific debugging specs
+</example-1>
+
+<example-2>
+**Input**: `/context` (general)
+**Output**: Discovers current task context and loads appropriate workflow guides and standards
+</example-2>
 
 ## Context Discovery Workflow
 
@@ -19,9 +93,9 @@ Explore the context catalog and read additional files that help build context ar
 
 - **Read Index Files**
 
-  - `~/.claude/context/README.md`
-  - `~/.claude/guides/README.md`
-  - `~/.claude/templates/README.md`
+  - `~/.claude/docs/README.md`
+  - `~/.claude/docs/README.md`
+  - `~/.claude/docs/templates/README.md`
   - `<project>/.claude/` structure
 
 - **Identify Relevant Areas**
@@ -52,23 +126,23 @@ Explore the context catalog and read additional files that help build context ar
 
 Read:
 
-- `~/.claude/context/git-commit-guidelines.md`
-- `~/.claude/context/pr-guidelines.md`
+- `~/.claude/docs/git/commit-guidelines.md`
+- `~/.claude/docs/git/pr-guidelines.md`
 - `<project>/.claude/specs/git-standards.md` (if exists)
 
 #### Testing Work
 
 Read:
 
-- `~/.claude/context/testing.md`
-- `~/.claude/context/tdd.md`
+- `~/.claude/docs/testing/testing.md`
+- `~/.claude/docs/testing/tdd.md`
 - `<project>/.claude/specs/testing-patterns.md` (if exists)
 
 #### Debugging
 
 Read:
 
-- `~/.claude/guides/debugging-workflows.md`
+- `~/.claude/docs/project-setup/debugging-workflows.md`
 - `<project>/.claude/specs/language-debugging.md` (if exists)
 - `<project>/.claude/guides/troubleshooting.md` (if exists)
 
@@ -76,7 +150,7 @@ Read:
 
 Read:
 
-- `~/.claude/context/code-review.md`
+- `~/.claude/docs/git/code-review.md`
 - `<project>/.claude/specs/code-standards.md` (if exists)
 - `<project>/.claude/specs/architecture-patterns.md` (if exists)
 
@@ -117,30 +191,30 @@ Automatically explore:
 
 ### New Project Setup
 
-1. Read `~/.claude/context/memory-framework.md`
+1. Read `~/.claude/docs/memory-framework/architecture.md`
 2. Explore `<project>/.claude/specs/` for language specs
 3. Load `<project>/.claude/guides/setup.md` (if exists)
-4. Read relevant templates from `~/.claude/templates/`
+4. Read relevant templates from `~/.claude/docs/templates/`
 
 ### Feature Development
 
 1. Load `<project>/CLAUDE.md`
 2. Read `<project>/.claude/specs/` for relevant language specs
-3. Load testing and code review context from `~/.claude/context/`
+3. Load testing and code review context from `~/.claude/docs/`
 4. Explore `<project>/.claude/guides/` for related patterns
 
 ### Debugging Session
 
-1. Load `~/.claude/guides/debugging-workflows.md`
+1. Load `~/.claude/docs/project-setup/debugging-workflows.md`
 2. Read `<project>/.claude/specs/` for language-specific tools
 3. Load testing context for verification
 4. Explore `<project>/.claude/guides/troubleshooting.md` (if exists)
 
 ### Code Review
 
-1. Load `~/.claude/context/code-review.md`
+1. Load `~/.claude/docs/git/code-review.md`
 2. Read `<project>/.claude/specs/` for project standards
-3. Load git and PR context from `~/.claude/context/`
+3. Load git and PR context from `~/.claude/docs/git/`
 4. Explore `<project>/.claude/specs/` for relevant code area specs
 
 ## Best Practices

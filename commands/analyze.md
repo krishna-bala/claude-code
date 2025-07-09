@@ -1,20 +1,38 @@
-## Unpack complexity, clarify requirements, and establish fundamentals before implementation.
+Unpack complexity, clarify requirements, and establish fundamentals before implementation.
+
+---
+
+This command performs deep analysis of requirements and context to ensure clear understanding before proceeding with implementation. It structures thinking around explicit and implicit needs, identifies stakeholders, defines success criteria, and clarifies constraints to prevent misunderstandings and scope creep.
+
+## Command Type
+
+analysis - [Complexity: deep]
+
+## Tool Usage
+
+- **Primary**: Read (context files), TodoRead (check existing tasks), TodoWrite (track analysis steps), Bash (git operations for context)
+- **Secondary**: Glob (discover related files), Grep (find patterns), WebFetch (external research)
+- **Avoid**: Edit, Write, MultiEdit (analysis only, no implementation)
+
+## Context
+
+- **Files**: Project requirements, existing documentation, stakeholder communications
+- **Patterns**: Explicit vs implicit requirements, success criteria, constraint indicators
+- **Dependencies**: Project context, user needs, technical limitations
 
 ## Process
 
-1. **Analysis Preparation** (in thinking block):
+1. **Analysis Preparation** - Define key terms precisely, identify explicit and implicit needs
+2. **Stakeholder Assessment** - Identify all affected parties and their requirements
+3. **Success Criteria Definition** - Establish functional and non-functional requirements
+4. **Constraint Analysis** - Clarify technical, resource, and cultural limitations
+5. **Present Understanding** - Structure findings using analysis template format
 
-   - Define key terms precisely
-   - Identify explicit and implicit needs
-   - Clarify assumptions and constraints
-   - Consider stakeholders, success criteria, cultural context
+## Output
 
-2. **Present Understanding** using structured format:
+Produces structured analysis of requirements, needs, stakeholders, success criteria, and constraints to establish clear foundation for implementation decisions.
 
-## Output Format
-
-<analysis-template>
-
+<output-template>
 # Deep Understanding Analysis
 
 ## Core Terminology
@@ -50,9 +68,24 @@
 - **Assumptions**: [Require validation]
 - **Open Questions**: [Need answers]
 - **Potential Issues**: [Confusion areas]
+  </output-template>
 
-  </analysis-template>
+## Validation
 
-**Note**: If information is insufficient, explicitly state and list required questions.
+- All key terms are clearly defined
+- Explicit and implicit needs are identified
+- Success criteria are measurable
+- Constraints are documented
+- Outstanding questions are listed
 
-Only proceed to implementation after completing this analysis.
+## Examples
+
+<example-1>
+**Input**: "Add user authentication to the web app"
+**Output**: Analysis defining authentication types, user roles, security requirements, integration points, and technical constraints
+</example-1>
+
+<example-2>
+**Input**: "Improve application performance"
+**Output**: Analysis clarifying performance metrics, user scenarios, technical bottlenecks, and measurement criteria
+</example-2>

@@ -1,6 +1,24 @@
-## Set up .claude/ directory structure for context-aware development in the current project.
+Set up .claude/ directory structure for context-aware development in the current project.
 
-Initialize project memory framework with CLAUDE.md, specs, and guides directories. Run from project root to create the memory framework structure.
+---
+
+Initialize project memory framework with CLAUDE.md, specs, and guides directories. Run from project root to create the memory framework structure. Auto-detects project type and creates appropriate initial configuration.
+
+## Command Type
+
+workflow - [Complexity: medium]
+
+## Tool Usage
+
+- **Primary**: Write (create files), Bash (create directories), TodoRead (check existing tasks), TodoWrite (track setup progress)
+- **Secondary**: Read (template files), Glob (detect project files), Grep (find patterns)
+- **Avoid**: Edit (creates new files), MultiEdit (single file creation)
+
+## Context
+
+- **Files**: `@docs/templates/project-claude-md.md`, `@docs/templates/spec-template.md`, `@docs/project-setup/setup.md`
+- **Patterns**: Project type detection, framework identification, build tool recognition
+- **Dependencies**: Project root directory, existing configuration files, technology stack
 
 ## Process
 
@@ -19,7 +37,7 @@ Initialize project memory framework with CLAUDE.md, specs, and guides directorie
 
 3. **Generate Project CLAUDE.md**
 
-   - Use template from `@templates/project-claude-md.md`
+   - Use template from `@docs/templates/project-claude-md.md`
    - Auto-detect build/test commands
    - Include detected tech stack
    - Add references to relevant specs
@@ -39,9 +57,9 @@ Initialize project memory framework with CLAUDE.md, specs, and guides directorie
 
 Loads:
 
-- `@templates/project-claude-md.md` - Project template
-- `@templates/spec-template.md` - For creating specs
-- `@guides/project-setup.md` - Setup guidance
+- `@docs/templates/project-claude-md.md` - Project template
+- `@docs/templates/spec-template.md` - For creating specs
+- `@docs/project-setup/setup.md` - Setup guidance
 
 ## Detection Rules
 
@@ -99,14 +117,34 @@ Loads:
 
 ### Recommended Specs
 Based on your project:
-- `@templates/spec-template.md` → `.claude/specs/[language]-standards.md`
+- `@docs/templates/spec-template.md` → `.claude/specs/[language]-standards.md`
 - Consider adding: [Other relevant specs]
 ```
+
+## Validation
+
+- `.claude/` directory structure is created successfully
+- Project CLAUDE.md is generated with detected configuration
+- Initial spec and guide README files are created
+- Project type and framework are correctly identified
+- Directory structure matches template requirements
+
+## Examples
+
+<example-1>
+**Input**: `/init-project` (in Python Django project)
+**Output**: Creates .claude/ structure with Python/Django-specific CLAUDE.md and suggested specs
+</example-1>
+
+<example-2>
+**Input**: `/init-project` (in Node.js React project)
+**Output**: Creates .claude/ structure with JavaScript/React-specific configuration and templates
+</example-2>
 
 ## Related Commands
 
 - `/load-context` - Load project context
 - `/list-specs` - Show available specs
 - `/session-start` - Begin first development session
-- `@guides/project-setup.md` - Detailed setup guide
-- `@guides/session-management.md` - Session workflow guide
+- `@docs/project-setup/setup.md` - Detailed setup guide
+- `@docs/project-setup/session-management.md` - Session workflow guide

@@ -1,20 +1,34 @@
-## Capture session context and decisions for future reference in a structured file.
+Capture work context to easily resume tasks, research, or development later.
 
-Extract and save relevant context from the current development session to a structured file. Interactively verify content with user through a checklist review.
+---
 
-## Usage
+Save important context, decisions, code changes, and insights as a "context scratchpad" that helps you jump back into this specific work later. Interactively verify content with user through a checklist review. Creates structured session files for seamless work resumption.
 
-Use when you want to preserve important context, decisions, or solutions from the current session for future reference. Saves to `.claude/sessions/YYYYMMDD_HHMMSS-CONTEXT.md` by default.
+## Command Type
+
+maintenance - [Complexity: medium]
+
+## Tool Usage
+
+- **Primary**: TodoRead (check current tasks), Write (create context file), mcp**time**get_current_time (timestamps)
+- **Secondary**: Read (review conversation), Glob (find similar contexts), Grep (search patterns)
+- **Avoid**: Edit (creates new files), Bash (unless checking git status)
+
+## Context
+
+- **Files**: Current session conversation, modified files, existing context files
+- **Patterns**: Session state, decision points, code changes, insights
+- **Dependencies**: Project structure, development phase, task complexity
 
 ## Process
 
-1. **Session Analysis**
+1. **Context Discovery**
 
-   - Review conversation history for key decisions made
-   - Identify code changes, solutions implemented, and files modified
-   - Extract context files that were referenced or loaded
-   - Note unresolved issues, follow-up items, and next steps
-   - Gather relevant code snippets and explanations
+   - Scan for existing context files with similar work focus
+   - If similar context found, prompt: "Found existing context: 'auth-refactor-2024-06-15'. Would you like to update it or create new?"
+   - Review conversation for key decisions, insights, and progress
+   - Identify code changes, patterns discovered, and problems solved
+   - Extract references that were helpful (docs, files, commands)
 
 2. **Content Verification** (Interactive Checklist)
 
@@ -24,12 +38,12 @@ Use when you want to preserve important context, decisions, or solutions from th
    - Allow user to add additional context items
    - Confirm final selection before generating file
 
-3. **File Generation**
-   - Get timestamp using time MCP server for filename
-   - Create structured context file at `.claude/sessions/YYYYMMDD_HHMMSS-CONTEXT.md`
-   - Include session metadata and auto-links to referenced context files
-   - Organize content by topic areas and relevance
-   - Add cross-references to related files and resources
+3. **Context File Creation**
+   - Prompt for context name that describes the work focus (e.g., "auth-refactor", "memory-leak-fix")
+   - Get timestamp using time MCP server
+   - Create structured context file at `.claude/contexts/<context-name>-YYYY-MM-DD-HHMM.md`
+   - Structure content for easy resumption - "Here's where we left off..."
+   - Include breadcrumbs to quickly re-establish mental context
 
 ## Context Loading
 
@@ -47,46 +61,49 @@ Uses time MCP server:
 
 <output-format>
 
-# Session Context - [Date/Time]
+# Context: [Context Name] - [Date/Time]
 
-## Session Summary
+## Where We Left Off
 
-- **Duration**: [Session length]
-- **Focus Areas**: [Main topics discussed]
-- **Key Decisions**: [Important choices made]
+- **Working on**: [What you were doing]
+- **Current status**: [How far you got]
+- **Next logical step**: [What to do when resuming]
 
-## Code Changes
+## Key Discoveries
 
-- **Files Modified**: [List with brief descriptions]
-- **Solutions Implemented**: [What was built/fixed]
-- **Technical Approach**: [How problems were solved]
+- **What worked**: [Successful approaches and solutions]
+- **What didn't work**: [Dead ends and why they failed]
+- **Important insights**: [Things that changed your understanding]
 
-## Context References
+## Code Changes Made
 
-- **Files Referenced**: [Auto-linked to actual files]
-- **Standards Applied**: [Links to relevant context files]
-- **Patterns Used**: [Development patterns followed]
+- **Files modified**: [List with brief descriptions of changes]
+- **Patterns applied**: [Useful approaches that worked]
+- **Testing approach**: [How you verified changes]
 
-## Key Insights
+## Useful References
 
-- **Learning Points**: [Important discoveries]
-- **Best Practices**: [Patterns worth remembering]
-- **Gotchas**: [Things to watch out for]
+- **Files to know about**: [Auto-linked to relevant files]
+- **Commands that helped**: [Specific commands/tools that were useful]
+- **Resources referenced**: [Docs, examples, context files used]
 
-## Action Items
+## Gotchas & Lessons
 
-- **Next Steps**: [Immediate follow-up tasks]
-- **Future Considerations**: [Longer-term items]
-- **Unresolved Issues**: [Things that need attention]
+- **Watch out for**: [Potential pitfalls discovered]
+- **Remember**: [Important things to keep in mind]
+- **Performance notes**: [Optimization insights]
 
-## Relevant Context Files
+## To Resume This Work
 
-- [Auto-linked references to ~/.claude/ files used]
-- [Project-specific context files referenced]
+- **Start by**: [First thing to do when picking this up again]
+- **Check**: [Things to verify before continuing]
+- **Remember**: [Key context to re-establish]
 
-## Code Snippets
+## Future Ideas
 
-[Key code examples with explanations]
+- **Next features**: [Related work that could follow]
+- **Improvements**: [Ways to enhance current solution]
+- **Technical debt**: [Things that need cleanup later]
 
 </output-format>
 
@@ -109,20 +126,22 @@ Additional items to include:
 [ User can add items here ]
 ```
 
+## Validation
+
+- Context file is created with proper timestamp
+- User confirms content selection via checklist
+- Essential work context is preserved
+- File is saved to correct location
+- Future resumption steps are clear
+
 ## Examples
 
-### Example 1: Bug Fix Session
+### Example 1: Bug Investigation Context
 
-Input: Session focused on debugging login timeout issue
-Output: Context file with problem analysis, solution approach, code changes, and testing notes
+Input: "I was debugging the login timeout issue and got partially through it"
+Output: Context file "login-timeout-debug-2024-06-15-1430.md" with problem analysis, what was tried, what worked, and next debugging steps
 
-### Example 2: Feature Development
+### Example 2: Feature Development Context
 
-Input: Session implementing new user registration feature  
-Output: Context file with requirements, design decisions, implementation details, and next steps
-
-## Related Commands
-
-- `/context` - Load additional context for current session
-- `/analyze` - Deep analysis before implementation
-- `/debug` - Systematic debugging workflow
+Input: "Made good progress on user registration feature, need to save where I left off"
+Output: Context file "user-registration-2024-06-15-1630.md" with implementation decisions, current state, and what to tackle next

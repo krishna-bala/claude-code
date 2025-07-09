@@ -65,7 +65,7 @@
 - **Unresolved Issues**: [Things that need attention]
 
 ## Relevant Context Files
-- [Auto-linked references to ~/.claude/ files used]
+- [Auto-linked references to ~/.claude/docs/ files used]
 - [Project-specific context files referenced]
 
 ## Code Snippets

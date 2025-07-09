@@ -105,7 +105,7 @@ Types:
 
 ## Configuration Template
 
-Uses `~/.claude/templates/project-hooks-template.json` as base.
+Uses `~/.claude/docs/templates/project-hooks-template.json` as base.
 
 ## Best Practices
 
@@ -116,6 +116,6 @@ Uses `~/.claude/templates/project-hooks-template.json` as base.
 
 ## Related
 
-- `guides/hooks-and-automation.md` - Full hook documentation
-- `context/hooks-automation.md` - Quick reference
-- `templates/project-hooks-template.json` - Configuration template
+- `docs/automation/hooks-and-automation.md` - Full hook documentation
+- `docs/automation/hooks-automation.md` - Quick reference
+- `docs/templates/project-hooks-template.json` - Configuration template

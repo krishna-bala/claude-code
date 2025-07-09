@@ -1,12 +1,24 @@
-## Comprehensive code review workflow for PRs, working tree changes, or specific branches.
+Comprehensive code review workflow for PRs, working tree changes, or specific branches.
 
-Review PRs, working tree changes, or specific branches with structured feedback.
+---
 
-**Read context from:**
+Review PRs, working tree changes, or specific branches with structured feedback. Provides systematic evaluation of code quality, design, functionality, and maintainability with constructive suggestions.
 
-- `~/.claude/context/code-review.md`
-- `~/.claude/context/pr-guidelines.md`
-- `~/.claude/context/git-commit-guidelines.md`
+## Command Type
+
+analysis - [Complexity: deep]
+
+## Tool Usage
+
+- **Primary**: Read (code files), Bash (git operations), TodoRead (check existing tasks), TodoWrite (track review progress)
+- **Secondary**: Grep (search patterns), Glob (find files), WebFetch (check external resources)
+- **Avoid**: Edit, Write, MultiEdit (review only, no code changes)
+
+## Context
+
+- **Files**: `~/.claude/context/code-review.md`, `~/.claude/context/pr-guidelines.md`, `~/.claude/context/git-commit-guidelines.md`
+- **Patterns**: Code quality standards, design principles, security practices, performance considerations
+- **Dependencies**: Project coding standards, team conventions, technology stack requirements
 
 Usage:
 
@@ -124,3 +136,63 @@ Usage:
 - Documentation and comments
 - Error handling and logging
 - Testability and modularity
+
+## Output
+
+Provides comprehensive code review with structured feedback on design, functionality, code quality, and specific improvement recommendations.
+
+<output-template>
+
+## Code Review
+
+### Overview
+
+- **Scope**: [What was reviewed]
+- **Overall assessment**: [High-level evaluation]
+- **Recommendation**: [Approve/Request changes/Needs discussion]
+
+### Strengths
+
+- **Design**: [Well-architected aspects]
+- **Implementation**: [Quality code practices]
+- **Testing**: [Good coverage or approach]
+
+### Areas for Improvement
+
+- **Critical**: [Must-fix issues]
+- **Important**: [Should-fix issues]
+- **Suggestions**: [Nice-to-have improvements]
+
+### Specific Feedback
+
+- **File: [filename]**: [Specific comments]
+- **Security**: [Security-related observations]
+- **Performance**: [Performance considerations]
+
+### Next Steps
+
+- **Required changes**: [Must be addressed]
+- **Recommendations**: [Suggested improvements]
+- **Follow-up**: [Future considerations]
+
+</output-template>
+
+## Validation
+
+- Review covers all major quality dimensions
+- Feedback is constructive and actionable
+- Security and performance considerations are addressed
+- Specific examples and suggestions are provided
+- Overall assessment is fair and helpful
+
+## Examples
+
+<example-1>
+**Input**: `/review source: feature-branch target: main Authentication refactor`
+**Output**: Comprehensive review of authentication changes with security focus and specific recommendations
+</example-1>
+
+<example-2>
+**Input**: `/review` (local changes)
+**Output**: Review of current working directory changes with quality and maintainability feedback
+</example-2>
