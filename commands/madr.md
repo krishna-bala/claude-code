@@ -1,5 +1,3 @@
-# MADR
-
 Creates or updates Markdown Architectural Decision Records (M-ADR) with proper organization, numbering, and lifecycle management.
 
 ---

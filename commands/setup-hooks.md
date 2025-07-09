@@ -1,5 +1,3 @@
-# setup-hooks
-
 Configure project-specific hooks for automatic workflow integration.
 
 ## Usage
