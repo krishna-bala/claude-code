@@ -33,8 +33,8 @@ Examples:
 
 For significant decisions, create Any Decision Records (ADRs) using M-ADR format:
 
-- **Complex decisions**: Use `templates/madr-template.md` (full template)
-- **Simple decisions**: Use `templates/madr-template-minimal.md` (minimal template)
+- **Complex decisions**: Use `~/.claude/docs/templates/madr-template.md` (full template)
+- **Simple decisions**: Use `~/.claude/docs/templates/madr-template-minimal.md` (minimal template)
 - Document context, considered options, and rationale
 
 ## Context Reading
@@ -44,17 +44,18 @@ All paths below are relative to `~/.claude/` (this directory):
 
 ### Task-Specific Context
 
-- **Git operations**: `context/git-commit-guidelines.md`, `context/pr-guidelines.md`
-- **Testing**: `context/testing.md`, `context/tdd.md`
-- **Documentation**: `context/documentation-strategy.md`
-- **Debugging**: `guides/debugging-workflows.md`
-- **Interaction patterns**: `context/interaction-guidelines.md`
+- **Git operations**: `~/.claude/docs/git/commit-guidelines.md`, `~/.claude/docs/git/pr-guidelines.md`
+- **Testing**: `~/.claude/docs/testing/testing.md`, `~/.claude/docs/testing/tdd.md`
+- **Documentation**: `~/.claude/docs/documentation/strategy.md`
+- **Debugging**: `~/.claude/docs/project-setup/debugging-workflows.md`
+- **Interaction patterns**: `~/.claude/docs/memory-framework/interaction-guidelines.md`
 
 ### Available Resources
 
-- **Guides**: @guides/README.md - Development workflows and patterns
-- **Templates**: @templates/README.md - Reusable templates for projects
-- **Context Catalog**: @context/README.md - All available context files
+- **Documentation**: @~/.claude/docs/README.md - All persistent documentation
+- **Git**: @~/.claude/docs/git/README.md - Version control guidelines
+- **Testing**: @~/.claude/docs/testing/README.md - Testing strategies
+- **Templates**: @~/.claude/docs/templates/README.md - Reusable templates
 
 ## Server Operations
 

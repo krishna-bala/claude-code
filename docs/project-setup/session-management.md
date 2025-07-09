@@ -111,17 +111,17 @@ Comprehensive guide for using Claude Code's session management system to maintai
 ```
 .claude/sessions/
 ├── .current-session          # Tracks active session
-├── 2025-06-27-1430-auth.md   # Named session
+├── auth-2025-06-27-1430.md   # Named session
 ├── 2025-06-27-1635.md        # Unnamed session
-└── 2025-06-28-0930-api.md    # Another session
+└── api-2025-06-28-0930.md    # Another session
 ```
 
 ### Naming Convention
 
-- Format: `YYYY-MM-DD-HHMM-[name].md`
+- Format: `[name]-YYYY-MM-DD-HHMM.md`
 - Examples:
-  - `2025-06-27-1430-user-auth.md`
-  - `2025-06-27-1635-bug-fix.md`
+  - `user-auth-2025-06-27-1430.md`
+  - `bug-fix-2025-06-27-1635.md`
   - `2025-06-28-0930.md` (no name)
 
 ### Session Content
@@ -161,15 +161,15 @@ Sessions are automatically included when using:
 /session-list
 
 # Load specific session for context
-@.claude/sessions/2025-06-27-1430-auth.md
+@.claude/sessions/auth-2025-06-27-1430.md
 ```
 
 ### Cross-Session References
 
 In session updates, reference related sessions:
 
-- "Building on authentication work from session 2025-06-26-1130-auth.md"
-- "Resolves issue first encountered in session 2025-06-25-0945-api.md"
+- "Building on authentication work from session auth-2025-06-26-1130.md"
+- "Resolves issue first encountered in session api-2025-06-25-0945.md"
 
 ### Team Collaboration
 

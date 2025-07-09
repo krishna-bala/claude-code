@@ -101,10 +101,10 @@ Automatically added by `/session-end`:
 
 ## Session Naming Convention
 
-- Format: `YYYY-MM-DD-HHMM-[name].md`
+- Format: `[name]-YYYY-MM-DD-HHMM.md`
 - Without name: `YYYY-MM-DD-HHMM.md`
 - Examples:
-  - `2025-06-27-1430-auth-refactor.md`
+  - `auth-refactor-2025-06-27-1430.md`
   - `2025-06-27-1430.md`
 
 ## File Location
