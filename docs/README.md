@@ -12,7 +12,7 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 
 ### Framework & Architecture
 
-- **Memory Framework**: `memory-framework/` - Claude memory system architecture and usage
+- **Memory Framework**: `memory-framework.md` - Claude memory system architecture and usage
 - **Automation**: `hooks-and-automation.md` - Hooks, tooling, and automation patterns
 - **Project Setup**: `project-setup/` - Project initialization and workflow patterns
 
@@ -38,10 +38,11 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 ### Documentation
 
 - Guidelines: `documentation-guidelines.md`
+- Maintenance: `documentation-maintenance.md` - Framework health tracking and maintenance workflows
 
 ### Memory Framework
 
-- Architecture & Usage: `memory-framework/architecture.md`
+- Architecture & Usage: `memory-framework.md`
 
 ### Project Setup
 

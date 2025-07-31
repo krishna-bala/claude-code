@@ -52,7 +52,7 @@ docs/
 **Proper usage examples** (escaped with backticks):
 
 - `@docs/testing.md` - References testing documentation (relative to working directory)
-- `@./memory-framework/guide.md` - Explicit relative path
+- `@./memory-framework.md` - Explicit relative path
 - `@/full/path/to/decisions/0001-database-choice.md` - Full path reference
 
 **Improper usage examples** (escaped with backticks):

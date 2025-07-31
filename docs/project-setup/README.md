@@ -33,5 +33,5 @@ Project initialization, workflow patterns, and development session management.
 ## Related Resources
 
 - Templates: `../templates/` - Project setup templates
-- Memory Framework: `../memory-framework/` - Framework integration
+- Memory Framework: `../memory-framework.md` - Framework integration
 - Decisions: `../decisions/` - Project setup decisions

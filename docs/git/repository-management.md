@@ -209,6 +209,6 @@ git remote get-url origin | grep -q github.com && echo "github" || echo "gitlab"
 
 - `pr-guidelines.md` - PR creation and review standards
 - `commit-guidelines.md` - Commit message conventions
-- `../memory-framework/architecture.md` - Context loading patterns
+- `../memory-framework.md` - Context loading patterns
 - External: [GitHub CLI Manual](https://cli.github.com/manual/)
 - External: [GitLab CLI Documentation](https://docs.gitlab.com/ee/editor_extensions/gitlab_cli/)
