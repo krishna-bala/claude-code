@@ -2,7 +2,7 @@ Set up .claude/ directory structure for context-aware development in the current
 
 ---
 
-Initialize project memory framework with CLAUDE.md, specs, and guides directories. Run from project root to create the memory framework structure. Auto-detects project type and creates appropriate initial configuration.
+Initialize project memory framework with CLAUDE.md and supporting directories. Run from project root to create the memory framework structure. Auto-detects project type and creates appropriate initial configuration.
 
 ## Command Type
 
@@ -16,7 +16,7 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: `@docs/templates/project-claude-md.md`, `@docs/templates/spec-template.md`, `@docs/project-setup/setup.md`
+- **Files**: `@docs/templates/project-claude.md`, `@docs/project-setup/setup.md`
 - **Patterns**: Project type detection, framework identification, build tool recognition
 - **Dependencies**: Project root directory, existing configuration files, technology stack
 
@@ -31,8 +31,7 @@ workflow - [Complexity: medium]
 2. **Create Directory Structure**
 
    ```bash
-   mkdir -p .claude/{specs,guides,templates,sessions}
-   touch .claude/sessions/.current-session
+   mkdir -p .claude/{docs,commands,templates}
    ```
 
 3. **Generate Project CLAUDE.md**
@@ -40,25 +39,24 @@ workflow - [Complexity: medium]
    - Use template from `@docs/templates/project-claude-md.md`
    - Auto-detect build/test commands
    - Include detected tech stack
-   - Add references to relevant specs
+   - Add references to relevant documentation
 
-4. **Create Initial Specs**
+4. **Create Initial Documentation**
 
-   - Add README.md to specs directory
-   - Suggest language-specific standards
-   - Include relevant tool configurations
+   - Add README.md to docs directory
+   - Suggest project-specific documentation
+   - Include relevant patterns and guidelines
 
 5. **Provide Next Steps**
    - List created files
    - Suggest customizations
-   - Recommend specs to add
+   - Recommend documentation to add
 
 ## Context Loading
 
 Loads:
 
-- `@docs/templates/project-claude-md.md` - Project template
-- `@docs/templates/spec-template.md` - For creating specs
+- `@docs/templates/project-claude.md` - Project template
 - `@docs/project-setup/setup.md` - Setup guidance
 
 ## Detection Rules
@@ -91,14 +89,12 @@ Loads:
 
 .claude/
 ├── CLAUDE.md # Project context
-├── specs/
-│ └── README.md # Spec index
-├── guides/
-│ └── README.md # Guide index
-├── templates/
-│ └── README.md # Template index
-└── sessions/ # Development sessions
-└── .current-session # Active session tracker
+├── docs/ # Project documentation
+│ └── README.md # Documentation index
+├── commands/ # Project-specific commands
+│ └── README.md # Command index
+└── templates/ # Project templates
+└── README.md # Template index
 
 ```
 
@@ -110,22 +106,23 @@ Loads:
 
 ### Suggested Next Steps
 1. Edit `.claude/CLAUDE.md` with project specifics
-2. Add language standards: `[suggested spec]`
-3. Document architecture in guides/
-4. Start first session: `/session-start [session-name]`
+2. Add project documentation in `docs/`
+3. Create project-specific commands if needed
+4. Add templates for common patterns
 5. Commit `.claude/` to version control
 
-### Recommended Specs
+### Recommended Documentation
 Based on your project:
-- `@docs/templates/spec-template.md` → `.claude/specs/[language]-standards.md`
-- Consider adding: [Other relevant specs]
+- Create architecture documentation in `.claude/docs/`
+- Add language-specific patterns and guidelines
+- Document project conventions and decisions
 ```
 
 ## Validation
 
 - `.claude/` directory structure is created successfully
 - Project CLAUDE.md is generated with detected configuration
-- Initial spec and guide README files are created
+- Initial documentation README files are created
 - Project type and framework are correctly identified
 - Directory structure matches template requirements
 
@@ -133,7 +130,7 @@ Based on your project:
 
 <example-1>
 **Input**: `/init-project` (in Python Django project)
-**Output**: Creates .claude/ structure with Python/Django-specific CLAUDE.md and suggested specs
+**Output**: Creates .claude/ structure with Python/Django-specific CLAUDE.md and documentation
 </example-1>
 
 <example-2>
@@ -143,8 +140,8 @@ Based on your project:
 
 ## Related Commands
 
-- `/load-context` - Load project context
-- `/list-specs` - Show available specs
-- `/session-start` - Begin first development session
+- `/documentation` - Browse available documentation
+- `/commands` - List available commands
+- `/memory-framework` - Provides an overview of the memory-framework
 - `@docs/project-setup/setup.md` - Detailed setup guide
 - `@docs/project-setup/session-management.md` - Session workflow guide

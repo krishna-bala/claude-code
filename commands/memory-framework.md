@@ -19,13 +19,7 @@ This command analyzes the memory framework starting from CLAUDE.md, recursively 
 **Standard tree view**:
 ```
 ~/.claude/CLAUDE.md [root]
-├── `@docs/README.md` ✓
-│   ├── `@git/README.md` ✓
-│   ├── `@testing/README.md` ✓
-│   └── `@templates/README.md` ✓
-├── `@commands/README.md` ✓
-└── `@docs/memory-framework/architecture.md` ✓
-    └── `@guide.md` ✗ (file not found)
+└── `@docs/README.md` ✓
 
 Summary: 6 files loaded, 1 missing
 ```
@@ -85,5 +79,3 @@ Concatenates all imported file contents into a single output
 ## Context Integration
 
 - Memory framework architecture: @docs/memory-framework/architecture.md
-- Interaction patterns: @docs/memory-framework/interaction-guidelines.md
-- Guide for effective usage: @docs/memory-framework/guide.md
