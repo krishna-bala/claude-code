@@ -17,13 +17,13 @@ Comprehensive documentation philosophy, strategy, and best practices for the Cla
 
 ```
 docs/
-├── README.md       # Navigation hub
-├── {topic}.md      # Single-purpose docs
-└── decisions/      # ADR records
-
-{component}/        # Component-specific docs alongside code
-├── README.md       # Component overview
-└── CLAUDE.md       # Development context
+├── README.md           # Navigation hub
+├── {topic}.md          # Single-purpose docs
+├── decisions/          # ADR records
+├── templates/          # Reusable document templates
+└── {component}/        # Component-specific docs alongside code
+    ├── README.md       # Component overview
+    └── CLAUDE.md       # Development context
 ```
 
 ### Document Types
@@ -45,20 +45,24 @@ docs/
 **Important**: `@-references` in code blocks are NOT escaped - they will be imported even in examples. Always use backticks to escape `@-references` when showing examples.
 
 **Path Options**:
+
 1. **Full paths from project root**: `/home/user/project/docs/testing.md`
 2. **Relative to current directory**: `../docs/testing.md` or `docs/testing.md`
 
 **Proper usage examples** (escaped with backticks):
+
 - `@docs/testing.md` - References testing documentation (relative to working directory)
 - `@./memory-framework/guide.md` - Explicit relative path
 - `@/full/path/to/decisions/0001-database-choice.md` - Full path reference
 
 **Improper usage examples** (escaped with backticks):
+
 - `@non-existent-file.md` - Ensure referenced files exist
 - `@some-file` - Always include file extension
 - Using `@-references` in code blocks without backticks (they will be imported!)
 
 **When to escape**:
+
 - Always use backticks when showing `@-reference` examples
 - When documenting actual files to reference, just provide the path: docs/testing.md
 - Only add the @ symbol when you want Claude to actually import the file
@@ -66,6 +70,7 @@ docs/
 ## When to Split Documents
 
 Split when they:
+
 - Serve multiple distinct audiences
 - Mix different content types (e.g., philosophy + implementation + procedures)
 - Violate single responsibility principle
@@ -74,9 +79,11 @@ Split when they:
 ## CLAUDE.md Strategy
 
 ### Purpose
+
 CLAUDE.md is automatically loaded when Claude Code starts working in a directory. It provides immediate context and can import other files via `@-references`.
 
 ### Guidelines
+
 - Focus on immediate development needs
 - Essential commands and patterns only
 - Use `@-references` to point to detailed documentation
@@ -91,6 +98,7 @@ For complex codebases, create `CLAUDE.md` files at relevant levels:
 - **Sub-module `CLAUDE.md`**: Specialized areas when needed
 
 Each should include:
+
 - Purpose and scope of the directory
 - Key architectural decisions
 - Important files and their roles
@@ -108,6 +116,7 @@ Use Any Decision Records (ADRs) for significant decisions:
 - **Naming**: Format `NNNN-title-of-decision.md`
 
 ADRs capture:
+
 - Context and problem statement
 - Considered options and trade-offs
 - Final decision and justification
@@ -116,11 +125,13 @@ ADRs capture:
 ## Documentation Workflow
 
 ### Continuous Updates
+
 - **Update docs as you work**: Modify when making significant changes
 - **Document decisions**: Record architectural choices via ADRs
 - **Keep context current**: Ensure docs reflect actual implementation
 
 ### Version Control
+
 - **Commit documentation separately**: Dedicated commits for doc updates
 - **Use descriptive messages**: Follow conventional commit format
 - **Leverage git history**: Version control is your archive
@@ -135,14 +146,16 @@ ADRs capture:
 
 ## Anti-patterns
 
-**Avoid**: 
+**Avoid**:
+
 - Mixed audiences in single document
 - Multiple purposes per file
 - Deep directory nesting
 - Outdated documentation
 - Arbitrary size limits
 
-**Prefer**: 
+**Prefer**:
+
 - Focused files with clear purpose
 - Single audience per document
 - Shallow hierarchies
@@ -150,3 +163,4 @@ ADRs capture:
 - Natural document boundaries
 
 **Summary**: Treat documentation like well-architected code - focused modules with single responsibilities that compose well together.
+

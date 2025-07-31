@@ -71,16 +71,18 @@ Iteratively review each documentation file in `/home/krishna/.claude/docs/` to e
 
 ## Pending Reviews
 
-### Top-Level Files
-- [ ] `hooks-and-automation.md` - Priority: High
-- [ ] `testing.md` - Priority: High
+### Top-Level Files (Priority: High)
+- [ ] `hooks-and-automation.md` - Hooks, tooling, and automation patterns
+- [ ] `testing.md` - Comprehensive testing guide with TDD practices
 
-### Directories to Review
-- [ ] `decisions/` - M-ADR decision records
-- [ ] `git/` - Version control guidelines
-- [ ] `memory-framework/` - Claude memory system docs
-- [ ] `project-setup/` - Project initialization patterns
-- [ ] `templates/` - Reusable document templates
+### Directories to Review (Priority: Medium)
+- [ ] `git/` - Version control guidelines, commit standards, PR processes
+- [ ] `memory-framework/` - Claude memory system architecture and usage
+- [ ] `project-setup/` - Project initialization and workflow patterns
+
+### Directories to Review (Priority: Low)
+- [ ] `decisions/` - M-ADR decision records (already well-structured)
+- [ ] `templates/` - Reusable document templates (reference materials)
 
 ## Review Process
 1. Read file content completely
@@ -95,7 +97,11 @@ Iteratively review each documentation file in `/home/krishna/.claude/docs/` to e
 6. Update this progress file after each review
 
 ## Next Steps
-Continue with `context-loading-reference.md` review, focusing on:
-- Relevance to current memory framework architecture
-- Potential overlap with other documentation
+Continue with high-priority reviews:
+1. `hooks-and-automation.md` - Essential for understanding tooling patterns
+2. `testing.md` - Core development practice documentation
+
+Focus areas for upcoming reviews:
+- Currency and relevance to current practices
+- Potential consolidation opportunities
 - Clarity and actionability of content
