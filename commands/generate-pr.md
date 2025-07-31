@@ -16,9 +16,11 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: `~/.claude/context/pr-guidelines.md`, `~/.claude/context/git-commit-guidelines.md`
+- **Files**: @/home/krishna/.claude/docs/git/pr-guidelines.md, @/home/krishna/.claude/docs/git/commit-guidelines.md, @/home/krishna/.claude/docs/git/code-review.md
 - **Patterns**: PR documentation standards, review checklists, conventional commit format
 - **Dependencies**: Branch changes, commit history, related issues
+
+**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation.
 
 ## Process
 

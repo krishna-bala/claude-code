@@ -16,9 +16,11 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: `~/.claude/context/testing.md`, `~/.claude/context/tdd.md`, auto-detected project test standards
+- **Files**: @/home/krishna/.claude/docs/testing/testing.md, @/home/krishna/.claude/docs/testing/tdd.md, auto-detected project test standards
 - **Patterns**: TDD cycle, testing strategies, framework-specific practices, coverage requirements
 - **Dependencies**: Project test framework, existing test structure, CI/CD integration
+
+**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation when creating new tests.
 
 ## Testing Workflow
 

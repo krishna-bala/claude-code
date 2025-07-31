@@ -4,8 +4,7 @@ Hooks, tooling, and automation patterns for Claude Code workflows.
 
 ## Available Guidelines
 
-- `hooks-automation.md` - Claude Code hook system and patterns
-- `hooks-and-automation.md` - Hooks and automation workflows
+- `hooks-and-automation.md` - Comprehensive guide to Claude Code hooks and automation workflows
 
 ## Quick Reference
 

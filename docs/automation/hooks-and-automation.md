@@ -10,6 +10,22 @@ Automate workflows and enforce standards using Claude Code's hook system.
 - Integrate with external tools
 - Maintain code quality automatically
 
+## When Claude Should Suggest Hooks
+
+- User mentions repetitive tasks after edits
+- Project has formatting/linting tools configured
+- Need for operation logging or auditing
+- Integration with CI/CD workflows
+- Maintaining code quality standards
+
+## Quick Reference
+
+- Configure in `settings.json` at global (`~/.claude/`) or project (`.claude/`) level
+- PostToolUse hooks trigger after Edit, MultiEdit, Write operations
+- Hooks are **additive** - both global and project hooks execute
+- Commands receive JSON input via stdin with operation details
+- Hooks run in `/bin/sh` with current directory as working directory
+
 ## Hook System Overview
 
 Claude Code supports hooks at two levels:
@@ -243,8 +259,8 @@ eslint --fix "$FILE_PATH" 2>/dev/null || true
 git add "$FILE_PATH" 2>/dev/null || true
 ```
 
-## Related
+## Related Resources
 
-- `context/hooks-automation.md` - Quick reference for hooks
-- `templates/project-hooks-template.json` - Hook configuration template
-- `commands/setup-hooks.md` - Interactive hook setup
+- `../templates/project-hooks-template.json` - Hook configuration template
+- `../templates/README.md` - All automation templates
+- `/setup-hooks` - Interactive hook setup command

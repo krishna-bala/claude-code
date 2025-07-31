@@ -17,10 +17,12 @@ analysis - [Complexity: deep]
 
 ## Context
 
-- **Files**: `~/.claude/docs/git/code-review.md`, `~/.claude/docs/git/pr-guidelines.md`, `~/.claude/docs/git/commit-guidelines.md`, **`~/.claude/docs/git/repository-management.md`**
+- **Files**: @/home/krishna/.claude/docs/git/code-review.md, @/home/krishna/.claude/docs/git/pr-guidelines.md, @/home/krishna/.claude/docs/git/commit-guidelines.md
 - **Platform**: **GitHub/GitLab PR context, CI status, linked issues, review history**
 - **Patterns**: Code quality standards, design principles, security practices, performance considerations
 - **Dependencies**: Project coding standards, team conventions, technology stack requirements, **platform-specific workflows**
+
+**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation for deep analysis.
 
 Usage:
 

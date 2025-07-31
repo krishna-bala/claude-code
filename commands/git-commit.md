@@ -16,9 +16,11 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: `~/.claude/context/git-commit-guidelines.md`, `~/.claude/context/pr-guidelines.md`
+- **Files**: @/home/krishna/.claude/docs/git/commit-guidelines.md, @/home/krishna/.claude/docs/git/pr-guidelines.md
 - **Patterns**: Atomic commit strategy, conventional commit format, staging evaluation
 - **Dependencies**: Git repository state, working directory changes, commit history
+
+**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation.
 
 Handles both scenarios:
 

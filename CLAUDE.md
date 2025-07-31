@@ -37,6 +37,15 @@ For significant decisions, create Any Decision Records (ADRs) using M-ADR format
 - **Simple decisions**: Use `~/.claude/docs/templates/madr-template-minimal.md` (minimal template)
 - Document context, considered options, and rationale
 
+## Discovery & Navigation
+
+Use these commands to explore available resources:
+
+- `/documentation` - Browse and get suggestions for relevant documentation
+- `/commands` - List available commands and get contextual suggestions
+
+These discovery commands help you find exactly what you need without loading everything upfront.
+
 ## Context Reading
 
 Before performing tasks, check if you need to read relevant context.
@@ -53,9 +62,6 @@ All paths below are relative to `~/.claude/` (this directory):
 ### Available Resources
 
 - **Documentation**: @~/.claude/docs/README.md - All persistent documentation
-- **Git**: @~/.claude/docs/git/README.md - Version control guidelines
-- **Testing**: @~/.claude/docs/testing/README.md - Testing strategies
-- **Templates**: @~/.claude/docs/templates/README.md - Reusable templates
 
 ## Server Operations
 
@@ -66,5 +72,6 @@ All paths below are relative to `~/.claude/` (this directory):
 - Context persists only for current session
 - Read specific files with their path when relevant to the task
 - Commands are located at `commands/<command-name>.md` directory and can be invoked with `/<command-name>`
+- Use discovery commands (`/documentation`, `/commands`) to explore available resources
 - Prioritize understanding over implementation
 - Make assumptions explicit

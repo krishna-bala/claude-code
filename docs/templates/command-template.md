@@ -1,67 +1,53 @@
 # Command Template
 
-Template for creating slash commands. Copy and customize.
+Template for creating slash commands. Copy and customize for clarity and usefulness.
 
 <command-template>
 
-[Brief description (<100 tokens) **what** the command does.]
+[Brief one-line description of what the command does.]
 
 ---
 
-[Detailed description of this command. Explains how to reason about the context state and arguments provided to this command. Less than 300 tokens.]
+[Detailed description paragraph explaining the command's purpose, how it works, and when to use it. Include context about arguments or parameters if needed. Keep focused and practical.]
 
-## Command Type
+## [Optional Section Name]
 
-[workflow|analysis|generation|maintenance] - [Complexity: light|medium|deep]
+[Include additional sections only as needed. Common useful sections:]
 
-## Tool Usage
+- **Process**: Step-by-step workflow when helpful
+- **Output Example**: Show expected output format
+- **Examples**: Usage examples with different scenarios
+- **Context Integration**: When to reference docs with @-references
+- **Sub-agent Delegation**: When to recommend breaking into smaller tasks
 
-- **Primary**: [Most important tools for this command type]
-- **Secondary**: [Supporting tools]
-- **Avoid**: [Tools that shouldn't be used]
-
-## Context
-
-- **Files**: [Key files/directories to examine first]
-- **Patterns**: [What signals to look for in code/config]
-- **Dependencies**: [Related systems/components to understand]
-
-## Process
-
-1. **[Step Name]** - [Action and result]
-2. **[Step Name]** - [Action and result]
-3. **[Step Name]** - [Action and result]
-
-## Output
-
-[Brief description of what the command returns or produces. Less than 200 tokens.]
-
-<output-template>
-[Format specification for command output]
-</output-template>
-
-## Validation
-
-[How to verify the command worked correctly]
-
-## Examples
-
-<example-1>
-**Input**: [Scenario]
-**Output**: [Expected result]
-</example-1>
-
-<example-2>
-**Input**: [Different scenario]
-**Output**: [Expected result]
-</example-2>
+[Remove any sections that don't add value for your specific command.]
 
 </command-template>
 
 ## Template Guidelines
 
-- Keep commands 30-80 lines total
-- Focus on automation and practical usage
-- Choose appropriate command type and complexity
-- Specify tool usage clearly
-- Include concrete examples with expected outcomes
+### Structure
+
+- **Brief + Detailed**: Start with one-line description, then detailed paragraph
+- **Flexible sections**: Only include sections that enhance understanding
+- **Practical focus**: Emphasize real-world usage over rigid categorization
+
+### Content Guidance
+
+- **Length**: Keep total length reasonable (30-80 lines)
+- **Clarity**: Write for practical usage, not documentation completeness
+- **Examples**: Include concrete examples when they clarify usage
+
+### Integration
+
+- **@-references**: Link to relevant docs when command relates to broader topics
+  - Example: Reference `@docs/testing/tdd.md` for testing commands
+- **Sub-agent delegation**: Suggest when complex tasks should be broken down
+  - Example: "For large codebases, consider using sub-agents for each module"
+
+### Common Optional Sections
+
+- **Process**: Multi-step workflows that benefit from explicit ordering
+- **Output Example**: When output format needs clarification
+- **Examples**: Different usage scenarios with expected results
+- **Context Integration**: How command fits with broader workflows
