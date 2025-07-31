@@ -1,6 +1,6 @@
 # Claude Code Hooks and Automation
 
-Automate workflows and enforce standards using Claude Code's hook system.
+Automate workflows and enforce standards using Claude Code's hook system. Comprehensive guide to hooks, tooling, and automation patterns for Claude Code workflows.
 
 ## When to Use
 
@@ -259,8 +259,6 @@ eslint --fix "$FILE_PATH" 2>/dev/null || true
 git add "$FILE_PATH" 2>/dev/null || true
 ```
 
-## Related Resources
+## Hook Configuration Example
 
-- `../templates/project-hooks-template.json` - Hook configuration template
-- `../templates/README.md` - All automation templates
-- `/setup-hooks` - Interactive hook setup command
+For a complete example configuration, refer to the Configuration Structure section above. Copy and modify the JSON example to create your own `settings.json` file.
