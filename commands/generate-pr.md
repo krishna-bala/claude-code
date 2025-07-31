@@ -16,7 +16,7 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: @/home/krishna/.claude/docs/git/pr-guidelines.md, @/home/krishna/.claude/docs/git/commit-guidelines.md, @/home/krishna/.claude/docs/git/code-review.md
+- **Files**: @docs/git/pr-guidelines.md, @docs/git/commit-guidelines.md, @docs/git/code-review.md
 - **Patterns**: PR documentation standards, review checklists, conventional commit format
 - **Dependencies**: Branch changes, commit history, related issues
 

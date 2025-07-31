@@ -1,4 +1,4 @@
-Set up .claude/ directory structure for context-aware development in the current project.
+Set up `.claude/` directory structure for context-aware development in the current project.
 
 ---
 
@@ -16,7 +16,7 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: `@docs/templates/project-claude.md`, `@docs/project-setup/setup.md`
+- **Files**: `~/.claude/docs/templates/project-claude.md`, `~/.claude/docs/project-setup/setup.md`
 - **Patterns**: Project type detection, framework identification, build tool recognition
 - **Dependencies**: Project root directory, existing configuration files, technology stack
 
@@ -36,7 +36,7 @@ workflow - [Complexity: medium]
 
 3. **Generate Project CLAUDE.md**
 
-   - Use template from `@docs/templates/project-claude-md.md`
+   - Use template from `~/.claude/docs/templates/project-claude.md`
    - Auto-detect build/test commands
    - Include detected tech stack
    - Add references to relevant documentation
@@ -56,8 +56,8 @@ workflow - [Complexity: medium]
 
 Loads:
 
-- `@docs/templates/project-claude.md` - Project template
-- `@docs/project-setup/setup.md` - Setup guidance
+- `~/.claude/docs/templates/project-claude.md` - Project template
+- `~/.claude/docs/project-setup/setup.md` - Setup guidance
 
 ## Detection Rules
 
@@ -81,12 +81,13 @@ Loads:
 
 ## Output Format
 
-```markdown
+<output>
+
 ## Project Initialized ✅
 
 ### Created Structure
-```
 
+```
 .claude/
 ├── CLAUDE.md # Project context
 ├── docs/ # Project documentation
@@ -95,16 +96,17 @@ Loads:
 │ └── README.md # Command index
 └── templates/ # Project templates
 └── README.md # Template index
-
 ```
 
 ### Detected Configuration
+
 - **Language**: [Detected language]
 - **Framework**: [Detected framework]
 - **Build Tool**: [Detected tool]
 - **Test Runner**: [Detected runner]
 
 ### Suggested Next Steps
+
 1. Edit `.claude/CLAUDE.md` with project specifics
 2. Add project documentation in `docs/`
 3. Create project-specific commands if needed
@@ -112,16 +114,19 @@ Loads:
 5. Commit `.claude/` to version control
 
 ### Recommended Documentation
+
 Based on your project:
+
 - Create architecture documentation in `.claude/docs/`
 - Add language-specific patterns and guidelines
 - Document project conventions and decisions
-```
+
+</output>
 
 ## Validation
 
 - `.claude/` directory structure is created successfully
-- Project CLAUDE.md is generated with detected configuration
+- Project `CLAUDE.md` is generated with detected configuration
 - Initial documentation README files are created
 - Project type and framework are correctly identified
 - Directory structure matches template requirements
@@ -129,19 +134,27 @@ Based on your project:
 ## Examples
 
 <example-1>
+
+```
 **Input**: `/init-project` (in Python Django project)
 **Output**: Creates .claude/ structure with Python/Django-specific CLAUDE.md and documentation
+```
+
 </example-1>
 
 <example-2>
+
+```
 **Input**: `/init-project` (in Node.js React project)
 **Output**: Creates .claude/ structure with JavaScript/React-specific configuration and templates
+```
+
 </example-2>
 
 ## Related Commands
 
-- `/documentation` - Browse available documentation
-- `/commands` - List available commands
-- `/memory-framework` - Provides an overview of the memory-framework
-- `@docs/project-setup/setup.md` - Detailed setup guide
-- `@docs/project-setup/session-management.md` - Session workflow guide
+- `~/.claude/commands/documentation.md` - Browse available documentation
+- `~/.claude/commands/commands.md` - List available commands
+- `~/.claude/commands/memory-framework.md` - Provides an overview of the memory-framework
+- `~/.claude/docs/project-setup/setup.md` - Detailed setup guide
+- `~/.claude/docs/project-setup/session-management.md` - Session workflow guide

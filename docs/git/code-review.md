@@ -1,66 +1,106 @@
-## Introduction {#intro}
+# Code Review Guidelines
 
-A code review is a process where someone other than the author(s) of a piece of
-code examines that code.
+## Purpose
 
-At Google, we use code review to maintain the quality of our code and products.
+Code reviews are a critical part of our development process, ensuring code quality, knowledge sharing, and maintaining consistent standards across the codebase.
 
-This documentation is the canonical description of Google's code review
-processes and policies.
+## Review Principles
 
-This page is an overview of our code review process. There are two other large
-documents that are a part of this guide:
+### What to Look For
 
-- **[How To Do A Code Review](reviewer/index.md)**: A detailed guide for code
-  reviewers.
-- **[The CL Author's Guide](developer/index.md)**: A detailed guide for
-  developers whose CLs are going through review.
+1. **Design & Architecture**
+   - Is the code well-designed and appropriate for the system?
+   - Does it follow established patterns and conventions?
+   - Are there potential scalability or performance concerns?
 
-## What Do Code Reviewers Look For? {#look_for}
+2. **Functionality**
+   - Does the code do what it's supposed to do?
+   - Are edge cases handled appropriately?
+   - Is error handling comprehensive?
 
-Code reviews should look at:
+3. **Code Quality**
+   - Is the code readable and maintainable?
+   - Could it be simplified without losing functionality?
+   - Are there any code smells or anti-patterns?
 
-- **Design**: Is the code well-designed and appropriate for your system?
-- **Functionality**: Does the code behave as the author likely intended? Is
-  the way the code behaves good for its users?
-- **Complexity**: Could the code be made simpler? Would another developer be
-  able to easily understand and use this code when they come across it in the
-  future?
-- **Tests**: Does the code have correct and well-designed automated tests?
-- **Naming**: Did the developer choose clear names for variables, classes,
-  methods, etc.?
-- **Comments**: Are the comments clear and useful?
-- **Style**: Does the code follow our
-  [style guides](http://google.github.io/styleguide/)?
-- **Documentation**: Did the developer also update relevant documentation?
+4. **Testing**
+   - Are tests comprehensive and meaningful?
+   - Do tests cover edge cases and error conditions?
+   - Is the test coverage appropriate for the changes?
 
-See **[How To Do A Code Review](reviewer/index.md)** for more information.
+5. **Documentation**
+   - Are complex logic and decisions documented?
+   - Is the code self-documenting through good naming?
+   - Are API changes reflected in documentation?
 
-### Picking the Best Reviewers {#best_reviewers}
+## Review Process
 
-In general, you want to find the _best_ reviewers you can who are capable of
-responding to your review within a reasonable period of time.
+### For Reviewers
 
-The best reviewer is the person who will be able to give you the most thorough
-and correct review for the piece of code you are writing. This usually means the
-owner(s) of the code, who may or may not be the people in the OWNERS file.
-Sometimes this means asking different people to review different parts of the
-CL.
+1. **Understand Context**
+   - Read the PR description thoroughly
+   - Understand the problem being solved
+   - Check linked issues or tickets
 
-If you find an ideal reviewer but they are not available, you should at least CC
-them on your change.
+2. **Review Systematically**
+   - Start with high-level design
+   - Check critical paths first
+   - Look for potential bugs or security issues
+   - Verify tests are adequate
 
-### In-Person Reviews (and Pair Programming) {#in_person}
+3. **Provide Constructive Feedback**
+   - Be specific and actionable
+   - Suggest improvements, don't just criticize
+   - Distinguish between must-fix and nice-to-have
+   - Acknowledge good practices
 
-If you pair-programmed a piece of code with somebody who was qualified to do a
-good code review on it, then that code is considered reviewed.
+4. **Consider the Author**
+   - Be respectful and professional
+   - Remember there's a person behind the code
+   - Focus on the code, not the coder
 
-You can also do in-person code reviews where the reviewer asks questions and the
-developer of the change speaks only when spoken to.
+### For Authors
 
-## See Also {#seealso}
+1. **Prepare for Review**
+   - Self-review before requesting others
+   - Ensure CI/CD passes
+   - Write clear PR description
+   - Keep changes focused and atomic
 
-- [How To Do A Code Review](reviewer/index.md): A detailed guide for code
-  reviewers.
-- [The CL Author's Guide](developer/index.md): A detailed guide for developers
-  whose CLs are going through review.
+2. **Respond Professionally**
+   - Address all feedback
+   - Ask for clarification when needed
+   - Explain decisions when necessary
+   - Update code based on valid feedback
+
+## Best Practices
+
+### Effective Reviews
+
+- Review promptly (within 24 hours if possible)
+- Keep PRs small and focused
+- Use draft PRs for early feedback
+- Batch similar comments
+- Use code suggestions when appropriate
+
+### Communication
+
+- Use clear, unambiguous language
+- Prefix comments with severity:
+  - **MUST**: Critical issues that block approval
+  - **SHOULD**: Important improvements
+  - **CONSIDER**: Suggestions for enhancement
+  - **NIT**: Minor style or preference issues
+
+### Tools & Automation
+
+- Rely on automated tools for style/formatting
+- Use linters and static analysis
+- Let CI handle build and test verification
+- Focus human review on logic and design
+
+## Related Resources
+
+- PR Guidelines: `pr-guidelines.md`
+- Commit Guidelines: `commit-guidelines.md`
+- Testing Guide: `../testing.md`

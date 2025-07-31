@@ -17,7 +17,7 @@ analysis - [Complexity: deep]
 
 ## Context
 
-- **Files**: @/home/krishna/.claude/docs/git/code-review.md, @/home/krishna/.claude/docs/git/pr-guidelines.md, @/home/krishna/.claude/docs/git/commit-guidelines.md
+- **Files**: @docs/git/code-review.md, @docs/git/pr-guidelines.md, @docs/git/commit-guidelines.md
 - **Platform**: **GitHub/GitLab PR context, CI status, linked issues, review history**
 - **Patterns**: Code quality standards, design principles, security practices, performance considerations
 - **Dependencies**: Project coding standards, team conventions, technology stack requirements, **platform-specific workflows**
