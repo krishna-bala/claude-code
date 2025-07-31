@@ -2,6 +2,14 @@
 
 Automate workflows and enforce standards using Claude Code's hook system. Comprehensive guide to hooks, tooling, and automation patterns for Claude Code workflows.
 
+## Prerequisites
+
+- `jq` for JSON parsing: `sudo apt install jq` (or equivalent for your OS)
+- Formatters/linters installed via your preferred method:
+  - Mason (Neovim): See examples below using Mason paths
+  - npm/pip: Install globally or locally
+  - System packages: Use your package manager
+
 ## When to Use
 
 - Enforce formatting standards on file edits
@@ -103,23 +111,31 @@ Note: File extension matching in matchers (e.g., `"Write(*.md)"`) is not current
 ### Auto-Formatting Script
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # ~/.claude/hooks/format.sh
+# Note: Using sh for compatibility, wrap in bash if needed
 
 # Parse file path from JSON input
 JSON=$(cat)
 FILE_PATH=$(echo "$JSON" | jq -r '.tool_input.file_path')
 
 # Format based on file extension (using Mason-managed formatters)
+# Check if formatter exists before running
 case "$FILE_PATH" in
   *.md)
-    ~/.local/share/nvim/mason/bin/prettier --write --parser markdown "$FILE_PATH" 2>/dev/null
+    if [ -x ~/.local/share/nvim/mason/bin/prettier ]; then
+      ~/.local/share/nvim/mason/bin/prettier --write --parser markdown "$FILE_PATH" 2>/dev/null || true
+    fi
     ;;
   *.py)
-    ~/.local/share/nvim/mason/bin/ruff format "$FILE_PATH" 2>/dev/null
+    if [ -x ~/.local/share/nvim/mason/bin/ruff ]; then
+      ~/.local/share/nvim/mason/bin/ruff format "$FILE_PATH" 2>/dev/null || true
+    fi
     ;;
   *.js|*.ts|*.jsx|*.tsx)
-    ~/.local/share/nvim/mason/bin/prettier --write "$FILE_PATH" 2>/dev/null
+    if [ -x ~/.local/share/nvim/mason/bin/prettier ]; then
+      ~/.local/share/nvim/mason/bin/prettier --write "$FILE_PATH" 2>/dev/null || true
+    fi
     ;;
 esac
 ```
@@ -127,20 +143,26 @@ esac
 ### Linting Script
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # ~/.claude/hooks/lint.sh
+# Note: Using sh for compatibility, wrap in bash if needed
 
 # Parse file path from JSON input
 JSON=$(cat)
 FILE_PATH=$(echo "$JSON" | jq -r '.tool_input.file_path')
 
 # Run linters with auto-fix (using Mason-managed linters)
+# Check if linter exists before running
 case "$FILE_PATH" in
   *.py)
-    ~/.local/share/nvim/mason/bin/ruff check --fix "$FILE_PATH" 2>/dev/null
+    if [ -x ~/.local/share/nvim/mason/bin/ruff ]; then
+      ~/.local/share/nvim/mason/bin/ruff check --fix "$FILE_PATH" 2>/dev/null || true
+    fi
     ;;
   *.js|*.ts|*.jsx|*.tsx)
-    ~/.local/share/nvim/mason/bin/eslint --fix "$FILE_PATH" 2>/dev/null
+    if [ -x ~/.local/share/nvim/mason/bin/eslint ]; then
+      ~/.local/share/nvim/mason/bin/eslint --fix "$FILE_PATH" 2>/dev/null || true
+    fi
     ;;
 esac
 ```
@@ -148,7 +170,7 @@ esac
 ### Operation Logging
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # ~/.claude/hooks/log-operations.sh
 
 # Log all operations with timestamp
@@ -162,12 +184,20 @@ esac
 ### Git Auto-Stage
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # ~/.claude/hooks/git-autostage.sh
 
 FILE_PATH=$(cat | jq -r '.tool_input.file_path')
 git add "$FILE_PATH" 2>/dev/null || true
 ```
+
+## Performance Considerations
+
+- **Target Sub-Second Execution**: Hooks should complete in <1 second for good UX
+- **Use Timeouts**: Prevent hanging operations with `timeout` command
+- **Avoid Network Calls**: Network operations can cause unpredictable delays
+- **Background Long Tasks**: Use `&` for operations that don't need immediate completion
+- **Profile Your Hooks**: Test execution time with `time` command
 
 ## Best Practices
 
@@ -189,12 +219,17 @@ git add "$FILE_PATH" 2>/dev/null || true
    - Avoid network calls
    - Minimize file I/O
    - Use background jobs for slow operations
+   - Consider using `timeout` for potentially hanging operations:
+     ```bash
+     timeout 5s prettier --write "$FILE_PATH" || true
+     ```
 
-4. **Bash vs Sh**: For bash features, create a wrapper script
+4. **Shell Compatibility**: Hooks run in `/bin/sh`. For bash-specific features:
 
    ```bash
    #!/bin/bash
-   # Wrapper for bash-specific syntax
+   # bash-wrapper.sh - Use when bash features are needed
+   exec bash ~/.claude/hooks/my-bash-script.sh
    ```
 
 5. **Debug with Logging**: Capture stdin for debugging
@@ -230,7 +265,7 @@ git add "$FILE_PATH" 2>/dev/null || true
 ### Conditional Execution
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # Only format if file was actually modified
 JSON=$(cat)
 FILE_PATH=$(echo "$JSON" | jq -r '.tool_input.file_path')
@@ -244,21 +279,23 @@ fi
 ### Multiple Actions
 
 ```bash
-#!/bin/bash
+#!/bin/sh
 # Run multiple tools in sequence
 JSON=$(cat)
 FILE_PATH=$(echo "$JSON" | jq -r '.tool_input.file_path')
 
 # Format
-prettier --write "$FILE_PATH" 2>/dev/null || true
+# Check and run each tool if available
+if command -v prettier >/dev/null 2>&1; then
+  prettier --write "$FILE_PATH" 2>/dev/null || true
+fi
 
 # Lint
-eslint --fix "$FILE_PATH" 2>/dev/null || true
+if command -v eslint >/dev/null 2>&1; then
+  eslint --fix "$FILE_PATH" 2>/dev/null || true
+fi
 
 # Stage
 git add "$FILE_PATH" 2>/dev/null || true
 ```
 
-## Hook Configuration Example
-
-For a complete example configuration, refer to the Configuration Structure section above. Copy and modify the JSON example to create your own `settings.json` file.
