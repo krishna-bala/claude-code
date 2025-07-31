@@ -7,13 +7,13 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 ### Core Development
 
 - **Git**: `git/` - Version control guidelines, commit standards, PR processes
-- **Testing**: `testing/` - Testing strategies, TDD practices, frameworks
-- **Documentation**: `documentation/` - Documentation philosophy and strategy
+- **Testing**: `testing.md` - Comprehensive testing guide with TDD practices and frameworks
+- **Documentation**: `documentation-guidelines.md` - Documentation philosophy and strategy
 
 ### Framework & Architecture
 
 - **Memory Framework**: `memory-framework/` - Claude memory system architecture and usage
-- **Automation**: `automation/` - Hooks, tooling, and automation patterns
+- **Automation**: `hooks-and-automation.md` - Hooks, tooling, and automation patterns
 - **Project Setup**: `project-setup/` - Project initialization and workflow patterns
 
 ### Resources
@@ -33,14 +33,11 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 
 ### Testing
 
-- Testing Strategies: `testing/testing.md`
-- TDD Practices: `testing/tdd.md`
-- Testing Patterns: `testing/testing-patterns.md`
+- Comprehensive Testing Guide: `testing.md`
 
 ### Documentation
 
-- Philosophy: `documentation/philosophy.md`
-- Strategy: `documentation/strategy.md`
+- Guidelines: `documentation-guidelines.md`
 
 ### Memory Framework
 
