@@ -41,7 +41,7 @@ Template for creating slash commands. Copy and customize for clarity and usefuln
 ### Integration
 
 - **@-references**: Link to relevant docs when command relates to broader topics
-  - Example: Reference `@docs/testing/tdd.md` for testing commands
+  - Example: Reference `@docs/testing.md` for testing commands
 - **Sub-agent delegation**: Suggest when complex tasks should be broken down
   - Example: "For large codebases, consider using sub-agents for each module"
 

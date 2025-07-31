@@ -1,6 +1,6 @@
 # Project CLAUDE.md Template
 
-Template for creating project-specific `CLAUDE.md` files. Copy and customize for your project.
+Template for creating project-specific `CLAUDE.md` files. Copy and customize for your project. Based on the project, you may deviate from this template as you see fit.
 
 <template>
 
@@ -50,20 +50,11 @@ Project context for [PROJECT NAME]. This file helps Claude Code understand proje
 └── ...
 ```
 
-## Active Specs
-
-Load these based on what you're working on:
-
-- **General**: `.claude/specs/coding-standards.md`
-- **[LANGUAGE]**: `.claude/specs/[LANGUAGE]-standards.md`
-- **API**: `.claude/specs/api-design.md` (if applicable)
-- **Testing**: `.claude/specs/testing-strategy.md`
-
 ## Detailed Documentation
 
-- **Architecture**: `docs/architecture.md`
-- **API Reference**: `docs/api/README.md`
-- **Deployment**: `docs/deployment.md`
+- **Architecture**: [ARCHITECTURE DOCUMENTATION]
+- **API Reference**: [API DOCUMENTATION]
+- **Deployment**: [DEPLOYMENT DOCUMENTATION]
 
 ## Quick Reference
 
@@ -88,11 +79,3 @@ Load these based on what you're working on:
 3. Keep under 200 lines total
 4. Focus on what's essential for development
 5. Link to detailed docs instead of inline explanations
-
-## Size Guidelines
-
-- Essential commands: 3-10 lines
-- Project overview: 5-15 lines
-- Key patterns: 10-30 lines
-- Structure diagram: 10-20 lines
-- References: 10-20 lines
