@@ -2,12 +2,9 @@
 
 Claude Code Memory Framework architecture, usage patterns, and interaction guidelines.
 
-## Available Guidelines
+## Available Documentation
 
-- `architecture.md` - Core framework architecture and concepts
-- `guide.md` - How to effectively use the memory framework
-- `context-loading-patterns.md` - Context loading strategies and patterns
-- `interaction-guidelines.md` - How Claude should approach requests
+- `architecture.md` - Framework architecture, concepts, and principles
 
 ## Quick Reference
 
@@ -20,17 +17,12 @@ Claude Code Memory Framework architecture, usage patterns, and interaction guide
 
 ### Usage Patterns
 
+- Starting new projects with `/init-project`
+- Discovery through `/documentation` and `/commands`
 - @-reference syntax for dynamic loading
 - Context triggers and automatic recognition
 - Progressive disclosure strategies
-- File organization best practices
 
-### Interaction Guidelines
-
-- Task recognition and context loading
-- Response patterns and communication
-- Error handling and debugging
-- Memory optimization techniques
 
 ## Related Resources
 
