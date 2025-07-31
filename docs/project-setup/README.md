@@ -4,9 +4,8 @@ Project initialization, workflow patterns, and development session management.
 
 ## Available Guidelines
 
-- `setup.md` - Project initialization and `.claude/` directory setup
-- `session-management.md` - Development session tracking and context
-- `debugging-workflows.md` - Systematic debugging approaches
+- `setup.md` - Project initialization and memory framework setup
+- `session-management.md` - Development session tracking and context preservation
 
 ## Quick Reference
 

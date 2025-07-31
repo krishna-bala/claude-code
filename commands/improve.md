@@ -1,152 +1,96 @@
-## Intelligently improve code, documentation, architecture, and workflows.
+Intelligently improve code, documentation, architecture, and workflows.
 
-Analyze current context and suggest targeted improvements. Accepts arguments to focus on specific areas: `/improve memory`, `/improve commands`, `/improve context`, or `/improve <custom-focus>`.
+---
 
-**Read context from:**
-
-- `~/.claude/docs/memory-framework/architecture.md`
-- `~/.claude/docs/memory-framework/guide.md`
-- Project .claude/ directory structure
-- Current working context and files
-
-## Command Type
-
-analysis - Complexity: medium
-
-## Tool Usage
-
-- **Primary**: Read, Glob, Grep, Task
-- **Secondary**: LS, Bash
-- **Avoid**: Write, Edit (analysis only)
-
-## Context
-
-- **Files**: .claude/ directory, CLAUDE.md, current working files
-- **Patterns**: Repetitive workflows, token inefficiency, missing context
-- **Dependencies**: Memory framework, command structure, development patterns
+Analyzes current context and suggests targeted improvements. Natural language processing determines focus area - simply describe what you want to improve like "memory framework efficiency" or "command organization".
 
 ## Process
 
-1. **Parse Arguments and Context**
+1. **Parse intent** - Extract focus area from natural language (memory, commands, workflows, or custom)
+2. **Analyze current state** - Review relevant files and patterns based on focus
+3. **Identify opportunities** - Find gaps, inefficiencies, and enhancement possibilities
+4. **Generate recommendations** - Create prioritized, actionable improvements
+5. **Provide implementation guidance** - Include concrete steps and examples
 
-   - Identify focus area from arguments (memory/commands/context/custom)
-   - Analyze current working directory and files
-   - Determine improvement scope and priorities
+## Focus Areas
 
-2. **Analyze Current State**
+**Memory Framework**:
 
-   - Review relevant architecture based on focus area
-   - Identify gaps, inefficiencies, and opportunities
-   - Assess token usage and organizational patterns
-   - Evaluate workflow effectiveness
+- CLAUDE.md efficiency and organization
+- Context loading optimization
+- @-import structure improvements
 
-3. **Generate Targeted Improvements**
+**Commands & Workflows**:
 
-   - Suggest specific enhancements for focus area
-   - Provide implementation approaches and templates
-   - Prioritize by impact and maintenance cost
-   - Include concrete examples and rationale
-
-4. **Present Actionable Results**
-   - High-impact improvements first
-   - Clear implementation steps
-   - Template and example references
-
-## Improvement Focus Areas
-
-### Memory Architecture (`/improve memory`)
-
-- CLAUDE.md token efficiency and organization
-- Missing or outdated project-specific context
-- Opportunities for project-level commands
-- Context loading patterns and optimization
-
-### Command Structure (`/improve commands`)
-
-- Command organization and discoverability
+- Command discoverability and organization
 - Workflow automation opportunities
-- Command consolidation and efficiency
-- Template and pattern consistency
+- Pattern consistency
 
-### Context Organization (`/improve context`)
+**Documentation & Architecture**:
 
-- Spec and guide organization
 - Documentation gaps and redundancy
-- Cross-reference optimization
-- Knowledge graph coherence
+- Architectural improvements
+- Code quality enhancements
 
-### Custom Focus (`/improve <custom>`)
+## Output Example
 
-- Specific area improvements based on arguments
-- Code quality and architecture
-- Development workflow optimization
-- Tool integration and automation
-
-## Output
-
-Targeted improvement recommendations with implementation guidance, prioritized by impact and feasibility.
-
-<improvement-output-template>
-## [Focus Area] Improvements
+```
+## Memory Framework Improvements
 
 ### 🎯 High Priority
 
-1. **[Specific Improvement]**
+1. **Consolidate duplicate context references**
+   - Why: Reduces token usage by 30%
+   - How: Merge git-related sections into single @-import
+   - Impact: Faster context loading, clearer organization
 
-   - **Why**: [Benefit and rationale]
-   - **How**: [Implementation approach]
-   - **Impact**: [Expected outcome]
-
-   ```markdown
-   // Example implementation or template
-   ```
+   Example:
+   Replace multiple references with:
+   `@docs/git/README.md`
 
 ### 📋 Implementation Steps
 
-1. [Concrete action step]
-2. [Concrete action step]
-3. [Concrete action step]
-
-### 🔧 Templates and Resources
-
-- [Template name]: `@templates/[template-file].md`
-- [Guide reference]: `@guides/[guide-file].md`
-- [Context reference]: `@context/[context-file].md`
+1. Audit current CLAUDE.md for duplicates
+2. Create consolidated reference structure
+3. Test with memory-framework command
 
 ### 📊 Expected Outcomes
-
-- [Measurable improvement]
-- [Workflow enhancement]
-- [Maintenance reduction]
-  </improvement-output-template>
-
-## Validation
-
-- Improvements are actionable and specific
-- Implementation steps are clear and feasible
-- Templates and resources are correctly referenced
-- Expected outcomes are measurable
+- 30% reduction in context size
+- Improved navigation clarity
+- Faster agent startup
+```
 
 ## Examples
 
-<example-1>
-**Input**: `/improve memory`
-**Output**: Analysis of CLAUDE.md token usage, suggest reorganization of context loading, propose new project-level commands for common workflows
-</example-1>
+**Improve memory efficiency**:
 
-<example-2>
-**Input**: `/improve commands workflow automation`
-**Output**: Identify repetitive command patterns, suggest consolidated commands, provide templates for workflow automation
-</example-2>
+```
+/improve memory framework token usage
+/improve make the memory system more efficient
+```
 
-<example-3>
-**Input**: `/improve context documentation gaps`
-**Output**: Identify missing specs and guides, suggest documentation architecture improvements, provide implementation templates
-</example-3>
+Analyzes CLAUDE.md structure and suggests optimizations
 
-## Related Commands
+**Enhance command workflow**:
 
-- `/context` - Context management and optimization
-- `/init-project` - Project initialization
-- `/analyze` - Deep project analysis
-- `/save-context` - Context preservation and organization
+```
+/improve command organization
+/improve workflow automation for testing
+```
+
+Reviews commands and suggests consolidation or new automation
+
+**Architecture improvements**:
+
+```
+/improve project architecture
+/improve code organization in src/
+```
+
+Analyzes codebase structure and suggests improvements
+
+## Context Integration
+
+- Memory framework architecture: @docs/memory-framework/architecture.md
+- Command design principles: @docs/decisions/0005-command-system-design.md
+- Best practices guide: @docs/memory-framework/guide.md

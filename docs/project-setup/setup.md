@@ -13,43 +13,22 @@ Initialize and configure `<project>/.claude/` directories for projects.
 
 ### 1. Initialize Structure
 
-```bash
-# Run from project root
+```
 /init-project
-
-# Or manually create:
-mkdir -p .claude/{specs,guides,templates}
 ```
 
 ### 2. Create Project CLAUDE.md
 
-Use `templates/project-claude-md.md` as starting point:
+Use `~/.claude/docs/templates/project-claude.md` as starting point:
 
 - Essential commands (build, test, lint)
 - Key architectural patterns
 - Technology stack references
 - Links to detailed docs
 
-### 3. Add Relevant Specs
+### 3. Suggest & Configure Hooks (Optional)
 
-Based on project technologies:
-
-- `specs/README.md` - Spec index
-- Language standards (python, javascript, etc.)
-- Tool configurations (docker, ci/cd)
-- API conventions
-
-### 4. Configure Hooks (Optional)
-
-Set up automation hooks for the project:
-
-```bash
-# Interactive setup
-/setup-hooks formatter
-
-# Or manually create .claude/settings.json
-cp ~/.claude/templates/project-hooks-template.json .claude/settings.json
-```
+Suggest and set up automation hooks for the project:
 
 Common hooks:
 
@@ -62,21 +41,22 @@ Common hooks:
 
 Create guides for:
 
-- `guides/architecture.md` - System design
-- `guides/development.md` - Dev workflow
-- `guides/deployment.md` - Release process
+Architecture & System design
+Development workflow
+Release process
+Testing
 
 ## Directory Organization
 
 ```
 project/
 └── .claude/
-    ├── CLAUDE.md           # Project context (<200 lines)
+    ├── CLAUDE.md           # Project context
     ├── settings.json       # Hook configuration (optional)
-    ├── specs/              # Standards and requirements
-    │   ├── README.md       # Spec navigation
+    ├── docs/               # Standards and requirements
+    │   ├── README.md       # Docs navigation
     │   ├── api-spec.md     # API conventions
-    │   └── testing-spec.md # Testing standards
+    │   └── testing.md # Testing standards
     ├── guides/             # Project workflows
     │   ├── README.md       # Guide index
     │   └── onboarding.md   # New developer guide
@@ -88,8 +68,6 @@ project/
 
 ### Content Guidelines
 
-- Keep CLAUDE.md under 200 lines
-- One concept per spec file
 - Action-oriented guides
 - Version control everything
 
@@ -114,7 +92,7 @@ project/
 ```
 .claude/
 ├── CLAUDE.md              # Root context
-└── packages/
+└── docs/
     ├── frontend/
     │   └── CLAUDE.md      # Frontend specific
     └── backend/
@@ -130,14 +108,7 @@ project/
 ## Tools and Commands
 
 - `/init-project` - Automated setup
-- `/check-standards` - Validate against specs
-- `/list-specs` - Show available specs
 
 ## Related Resources
 
-- @templates/project-claude-md.md - CLAUDE.md template
-- @templates/project-hooks-template.json - Hook configuration template
-- @guides/hooks-and-automation.md - Hook system documentation
-- @guides/context-loading-patterns.md - Organize specs
-- @context/documentation.md - Doc philosophy
-- @commands/setup-hooks.md - Automated hook setup
+- @templates/project-claude.md - CLAUDE.md template

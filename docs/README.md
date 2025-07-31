@@ -41,14 +41,11 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 
 ### Memory Framework
 
-- Architecture: `memory-framework/architecture.md`
-- Usage Guide: `memory-framework/guide.md`
-- Interaction Guidelines: `memory-framework/interaction-guidelines.md`
+- Architecture & Usage: `memory-framework/architecture.md`
 
 ### Project Setup
 
-- Process Workflows: `project-setup/process-workflows.md`
-- Debugging Workflows: `project-setup/debugging-workflows.md`
+- Setup Guide: `project-setup/setup.md`
 - Session Management: `project-setup/session-management.md`
 
 ## Usage Patterns

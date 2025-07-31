@@ -16,7 +16,7 @@ workflow - [Complexity: medium]
 
 ## Context
 
-- **Files**: @/home/krishna/.claude/docs/testing/testing.md, @/home/krishna/.claude/docs/testing/tdd.md, auto-detected project test standards
+- **Files**: @/home/krishna/.claude/docs/testing.md, auto-detected project test standards
 - **Patterns**: TDD cycle, testing strategies, framework-specific practices, coverage requirements
 - **Dependencies**: Project test framework, existing test structure, CI/CD integration
 
