@@ -2,69 +2,53 @@ Generate a new slash command from user requirements using the standard command t
 
 ---
 
-This command creates new slash commands following the established template structure and conventions. It analyzes the user's requirements, determines the appropriate command type and complexity, selects suitable tools, and generates a properly formatted command file.
-
-## Command Type
-
-generation - [Complexity: medium]
-
-## Tool Usage
-
-- **Primary**: Read (template), Write (new command file), Glob (check existing commands)
-- **Secondary**: LS (verify directory structure)
-- **Avoid**: Bash (not needed for file generation)
-
-## Context
-
-- **Files**: `~/.claude/docs/templates/command-template.md`, existing commands in `~/.claude/commands/`
-- **Patterns**: Command naming conventions, category patterns, tool usage patterns
-- **Dependencies**: Template structure, command organization standards
+Creates new slash commands following the established template structure and conventions. Analyzes user requirements to generate a properly formatted command file that fits seamlessly into the command system.
 
 ## Process
 
-1. **Parse Requirements** - Extract command purpose, identify category and complexity level
-2. **Generate Structure** - Create command following template with all required sections
-3. **Write Command File** - Save to appropriate location with proper naming convention
+1. **Parse requirements** - Extract command purpose and identify key functionality
+2. **Review template** - Load command template from @docs/templates/command-template.md
+3. **Check existing commands** - Ensure unique naming and consistent patterns
+4. **Generate command** - Create command file with appropriate sections
+5. **Save to commands directory** - Write to `~/.claude/commands/[command-name].md`
 
-## Output
+## Output Example
 
-Creates a new command file in the commands directory following the standard template structure.
+```
+## Command Generated: `/analyze-dependencies`
 
-<output-template>
+**File Created**: `commands/analyze-dependencies.md`
+**Purpose**: Deep code analysis to map dependencies between modules
 
-## Command Generated: `/[command-name]`
-
-**File Created**: `commands/[command-name].md`
-**Command Type**: [type] - [complexity]
-**Primary Tools**: [tool list]
-
-### Next Steps
-
-1. Review the generated command for accuracy
-2. Test with sample inputs
-3. Adjust tool usage or process steps as needed
-
-</output-template>
-
-## Validation
-
-- Command file exists at correct location
-- All required sections are present
-- Command name follows kebab-case convention
-- Examples demonstrate proper usage
+The command follows the standard template with:
+- Brief one-line description
+- Detailed explanation with context
+- Process steps for execution
+- Usage examples
+```
 
 ## Examples
 
-<example-1>
+**Generate analysis command**:
+```
+/generate-command Create a command to analyze code dependencies and visualize module relationships
+```
+Creates `/analyze-dependencies` with analysis workflow and visualization output
 
-**Input**: Generate a command to analyze code dependencies
-**Output**: Creates `/analyze-dependencies` command with analysis type, Read/Grep tools, and dependency tracking process
+**Generate workflow command**:
+```
+/generate-command I need a command that sets up git hooks for the project
+```
+Creates `/setup-hooks` with step-by-step hook installation process
 
-</example-1>
+**Generate discovery command**:
+```
+/generate-command Make a command that helps explore available testing utilities
+```
+Creates `/test-utilities` with discovery and suggestion features
 
-<example-2>
+## Context Integration
 
-**Input**: Generate a command to setup git hooks
-**Output**: Creates `/setup-hooks` command with workflow type, Bash/Write tools, and hook installation process
-
-</example-2>
+- Command template structure: @docs/templates/command-template.md
+- Command design principles: @docs/decisions/0005-command-system-design.md
+- Documentation organization: @docs/decisions/0006-documentation-organization-optimization.md

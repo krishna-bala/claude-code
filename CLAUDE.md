@@ -46,22 +46,9 @@ Use these commands to explore available resources:
 
 These discovery commands help you find exactly what you need without loading everything upfront.
 
-## Context Reading
+## Available Resources
 
-Before performing tasks, check if you need to read relevant context.
-All paths below are relative to `~/.claude/` (this directory):
-
-### Task-Specific Context
-
-- **Git operations**: `~/.claude/docs/git/commit-guidelines.md`, `~/.claude/docs/git/pr-guidelines.md`
-- **Testing**: `~/.claude/docs/testing/testing.md`, `~/.claude/docs/testing/tdd.md`
-- **Documentation**: `~/.claude/docs/documentation/strategy.md`
-- **Debugging**: `~/.claude/docs/project-setup/debugging-workflows.md`
-- **Interaction patterns**: `~/.claude/docs/memory-framework/interaction-guidelines.md`
-
-### Available Resources
-
-- **Documentation**: @~/.claude/docs/README.md - All persistent documentation
+- **Documentation**: @docs/README.md - All persistent documentation with task-specific context organized by domain
 
 ## Server Operations
 
