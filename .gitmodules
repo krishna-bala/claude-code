@@ -1,3 +1,4 @@
 [submodule "agents"]
 	path = agents
-	url = git@github.com:wshobson/agents.git
+  url = git@github.com:wshobson/agents.git
+  ignore = dirty
