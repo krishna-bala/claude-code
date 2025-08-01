@@ -12,3 +12,7 @@ shell-snapshots/
 settings.json
 ide/
 .worktrees/
+
+# Symlinks and backups
+
+agents
