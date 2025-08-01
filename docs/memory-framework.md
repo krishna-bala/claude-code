@@ -194,7 +194,7 @@ The framework recognizes context automatically:
 
 For testing tasks: @docs/testing.md
 For git operations: @docs/git/README.md
-For architecture decisions: @docs/decisions/
+For architecture decisions: @decisions/
 ```
 
 ### Command Delegation

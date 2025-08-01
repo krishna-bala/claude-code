@@ -19,7 +19,7 @@ Initialize and configure `<project>/.claude/` directories for projects.
 
 ### 2. Create Project CLAUDE.md
 
-Use `~/.claude/docs/templates/project-claude.md` as starting point:
+Use `~/.claude/templates/project-claude.md` as starting point:
 
 - Essential commands (build, test, lint)
 - Key architectural patterns

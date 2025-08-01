@@ -7,7 +7,7 @@ Creates new slash commands following the established template structure and conv
 ## Process
 
 1. **Parse requirements** - Extract command purpose and identify key functionality
-2. **Review template** - Load command template from @docs/templates/command-template.md
+2. **Review template** - Load command template from @templates/command-template.md
 3. **Check existing commands** - Ensure unique naming and consistent patterns
 4. **Generate command** - Create command file with appropriate sections
 5. **Save to commands directory** - Write to `~/.claude/commands/[command-name].md`
@@ -49,6 +49,6 @@ Creates `/test-utilities` with discovery and suggestion features
 
 ## Context Integration
 
-- Command template structure: @docs/templates/command-template.md
-- Command design principles: @docs/decisions/0005-command-system-design.md
-- Documentation organization: @docs/decisions/0006-documentation-organization-optimization.md
+- Command template structure: @templates/command-template.md
+- Command design principles: @decisions/0005-command-system-design.md
+- Documentation organization: @decisions/0006-documentation-organization-optimization.md

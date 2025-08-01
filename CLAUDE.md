@@ -56,8 +56,8 @@ Examples:
 
 For significant decisions, create Any Decision Records (ADRs) using M-ADR format:
 
-- **Complex decisions**: Use `~/.claude/docs/templates/madr-template.md` (full template)
-- **Simple decisions**: Use `~/.claude/docs/templates/madr-template-minimal.md` (minimal template)
+- **Complex decisions**: Use `~/.claude/templates/madr-template.md` (full template)
+- **Simple decisions**: Use `~/.claude/templates/madr-template-minimal.md` (minimal template)
 - Document context, considered options, and rationale
 
 ## Discovery & Navigation

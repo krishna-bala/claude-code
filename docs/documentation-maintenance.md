@@ -28,9 +28,9 @@ This guide serves as the central reference for maintaining the Claude Code Memor
    ~/.claude/
    ├── CLAUDE.md              # Entry point
    ├── commands/              # 12 slash commands
+   ├── decisions/             # M-ADR decision records
    ├── docs/                  # Domain-organized documentation
    │   ├── README.md          # Navigation index
-   │   ├── decisions/         # 6 ADRs
    │   ├── git/               # 6 git-related docs
    │   ├── memory-framework.md  # Consolidated framework documentation
    │   ├── project-setup/     # 3 setup docs (needs merge)

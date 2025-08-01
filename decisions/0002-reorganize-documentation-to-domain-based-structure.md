@@ -18,21 +18,21 @@ The existing structure:
 - `context/` - Development guidelines and standards
 - `guides/` - Step-by-step workflows and processes
 - `templates/` - Reusable starting points
-- `docs/decisions/` - M-ADR decision records
+- `decisions/` - M-ADR decision records
 
 This organization leads to:
 
 - Scattered related information across directories
 - Unclear boundaries between context/guides categories
 - Difficulty discovering domain-specific information
-- Inconsistent with existing `docs/decisions/` pattern
+- Inconsistent with existing `decisions/` pattern
 
 ## Decision Drivers
 
 - **Cognitive Load**: Reduce mental overhead when finding information
 - **Discoverability**: Group related concepts together by domain
 - **Maintainability**: Easier to maintain domain-specific documentation
-- **Consistency**: Align with existing `docs/decisions/` pattern
+- **Consistency**: Align with existing `decisions/` pattern
 - **Scalability**: Structure that grows naturally with new domains
 
 ## Considered Options
@@ -44,14 +44,14 @@ This organization leads to:
 
 ## Decision Outcome
 
-Chosen option: "Domain-based organization under `docs/`", because it provides the most natural mental model for finding information, scales well with new domains, and aligns with the existing `docs/decisions/` pattern.
+Chosen option: "Domain-based organization under `docs/`", because it provides the most natural mental model for finding information, scales well with new domains, and aligns with the existing `decisions/` pattern.
 
 ### Consequences
 
 - Good, because users can think "I need git help" → look in `docs/git/`
 - Good, because related concepts are grouped together
 - Good, because it's easier to maintain domain-specific knowledge
-- Good, because it aligns with existing `docs/decisions/` pattern
+- Good, because it aligns with existing `decisions/` pattern
 - Good, because sessions are now clearly separated from persistent docs
 - Bad, because requires updating all existing @-references
 - Bad, because some cross-domain content may be harder to categorize
@@ -74,7 +74,7 @@ Implementation confirmed by:
 - Good, because natural mental model matches how developers think
 - Good, because easy to discover related information
 - Good, because scales well with new domains
-- Good, because consistent with existing `docs/decisions/` pattern
+- Good, because consistent with existing `decisions/` pattern
 - Good, because clear separation of persistent docs from transient sessions
 - Bad, because some content spans multiple domains
 - Bad, because requires significant migration effort

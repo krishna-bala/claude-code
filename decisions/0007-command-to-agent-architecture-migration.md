@@ -103,7 +103,7 @@ This approach provides the optimal balance between simplicity and functionality.
 
 - Architecture document: @docs/architecture/command-agent-framework.md
 - Workflow diagrams: @docs/architecture/command-agent-workflow.md
-- Original command design: @docs/decisions/0005-command-system-design.md
+- Original command design: @decisions/0005-command-system-design.md
 
 ## Decision Review
 
