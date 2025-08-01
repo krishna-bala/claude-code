@@ -1,0 +1,5 @@
+[submodule "agents"]
+	path = agents
+	url = https://github.com/krishna-bala/awesome-claude-agents.git
+	branch = main
+  ignore = dirty
