@@ -2,31 +2,29 @@ Set up `.claude/` directory structure for context-aware development in the curre
 
 ---
 
-Initialize project memory framework with CLAUDE.md and supporting directories. Run from project root to create the memory framework structure. Auto-detects project type and creates appropriate initial configuration.
+Initialize project memory framework with basic structure and CLAUDE.md template. Run from project root to quickly set up the memory framework with placeholders for manual customization.
 
 ## Command Type
 
-workflow - [Complexity: medium]
+workflow - [Complexity: simple]
 
 ## Tool Usage
 
-- **Primary**: Write (create files), Bash (create directories), TodoRead (check existing tasks), TodoWrite (track setup progress)
-- **Secondary**: Read (template files), Glob (detect project files), Grep (find patterns)
-- **Avoid**: Edit (creates new files), MultiEdit (single file creation)
+- **Primary**: Write (create files), Bash (create directories)
+- **Secondary**: Read (template files), LS (check existing structure)
+- **Avoid**: Complex detection logic, auto-population of templates
 
 ## Context
 
-- **Files**: `~/.claude/docs/templates/project-claude.md`, `~/.claude/docs/project-setup/setup.md`
-- **Patterns**: Project type detection, framework identification, build tool recognition
-- **Dependencies**: Project root directory, existing configuration files, technology stack
+- **Files**: `~/.claude/templates/project-claude.md` - Base project template
+- **Dependencies**: Project root directory
 
 ## Process
 
 1. **Check Existing Structure**
-
+   
    - Look for existing `.claude/` directory
-   - Detect project type and technologies
-   - Identify build tools and frameworks
+   - Skip if already exists to avoid overwriting
 
 2. **Create Directory Structure**
 
@@ -34,50 +32,21 @@ workflow - [Complexity: medium]
    mkdir -p .claude/{docs,commands,templates}
    ```
 
-3. **Generate Project CLAUDE.md**
+3. **Copy Base CLAUDE.md Template**
 
-   - Use template from `~/.claude/docs/templates/project-claude.md`
-   - Auto-detect build/test commands
-   - Include detected tech stack
-   - Add references to relevant documentation
+   - Copy template from `~/.claude/templates/project-claude.md`
+   - Keep all placeholders for manual customization
+   - No auto-detection or replacement
 
-4. **Create Initial Documentation**
+4. **Create Basic README Files**
 
-   - Add README.md to docs directory
-   - Suggest project-specific documentation
-   - Include relevant patterns and guidelines
+   - Add basic README.md files to each subdirectory
+   - Keep them simple and focused
 
-5. **Provide Next Steps**
+5. **Provide Clear Next Steps**
    - List created files
-   - Suggest customizations
-   - Recommend documentation to add
-
-## Context Loading
-
-Loads:
-
-- `~/.claude/docs/templates/project-claude.md` - Project template
-- `~/.claude/docs/project-setup/setup.md` - Setup guidance
-
-## Detection Rules
-
-### Language Detection
-
-- Python: `requirements.txt`, `setup.py`, `*.py`
-- JavaScript/Node: `package.json`, `*.js`
-- TypeScript: `tsconfig.json`, `*.ts`
-- Go: `go.mod`, `*.go`
-
-### Framework Detection
-
-- React: `package.json` contains "react"
-- Django: `manage.py`, `settings.py`
-- Express: `package.json` contains "express"
-
-### Tool Detection
-
-- Docker: `Dockerfile`, `docker-compose.yml`
-- CI/CD: `.github/workflows/`, `.gitlab-ci.yml`
+   - Explain what needs customization
+   - Give specific guidance on common patterns
 
 ## Output Format
 
@@ -89,72 +58,64 @@ Loads:
 
 ```
 .claude/
-├── CLAUDE.md # Project context
-├── docs/ # Project documentation
-│ └── README.md # Documentation index
-├── commands/ # Project-specific commands
-│ └── README.md # Command index
-└── templates/ # Project templates
-└── README.md # Template index
+├── CLAUDE.md           # Project context (customize this!)
+├── docs/
+│   └── README.md      # Documentation index
+├── commands/
+│   └── README.md      # Command index  
+└── templates/
+    └── README.md      # Template index
 ```
 
-### Detected Configuration
+### Next Steps (Required)
 
-- **Language**: [Detected language]
-- **Framework**: [Detected framework]
-- **Build Tool**: [Detected tool]
-- **Test Runner**: [Detected runner]
+1. **Edit `.claude/CLAUDE.md`** - Replace all `[PLACEHOLDERS]` with your project details:
+   - `[PROJECT NAME]` - Your project name
+   - `[BUILD_COMMAND]` - How to build (e.g., `npm run build`, `make`, `cargo build`)
+   - `[TEST_COMMAND]` - How to run tests (e.g., `npm test`, `pytest`, `go test`)
+   - `[LINT_COMMAND]` - Linting command (e.g., `eslint .`, `flake8`)
+   - `[DEV_COMMAND]` - Development server (e.g., `npm start`, `python manage.py runserver`)
 
-### Suggested Next Steps
+2. **Add Project Documentation** - Create files in `.claude/docs/` for:
+   - Architecture overview
+   - API documentation
+   - Deployment guides
 
-1. Edit `.claude/CLAUDE.md` with project specifics
-2. Add project documentation in `docs/`
-3. Create project-specific commands if needed
-4. Add templates for common patterns
-5. Commit `.claude/` to version control
+3. **Create Project Commands** - Add `.md` files in `.claude/commands/` for:
+   - Custom workflows
+   - Project-specific shortcuts
 
-### Recommended Documentation
+4. **Commit to Version Control** - Add `.claude/` to your repository
 
-Based on your project:
+### Common Customizations
 
-- Create architecture documentation in `.claude/docs/`
-- Add language-specific patterns and guidelines
-- Document project conventions and decisions
+**Web Projects**: Include build, test, lint, and dev server commands
+**Backend APIs**: Include database migration, seed data, and API documentation
+**CLI Tools**: Include build, test, and usage examples
+**Libraries**: Include build, test, publish, and example usage
 
 </output>
 
 ## Validation
 
 - `.claude/` directory structure is created successfully
-- Project `CLAUDE.md` is generated with detected configuration
-- Initial documentation README files are created
-- Project type and framework are correctly identified
-- Directory structure matches template requirements
+- Base `CLAUDE.md` template is copied with placeholders intact
+- Basic README files are created in subdirectories
+- No files are overwritten if `.claude/` already exists
 
 ## Examples
 
 <example-1>
 
 ```
-**Input**: `/init-project` (in Python Django project)
-**Output**: Creates .claude/ structure with Python/Django-specific CLAUDE.md and documentation
+**Input**: `/init-project` (in any project)
+**Output**: Creates .claude/ structure with template CLAUDE.md containing placeholders to fill in
 ```
 
 </example-1>
 
-<example-2>
-
-```
-**Input**: `/init-project` (in Node.js React project)
-**Output**: Creates .claude/ structure with JavaScript/React-specific configuration and templates
-```
-
-</example-2>
-
 ## Related Commands
 
-- `~/.claude/commands/documentation.md` - Browse available documentation
-- `~/.claude/commands/commands.md` - List available commands
-- `~/.claude/commands/memory-framework.md` - Provides an overview of the memory-framework
+- `/documentation` - Browse available documentation and guides
+- `/commands` - List available commands
 - `~/.claude/docs/project-setup/setup.md` - Detailed setup guide
-- `~/.claude/docs/project-setup/session-management.md` - Session workflow guide
