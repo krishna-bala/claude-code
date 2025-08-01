@@ -11,3 +11,4 @@ local/
 shell-snapshots/
 settings.json
 ide/
+.worktrees/
