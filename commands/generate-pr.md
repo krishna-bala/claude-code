@@ -1,6 +1,22 @@
-Generate structured pull request descriptions and checklists with comprehensive documentation.
+**DEPRECATED**: This command has been migrated to the pr-generator agent. Use the agent instead for better natural language support.
 
 ---
+
+**MIGRATION NOTICE**: The functionality of this command has been moved to `/home/krishna/.dotfiles/claude/agents/pr-generator.md`. The agent provides:
+- Better natural language understanding
+- Enhanced git analysis capabilities  
+- More flexible invocation patterns
+- Improved PR template customization
+
+**New Usage**: Simply describe what you need:
+- "generate a PR description"
+- "create PR for dark mode feature" 
+- "help me write a PR"
+- "PR description for bug fix"
+
+---
+
+Generate structured pull request descriptions and checklists with comprehensive documentation.
 
 Create comprehensive PR documentation with titles, descriptions, and review checklists. Include any additional context after the command like `/git-pr This PR adds dark mode support to the dashboard`. Generates complete pull request documentation following established conventions.
 

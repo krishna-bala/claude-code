@@ -1,96 +1,109 @@
-Intelligently improve code, documentation, architecture, and workflows.
+**DEPRECATED - Use Specialized Agents Instead**
+
+This command has been migrated to specialized agents for better expertise and focused improvements.
 
 ---
 
-Analyzes current context and suggests targeted improvements. Natural language processing determines focus area - simply describe what you want to improve like "memory framework efficiency" or "command organization".
+## Migration Guide
 
-## Process
+Instead of using `/improve`, use these specialized agents based on your improvement needs:
 
-1. **Parse intent** - Extract focus area from natural language (memory, commands, workflows, or custom)
-2. **Analyze current state** - Review relevant files and patterns based on focus
-3. **Identify opportunities** - Find gaps, inefficiencies, and enhancement possibilities
-4. **Generate recommendations** - Create prioritized, actionable improvements
-5. **Provide implementation guidance** - Include concrete steps and examples
+### 🔧 Code Quality Improvements
+**Use: `code-reviewer` agent**
 
-## Focus Areas
+For improving:
+- Code quality and maintainability
+- Design patterns and architecture
+- Error handling and best practices
+- Code organization and structure
 
-**Memory Framework**:
+**Examples:**
+- "improve code quality in src/"
+- "make this code more maintainable"
+- "suggest improvements for error handling"
 
-- CLAUDE.md efficiency and organization
-- Context loading optimization
-- @-import structure improvements
+### 🧠 Memory Framework Improvements  
+**Use: `memory-framework` agent**
 
-**Commands & Workflows**:
+For improving:
+- Context loading efficiency
+- @-import structure optimization
+- Token usage reduction
+- Framework organization
 
-- Command discoverability and organization
-- Workflow automation opportunities
-- Pattern consistency
+**Examples:**
+- "improve memory framework efficiency"
+- "optimize context loading"
+- "reduce token usage in framework"
 
-**Documentation & Architecture**:
+### 🏗️ Architecture Improvements
+**Use: `architect-review` agent**
 
-- Documentation gaps and redundancy
-- Architectural improvements
-- Code quality enhancements
+For improving:
+- System architecture and design
+- Service boundaries and dependencies
+- Scalability and maintainability
+- Design pattern implementation
 
-## Output Example
+**Examples:**
+- "improve project architecture"
+- "optimize service boundaries"
+- "improve system scalability"
 
-```
-## Memory Framework Improvements
+### ⚡ Performance Improvements
+**Use: `performance-engineer` agent**
 
-### 🎯 High Priority
+For improving:
+- Application performance and speed
+- Database and API optimization
+- Frontend performance (Core Web Vitals)
+- System resource utilization
 
-1. **Consolidate duplicate context references**
-   - Why: Reduces token usage by 30%
-   - How: Merge git-related sections into single @-import
-   - Impact: Faster context loading, clearer organization
+**Examples:**
+- "improve application performance" 
+- "optimize database queries"
+- "make the app faster"
 
-   Example:
-   Replace multiple references with:
-   `@docs/git/README.md`
+### 🛠️ Workflow & Process Improvements
+**Use: `dx-optimizer` agent**
 
-### 📋 Implementation Steps
+For improving:
+- Development workflows
+- Command organization and automation
+- Team productivity processes
+- Tooling and environment setup
 
-1. Audit current CLAUDE.md for duplicates
-2. Create consolidated reference structure
-3. Test with memory-framework command
+**Examples:**
+- "improve development workflow"
+- "optimize command organization"
+- "improve team productivity"
 
-### 📊 Expected Outcomes
-- 30% reduction in context size
-- Improved navigation clarity
-- Faster agent startup
-```
+## Quick Reference
 
-## Examples
+| Improvement Type | Agent | Key Focus |
+|------------------|-------|-----------|
+| Code Quality | `code-reviewer` | Code patterns, maintainability |
+| Memory Framework | `memory-framework` | Context efficiency, @-imports |
+| Architecture | `architect-review` | System design, scalability |
+| Performance | `performance-engineer` | Speed, optimization, benchmarks |
+| Workflows | `dx-optimizer` | Processes, automation, DX |
 
-**Improve memory efficiency**:
+## Why This Change?
 
-```
-/improve memory framework token usage
-/improve make the memory system more efficient
-```
+- **Specialized Expertise**: Each agent has deep domain knowledge
+- **Better Recommendations**: Focused analysis leads to better suggestions  
+- **Consistent Patterns**: Each agent follows established improvement methodologies
+- **Natural Language**: All agents understand improvement requests naturally
 
-Analyzes CLAUDE.md structure and suggests optimizations
+## Migration Examples
 
-**Enhance command workflow**:
+**Old:** `/improve memory framework token usage`
+**New:** Use `memory-framework` agent: "improve memory framework token usage"
 
-```
-/improve command organization
-/improve workflow automation for testing
-```
+**Old:** `/improve code organization in src/`  
+**New:** Use `code-reviewer` agent: "improve code organization in src/"
 
-Reviews commands and suggests consolidation or new automation
+**Old:** `/improve project architecture`
+**New:** Use `architect-review` agent: "improve project architecture"
 
-**Architecture improvements**:
-
-```
-/improve project architecture
-/improve code organization in src/
-```
-
-Analyzes codebase structure and suggests improvements
-
-## Context Integration
-
-- Memory framework architecture: @docs/memory-framework/architecture.md
-- Command design principles: @docs/decisions/0005-command-system-design.md
-- Best practices guide: @docs/memory-framework/guide.md
+Each specialized agent provides the same quality analysis with deeper domain expertise and more targeted recommendations.
