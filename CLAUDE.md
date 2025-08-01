@@ -2,7 +2,30 @@
 
 ## Memory Framework Architecture
 
-This environment uses organized specs, guides, and templates for consistent development across projects.
+This environment uses a three-tier architecture for AI-assisted development:
+
+### Three-Tier Architecture
+
+1. **Documentation Layer** (`docs/`, `decisions/`, `templates/`)
+   - Persistent knowledge base referenced by agents and commands
+   - Domain-organized reference material
+   - Single source of truth for conventions and practices
+
+2. **Agent Layer** (`agents/`)
+   - General-purpose AI capabilities with domain expertise
+   - Symlinked from `~/src/awesome-claude-agents/agents/`
+   - Categories: core, orchestrators, specialized, universal
+
+3. **Command Layer** (`commands/`)
+   - Task-specific workflows that compose multiple agents
+   - Lightweight orchestration recipes
+   - Encode user-specific patterns and preferences
+
+### Information Flow
+
+Commands orchestrate agents, which reference documentation to accomplish tasks. See @docs/memory-framework/architecture.md for detailed architecture.
+
+### Directory Structure
 
 - **Global (`~/.claude/`)**: Universal tools, commands, and workflows
 - **Project (`<project>/.claude/`)**: Language specs, architecture, and project patterns

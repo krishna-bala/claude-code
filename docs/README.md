@@ -18,8 +18,8 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 
 ### Resources
 
-- **Templates**: `templates/` - Reusable starting points for all document types
-- **Decisions**: `decisions/` - M-ADR decision records
+- **Templates**: `../templates/` - Reusable starting points for all document types
+- **Decisions**: `../decisions/` - M-ADR decision records
 
 ## Quick Reference
 
@@ -60,11 +60,11 @@ All persistent documentation for the Claude Code Memory Framework, organized by 
 
 This structure was reorganized from the previous type-based organization (`context/`, `guides/`, `templates/`) to domain-based organization for better discoverability and maintenance.
 
-See: `decisions/0002-reorganize-documentation-to-domain-based-structure.md`
+See: `../decisions/0002-reorganize-documentation-to-domain-based-structure.md`
 
 ## Recent Decisions
 
-- **Command System Design**: `decisions/0005-command-system-design.md`
-- **Documentation Organization**: `decisions/0006-documentation-organization-optimization.md`
-- **CLI Tools Integration**: `decisions/0004-integrate-gh-glab-cli-tools-for-repository-context.md`
-- **Archive Strategy**: `decisions/0003-memory-framework-archive-strategy.md`
+- **Command System Design**: `../decisions/0005-command-system-design.md`
+- **Documentation Organization**: `../decisions/0006-documentation-organization-optimization.md`
+- **CLI Tools Integration**: `../decisions/0004-integrate-gh-glab-cli-tools-for-repository-context.md`
+- **Archive Strategy**: `../decisions/0003-memory-framework-archive-strategy.md`
