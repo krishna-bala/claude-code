@@ -1,4 +1,15 @@
+**DEPRECATED**: This command has been migrated to the test-automator agent. Use the agent directly for enhanced testing capabilities.
+
 Complete testing workflow with TDD practices and comprehensive strategies.
+
+---
+
+⚠️ **DEPRECATION NOTICE**: This command functionality has been migrated to the **test-automator** agent for enhanced capabilities and better user experience. 
+
+**Instead of using `/test`, please:**
+- Use the test-automator agent directly for comprehensive testing support
+- Request "write tests for this code", "help me with TDD", "check test coverage", etc.
+- The agent provides all the same functionality with better framework detection and TDD workflow support
 
 ---
 

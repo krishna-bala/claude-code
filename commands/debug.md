@@ -1,8 +1,16 @@
-Systematic debugging workflow with curated context and language-specific tools.
+**DEPRECATED**: Use `/analyze` instead for debugging tasks.
 
 ---
 
-Troubleshoot issues with strategic approaches and language-specific tools. Include problem description like `/debug Users report login timeout errors on mobile devices`. This command provides structured debugging methodology with comprehensive problem analysis and solution implementation.
+**⚠️ DEPRECATION NOTICE**: This command has been merged into `/analyze` for unified analysis and debugging workflows. The `/analyze` command now handles both requirements analysis and debugging with the same comprehensive approach and strategies.
+
+**Migration**: Replace `/debug <problem>` with `/analyze <problem>`. The `/analyze` command automatically detects debugging requests and applies the same systematic debugging methodology.
+
+**Why the change**: Combining analysis and debugging into a single command eliminates overlap and provides a more cohesive workflow for understanding both requirements and problems.
+
+---
+
+**Legacy Description**: Troubleshoot issues with strategic approaches and language-specific tools. Include problem description like `/debug Users report login timeout errors on mobile devices`. This command provides structured debugging methodology with comprehensive problem analysis and solution implementation.
 
 ## Command Type
 
@@ -172,3 +180,7 @@ Provides structured debugging analysis with problem identification, systematic i
 - Improve error handling
 - Update monitoring
 - Share learnings with team
+
+---
+
+**🔄 MIGRATION COMPLETE**: All debugging functionality from this command has been integrated into `/analyze`. Use `/analyze` for all debugging tasks going forward. The `/analyze` command provides the same comprehensive debugging strategies plus intelligent detection of when to use debugging vs requirements analysis approaches.

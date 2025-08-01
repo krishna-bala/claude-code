@@ -1,6 +1,15 @@
-Comprehensive code review workflow for PRs, working tree changes, or specific branches.
+⚠️ **DEPRECATED**: This command has been migrated to the code-reviewer agent for better natural language interaction. Use `@agent-code-reviewer` instead.
+
+**Migration Guide**:
+- Instead of `/review PR #123`, use: "Review PR #123" with @agent-code-reviewer
+- Instead of `/review source: feature-branch target: main`, use: "Review changes from feature-branch to main" with @agent-code-reviewer  
+- Instead of `/review <description>`, use: "Review my local changes" or "Perform a security review" with @agent-code-reviewer
+
+The agent provides the same comprehensive functionality with more flexible interaction patterns.
 
 ---
+
+Comprehensive code review workflow for PRs, working tree changes, or specific branches.
 
 Review PRs, working tree changes, or specific branches with structured feedback. Provides systematic evaluation of code quality, design, functionality, and maintainability with constructive suggestions.
 
