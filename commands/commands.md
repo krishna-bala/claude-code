@@ -1,10 +1,19 @@
-List available commands and suggest relevant ones based on current context.
+**DEPRECATED**: This command has been migrated to the memory-framework agent.
 
 ---
 
-Provides command discovery and navigation. Lists all available commands in `/home/krishna/.claude/commands/`, groups them by purpose, and suggests relevant commands based on your current task or query.
+**Use instead**: `@agent-memory-framework` with requests like:
+- "show me available commands"
+- "commands for git"
+- "what testing commands exist?"
 
-Use with specific keywords like `/commands git` or `/commands test` to filter suggestions.
+The memory-framework agent now provides enhanced command discovery with better context analysis and grouping.
+
+---
+
+## Legacy Functionality (now in memory-framework agent)
+
+Provides command discovery and navigation. Lists all available commands in `/home/krishna/.claude/commands/`, groups them by purpose, and suggests relevant commands based on your current task or query.
 
 ## Process
 

@@ -1,10 +1,19 @@
-List available documentation and suggest relevant files to read based on context.
+**DEPRECATED**: This command has been migrated to the memory-framework agent.
 
 ---
 
-Provides an interactive documentation discovery experience. Lists documentation categories and files in `/home/krishna/.claude/docs/`, suggests relevant docs based on current task or user query, and helps navigate the knowledge base efficiently.
+**Use instead**: `@agent-memory-framework` with requests like:
+- "show me the documentation"
+- "documentation for testing"
+- "what docs exist for git workflows?"
 
-Use with specific topics like `/documentation testing` to get targeted suggestions.
+The memory-framework agent now provides enhanced documentation navigation with better context analysis and suggestions.
+
+---
+
+## Legacy Functionality (now in memory-framework agent)
+
+Provides an interactive documentation discovery experience. Lists documentation categories and files in `/home/krishna/.claude/docs/`, suggests relevant docs based on current task or user query, and helps navigate the knowledge base efficiently.
 
 ## Process
 

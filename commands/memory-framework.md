@@ -1,8 +1,20 @@
-Explore and visualize the memory framework structure by recursively following @-import references.
+**DEPRECATED**: This command has been migrated to the memory-framework agent.
 
 ---
 
-This command analyzes the memory framework starting from CLAUDE.md, recursively parsing all @-import references to build a complete view of the loaded context hierarchy. It helps users and agents understand what context is automatically available through the memory framework loading system. The command uses natural language parsing to determine scope (user-level vs project-level) and any specific focus areas.
+**Use instead**: `@agent-memory-framework` with requests like:
+- "explore the memory framework"
+- "show me framework structure"
+- "what's loaded in the framework?"
+- "framework content related to testing"
+
+The memory-framework agent now provides enhanced framework exploration with better visualization and filtering capabilities.
+
+---
+
+## Legacy Functionality (now in memory-framework agent)
+
+This command analyzes the memory framework starting from CLAUDE.md, recursively parsing all @-import references to build a complete view of the loaded context hierarchy. It helps users and agents understand what context is automatically available through the memory framework loading system.
 
 ## Process
 
