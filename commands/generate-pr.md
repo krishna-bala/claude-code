@@ -1,24 +1,10 @@
-**DEPRECATED**: This command has been migrated to the pr-generator agent. Use the agent instead for better natural language support.
-
----
-
-**MIGRATION NOTICE**: The functionality of this command has been moved to `/home/krishna/.dotfiles/claude/agents/pr-generator.md`. The agent provides:
-- Better natural language understanding
-- Enhanced git analysis capabilities  
-- More flexible invocation patterns
-- Improved PR template customization
-
-**New Usage**: Simply describe what you need:
-- "generate a PR description"
-- "create PR for dark mode feature" 
-- "help me write a PR"
-- "PR description for bug fix"
-
----
-
 Generate structured pull request descriptions and checklists with comprehensive documentation.
 
-Create comprehensive PR documentation with titles, descriptions, and review checklists. Include any additional context after the command like `/git-pr This PR adds dark mode support to the dashboard`. Generates complete pull request documentation following established conventions.
+---
+
+Create comprehensive PR documentation with titles, descriptions, and review checklists.
+Include any additional context after the command like `/generate-pr This PR adds dark mode support to the dashboard`.
+Generates complete pull request documentation following established conventions.
 
 ## Command Type
 
@@ -36,7 +22,7 @@ workflow - [Complexity: medium]
 - **Patterns**: PR documentation standards, review checklists, conventional commit format
 - **Dependencies**: Branch changes, commit history, related issues
 
-**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation.
+**Note**: This command benefits from focused execution. Consider sub-agent orchestration.
 
 ## Process
 
@@ -81,6 +67,7 @@ Add screenshots for UI changes
 
 Fixes #123
 Related to #456
+
 </pr-description-template>
 
 ## Review Readiness Checklist
@@ -111,6 +98,7 @@ Related to #456
 Generates structured pull request description with title, summary, and review checklist following established conventions.
 
 <output-template>
+
 ## PR Description Generated
 
 ### Title
@@ -156,13 +144,17 @@ Fixes #[issue-number]
 ## Examples
 
 <example-1>
+
 **Input**: `/generate-pr This PR adds dark mode support to the dashboard`
 **Output**: Generates structured PR description with dark mode context and relevant testing checklist
+
 </example-1>
 
 <example-2>
+
 **Input**: `/generate-pr` (analyzes current branch)
 **Output**: Analyzes branch changes and generates appropriate PR description automatically
+
 </example-2>
 
 ## Best Practices
