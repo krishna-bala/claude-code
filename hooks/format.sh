@@ -59,6 +59,12 @@ case "$FILE_PATH" in
 		~/.local/share/nvim/mason/bin/shfmt -w "$FILE_PATH" 2>/dev/null
 	fi
 	;;
+*.toml)
+	# TOML files - use taplo from Mason
+	if command -v ~/.local/share/nvim/mason/bin/taplo &>/dev/null; then
+		~/.local/share/nvim/mason/bin/taplo format "$FILE_PATH" 2>/dev/null
+	fi
+	;;
 esac
 
 # Apply universal fixes that are safe for all file types
