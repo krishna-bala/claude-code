@@ -10,7 +10,8 @@ Use this template for complex decisions that require detailed analysis of multip
 
 # [short title of solved problem and solution]
 
-- status: [proposed | rejected | accepted | deprecated | superseded by [ADR-0005](0005-example.md)]
+- status: [draft | rejected | accepted | superseded by [ADR-0005](0005-example.md)]
+- supersedes: [ADR-0003](0003-example.md) # Only include if this supersedes another ADR
 - date: [YYYY-MM-DD when the decision was last updated]
 - decision-makers: [list everyone involved in the decision]
 - consulted: [list everyone whose opinions are sought (stakeholders, subject matter experts)]

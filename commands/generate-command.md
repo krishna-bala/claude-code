@@ -1,54 +1,107 @@
-Generate a new slash command from user requirements using the standard command template.
+Generate new slash commands following a systematic, incremental approval process.
 
 ---
 
-Creates new slash commands following the established template structure and conventions. Analyzes user requirements to generate a properly formatted command file that fits seamlessly into the command system.
+Creates slash commands through an iterative refinement process with user approval at each stage. Analyzes requirements, proposes minimal command sets, and generates commands following the established template structure. Emphasizes creating only necessary commands with clear, focused workflows.
 
 ## Process
 
-1. **Parse requirements** - Extract command purpose and identify key functionality
-2. **Review template** - Load command template from @templates/command-template.md
-3. **Check existing commands** - Ensure unique naming and consistent patterns
-4. **Generate command** - Create command file with appropriate sections
-5. **Save to commands directory** - Write to `~/.claude/commands/[command-name].md`
+1. **Requirements Analysis**
+   - Extract command purpose and workflow from user context
+   - Identify specific functionality needed
+   - Determine if existing commands can be enhanced vs. creating new ones
+
+2. **Proposal Generation**
+   - Create detailed command proposal with justification
+   - Include specific examples of when the command would be used
+   - Compare with existing commands to avoid duplication
+   - Present for yes/no approval
+
+3. **Iterative Refinement**
+   - Incorporate user feedback
+   - Refine scope and workflow
+   - Re-present updated proposal
+   - Continue until approved or rejected
+
+4. **Command Creation**
+   - Load command template from @templates/command-template.md
+   - Generate command file with approved specifications
+   - Include appropriate agent references and documentation links
+   - Save to `~/.claude/commands/[command-name].md`
 
 ## Output Example
 
 ```
-## Command Generated: `/analyze-dependencies`
+## Command Proposal: /analyze-dependencies
 
-**File Created**: `commands/analyze-dependencies.md`
 **Purpose**: Deep code analysis to map dependencies between modules
 
-The command follows the standard template with:
-- Brief one-line description
-- Detailed explanation with context
-- Process steps for execution
-- Usage examples
+**Key Functionality**:
+- Parse import statements across codebase
+- Generate dependency graphs
+- Identify circular dependencies
+- Analyze module coupling metrics
+
+**When to Use**:
+- "Show me all dependencies of the auth module"
+- "Find circular dependencies in the codebase"
+- "Generate a dependency graph for documentation"
+
+**Justification**: Dependency analysis is a common need for refactoring and documentation that warrants a dedicated command
+
+**Comparison with Existing Commands**:
+- /review: Focuses on code quality, not structural analysis
+- /debug: Targets runtime issues, not static analysis
+
+Approve this command? (yes/no)
+```
+
+After approval, generates:
+
+```
+## Command Created: `/analyze-dependencies`
+
+**File**: `~/.claude/commands/analyze-dependencies.md`
+**Agents Referenced**: code-archaeologist, documentation-specialist
+**Documentation Links**: @docs/architecture/dependency-management.md
 ```
 
 ## Examples
 
-**Generate analysis command**:
+**Proposing an analysis command**:
 ```
 /generate-command Create a command to analyze code dependencies and visualize module relationships
 ```
-Creates `/analyze-dependencies` with analysis workflow and visualization output
+Presents proposal for `/analyze-dependencies`, refines based on feedback, then creates command
 
-**Generate workflow command**:
+**Enhancing existing command**:
 ```
-/generate-command I need a command that sets up git hooks for the project
+/generate-command I need better git hooks setup with pre-commit checks
 ```
-Creates `/setup-hooks` with step-by-step hook installation process
+Proposes enhancement to existing `/git-commit` rather than new command
 
-**Generate discovery command**:
+**Workflow command with approval**:
 ```
-/generate-command Make a command that helps explore available testing utilities
+/generate-command Make a command that automates our deployment process
 ```
-Creates `/test-utilities` with discovery and suggestion features
+Proposes `/deploy` with specific stages, gets approval, generates with proper safeguards
+
+**Discovery command iteration**:
+```
+/generate-command Help me explore available testing utilities in the codebase
+```
+Initial proposal → User feedback: "Include test coverage tools" → Refined proposal → Approval → Creates `/test-discovery`
 
 ## Context Integration
 
-- Command template structure: @templates/command-template.md
-- Command design principles: @decisions/0005-command-system-design.md
-- Documentation organization: @decisions/0006-documentation-organization-optimization.md
+- Command template structure: @../templates/command-template.md
+- Command design principles: @../decisions/0005-command-system-design.md
+- Documentation organization: @../decisions/0006-documentation-organization-optimization.md
+- Memory framework architecture: @../docs/memory-framework/architecture.md
+
+## Sub-agent Delegation
+
+For complex command generation tasks:
+- Use @agent-code-archaeologist to analyze existing command patterns
+- Use @agent-documentation-specialist to create command documentation
+- Use @agent-team-configurator to update command registry if needed

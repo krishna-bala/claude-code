@@ -1,32 +1,24 @@
-⚠️ **DEPRECATED**: This command has been migrated to the code-reviewer agent for better natural language interaction. Use `@agent-code-reviewer` instead.
-
-**Migration Guide**:
-- Instead of `/review PR #123`, use: "Review PR #123" with @agent-code-reviewer
-- Instead of `/review source: feature-branch target: main`, use: "Review changes from feature-branch to main" with @agent-code-reviewer  
-- Instead of `/review <description>`, use: "Review my local changes" or "Perform a security review" with @agent-code-reviewer
-
 The agent provides the same comprehensive functionality with more flexible interaction patterns.
 
 ---
 
-Comprehensive code review workflow for PRs, working tree changes, or specific branches.
+Comprehensive code review workflow for reviewing changesets and merge requests.
 
-Review PRs, working tree changes, or specific branches with structured feedback. Provides systematic evaluation of code quality, design, functionality, and maintainability with constructive suggestions.
-
-## Command Type
-
-analysis - [Complexity: deep]
+Review PRs, working tree changes, or specific changesets with structured feedback.
+Provides systematic evaluation of code quality, design, functionality, and maintainability with constructive suggestions.
 
 ## Tool Usage
 
 - **Primary**: Read (code files), Bash (git operations), **gh/glab (repository context)**, TodoRead (check existing tasks), TodoWrite (track review progress)
-- **Repository**: **gh pr view, gh pr checks, gh issue view** (GitHub) / **glab mr show, glab ci status** (GitLab)
-- **Secondary**: Grep (search patterns), Glob (find files), WebFetch (check external resources)
+- **Repository**:
+  - Github: **gh pr view, gh pr checks, gh issue view**
+  - GitLab: **glab mr show, glab ci status**
+- **Secondary**: Grep (search patterns), Glob (find files)
 - **Avoid**: Edit, Write, MultiEdit (review only, no code changes)
 
 ## Context
 
-- **Files**: @docs/git/code-review.md, @docs/git/pr-guidelines.md, @docs/git/commit-guidelines.md
+- **Files**: @docs/git/code-review.md, @docs/git/commit-guidelines.md
 - **Platform**: **GitHub/GitLab PR context, CI status, linked issues, review history**
 - **Patterns**: Code quality standards, design principles, security practices, performance considerations
 - **Dependencies**: Project coding standards, team conventions, technology stack requirements, **platform-specific workflows**

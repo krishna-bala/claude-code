@@ -31,6 +31,7 @@ templates/                   # Reusable patterns and starting points
 ```
 
 **Key Characteristics:**
+
 - Single source of truth for all domain knowledge
 - Versioned and tracked in git
 - Referenced via @-syntax by agents and commands
@@ -59,6 +60,7 @@ agents/
 ```
 
 **Key Characteristics:**
+
 - Each agent has deep expertise in one domain
 - Can reference documentation via @-syntax
 - Return structured findings for coordination
@@ -77,6 +79,7 @@ commands/
 ```
 
 **Key Characteristics:**
+
 - Lightweight orchestration recipes (~50 lines)
 - Compose multiple agents in sequence
 - Load context from documentation
@@ -114,13 +117,16 @@ commands/
 ### Documentation: Git Commit Guidelines
 
 `docs/git/commit-guidelines.md`:
+
 ```markdown
 # Git Commit Guidelines
 
 ## Format
+
 <type>(<scope>): <subject>
 
 ## Types
+
 - feat: New feature
 - fix: Bug fix
 - docs: Documentation only
@@ -129,6 +135,7 @@ commands/
 - chore: Maintenance
 
 ## Best Practices
+
 - Keep subject line under 50 characters
 - Use imperative mood
 - Reference issues when applicable
@@ -137,17 +144,12 @@ commands/
 ### Agent: Git Expert
 
 `agents/universal/git-expert.md`:
+
 ```markdown
 ---
 name: git-expert
 description: |
   Expert in git workflows, conventions, and best practices.
-  Examples:
-  <example>
-  Context: Committing changes with proper conventions
-  user: "Apply our git commit conventions"
-  assistant: "I'll help apply git best practices and commit conventions"
-  </example>
 ---
 
 # Git Expert
@@ -156,28 +158,42 @@ You are an expert in git version control, specializing in commit conventions,
 staging strategies, and repository management.
 
 ## Context
+
 Always reference:
+
 - @docs/git/commit-guidelines.md for commit standards
 - @docs/git/git-patterns.md for workflow patterns
+
+## Examples:
+
+<example>
+Context: Committing changes with proper conventions
+user: "Apply our git commit conventions"
+assistant: "I'll help apply git best practices and commit conventions"
+</example>
 ```
 
 ### Command: Git Commit
 
 `commands/git-commit.md`:
+
 ```markdown
 Orchestrates a comprehensive git commit workflow following team conventions.
 
 ## Process
 
 1. **Analyze Changes**
+
    - Use @agent-code-archaeologist to understand modifications
    - Load @docs/git/commit-guidelines.md for standards
 
 2. **Generate Commit Message**
+
    - Use @agent-documentation-specialist to create message
    - Apply format from guidelines
 
 3. **Apply Git Best Practices**
+
    - Use @agent-git-expert for staging strategy
    - Ensure atomic commits
 
@@ -186,27 +202,32 @@ Orchestrates a comprehensive git commit workflow following team conventions.
    - Confirm conventions are followed
 
 ## Example
+
 `/git-commit` → Creates well-structured commit following all conventions
 ```
 
 ## Benefits
 
 ### 1. Separation of Concerns
+
 - **Documentation**: What we know (persistent knowledge)
 - **Agents**: What we can do (reusable capabilities)
 - **Commands**: How we do it (user workflows)
 
 ### 2. Maintainability
+
 - Single source of truth in documentation
 - Agents remain focused on specific expertise
 - Commands stay concise as orchestration recipes
 
 ### 3. Extensibility
+
 - Add new knowledge → Update docs/
 - Add new capabilities → Create agents/
 - Add new workflows → Create commands/
 
 ### 4. Token Efficiency
+
 - Progressive loading via @-references
 - Commands are lightweight coordinators
 - Context loaded only when needed
@@ -214,18 +235,21 @@ Orchestrates a comprehensive git commit workflow following team conventions.
 ## Best Practices
 
 ### Creating Documentation
+
 - Organize by domain, not document type
 - Keep language/framework agnostic where possible
 - Use clear @-reference paths
 - Version all changes in git
 
 ### Creating Agents
+
 - Single domain focus per agent
 - Include 2-3 invocation examples
 - Reference relevant documentation
 - Return structured findings
 
 ### Creating Commands
+
 - Keep under 50 lines
 - Focus on orchestration, not implementation
 - Reference both docs and agents
@@ -246,3 +270,4 @@ For existing setups:
 - Agent capability discovery
 - Command composition templates
 - Framework health monitoring
+

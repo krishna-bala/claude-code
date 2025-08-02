@@ -1,7 +1,7 @@
 ---
 name: agent-name
-description: Brief description of what this agent does and when to use it. Include "Use PROACTIVELY" if the agent should be used without explicit user request.
-model: claude-sonnet-4-20250514
+description: Brief description of what this agent does and when to use it. To encourage more proactive subagent use, include phrases like “use PROACTIVELY” or “MUST BE USED” in your description field.
+model: [opus, sonnet, haiku]
 ---
 
 You are an expert at [specific domain/task].
@@ -95,3 +95,4 @@ Required Actions:
 ```
 
 Focus on [primary goal], with clear communication when manual intervention is necessary.
+

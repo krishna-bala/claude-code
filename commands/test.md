@@ -1,37 +1,16 @@
-**DEPRECATED**: This command has been migrated to the test-automator agent. Use the agent directly for enhanced testing capabilities.
-
 Complete testing workflow with TDD practices and comprehensive strategies.
-
----
-
-⚠️ **DEPRECATION NOTICE**: This command functionality has been migrated to the **test-automator** agent for enhanced capabilities and better user experience. 
-
-**Instead of using `/test`, please:**
-- Use the test-automator agent directly for comprehensive testing support
-- Request "write tests for this code", "help me with TDD", "check test coverage", etc.
-- The agent provides all the same functionality with better framework detection and TDD workflow support
 
 ---
 
 Comprehensive testing strategies including unit, integration, and TDD workflows. Specify focus areas like `/test tdd` for TDD cycle or `/test integration` for integration testing. Provides systematic approach to testing with framework-specific guidance and best practices.
 
-## Command Type
-
-workflow - [Complexity: medium]
-
-## Tool Usage
-
-- **Primary**: Bash (run tests), TodoRead (check existing tasks), TodoWrite (track testing progress), Read (test files)
-- **Secondary**: Edit (create/modify tests), Grep (search test patterns), Glob (find test files)
-- **Avoid**: Write (unless creating new test files), MultiEdit (prefer targeted test changes)
-
 ## Context
 
-- **Files**: @docs/testing.md, auto-detected project test standards
+- **Files**: General @docs/testing.md guidelines, project test standards
 - **Patterns**: TDD cycle, testing strategies, framework-specific practices, coverage requirements
 - **Dependencies**: Project test framework, existing test structure, CI/CD integration
 
-**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation when creating new tests.
+**Note**: This command benefits from focused execution. Consider using sub-agent delegation.
 
 ## Testing Workflow
 
@@ -208,13 +187,6 @@ workflow - [Complexity: medium]
 - Use pytest markers for test organization
 - Mock external dependencies with unittest.mock
 
-### JavaScript (Jest, Mocha, Cypress)
-
-- Use describe/it structure for organization
-- Mock modules and API calls
-- Test async code properly
-- Use snapshot testing for UI components
-
 ### General Principles
 
 - Keep tests simple and readable
@@ -250,6 +222,7 @@ workflow - [Complexity: medium]
 Provides comprehensive testing strategy with implementation guidance, framework-specific approaches, and verification results.
 
 <output-template>
+
 ## Testing Strategy
 
 ### Test Plan
@@ -281,7 +254,8 @@ Provides comprehensive testing strategy with implementation guidance, framework-
 - **Additional tests**: [Missing test scenarios]
 - **Refactoring**: [Code improvements needed]
 - **Automation**: [CI/CD integration tasks]
-  </output-template>
+
+</output-template>
 
 ## Validation
 
@@ -294,11 +268,15 @@ Provides comprehensive testing strategy with implementation guidance, framework-
 ## Examples
 
 <example-1>
+
 **Input**: `/test tdd` for new feature
 **Output**: Guides through TDD cycle with red-green-refactor approach and framework-specific implementation
+
 </example-1>
 
 <example-2>
+
 **Input**: `/test integration` for API testing
 **Output**: Creates integration testing strategy with API testing patterns and verification approach
+
 </example-2>

@@ -1,33 +1,34 @@
-Creates or updates Markdown Architectural Decision Records (M-ADR) with proper organization, numbering, and lifecycle management.
+Intelligently manages Markdown Architectural Decision Records (M-ADR) through their complete lifecycle from draft to superseded.
 
 ---
 
-This command manages M-ADR files following official MADR conventions. It handles the complete lifecycle including proper directory structure (`decisions/`), sequential numbering (`NNNN-title-with-dashes.md`), status tracking, and cross-referencing between decisions. The command automatically determines template complexity, creates new records, and updates existing ones with status changes or content modifications.
-
-## Command Type
-
-generation - [Complexity: medium]
-
-## Tool Usage
-
-- **Primary**: Read (templates, existing ADRs), Write (new/updated MADR files), Glob (find existing ADRs), mcp**time**get_current_time (timestamps)
-- **Secondary**: LS (verify directory structure), Bash (create directories if needed)
-- **Avoid**: Manual file management without proper numbering
+This command automatically determines the appropriate action (create, update, accept, reject, supersede) based on context and manages M-ADR files following official MADR conventions. It handles proper directory structure (`decisions/`), sequential numbering (`NNNN-title-with-dashes.md`), status tracking (draft → accepted/rejected → superseded), and automatic cross-referencing. All new ADRs start as drafts, allowing iteration before committing to decisions.
 
 ## Context
 
-- **Files**: `~/.claude/templates/madr-template.md`, `~/.claude/templates/madr-template-minimal.md`, `decisions/` directory, existing ADRs
-- **Patterns**: Sequential numbering (0001, 0002, etc.), kebab-case titles, status progression (proposed → accepted → deprecated)
-- **Dependencies**: Project decision-making processes, architectural categorization, stakeholder identification
+- **Files**: @../templates/madr-template.md, @../templates/madr-template-minimal.md, and existing ADRs in @../decisions/
+- **Patterns**: Sequential numbering (0001, 0002, etc.), kebab-case titles, status progression (draft → accepted/rejected → superseded)
+- **Dependencies**: Project decision-making processes, stakeholder identification, decision evolution tracking
 
 ## Process
 
-1. **Initialize Structure** - Create `decisions/` directory if it doesn't exist
-2. **Determine Action** - Create new MADR or update existing one based on arguments
-3. **Handle Numbering** - Find highest existing MADR number and increment for new records
-4. **Analyze Decision Complexity** - Choose full or minimal template based on scope and stakeholders
-5. **Generate/Update MADR** - Create new or modify existing decision record with proper metadata
-6. **Save and Index** - Write to `decisions/NNNN-title-with-dashes.md` with proper linking
+1. **Analyze Context** - Determine action from user input:
+   - Keywords like "accept", "reject", "supersede" + ADR number → Status change
+   - ADR number + new content → Update existing draft
+   - New decision topic → Create new draft
+   - "Supersede" + number + new topic → Create superseding ADR
+
+2. **Initialize Structure** - Create `decisions/` directory if needed
+
+3. **Execute Action**:
+   - **Create**: New ADR with next number, status "draft"
+   - **Update**: Modify existing draft with new information
+   - **Accept/Reject**: Change draft status with timestamp
+   - **Supersede**: Create new draft, cross-reference both ADRs
+
+4. **Handle Cross-References** - For superseding, update old ADR with "Superseded by" note
+
+5. **Save with Git-Friendly Names** - No renaming on status changes, rely on git history
 
 ## Output
 
@@ -40,8 +41,9 @@ Creates or updates a properly numbered M-ADR file with complete metadata, follow
 **File**: `decisions/NNNN-title-with-dashes.md`
 **Number**: [NNNN]
 **Template**: [full|minimal]
-**Status**: [proposed|accepted]
+**Status**: [draft|accepted|rejected|superseded]
 **Date**: [YYYY-MM-DD]
+**Action Taken**: [created|updated|accepted|rejected|superseded]
 
 ### Decision Summary
 
@@ -63,22 +65,27 @@ Creates or updates a properly numbered M-ADR file with complete metadata, follow
 ## Examples
 
 <example-1>
-
 **Input**: /madr We need to choose between REST and GraphQL for our API architecture
-**Output**: Creates `decisions/0001-use-graphql-for-api.md` with full template, analyzing performance, complexity, team expertise, and tooling considerations
-
+**Action Detected**: Create (new decision topic)
+**Output**: Creates `decisions/0001-choose-between-rest-and-graphql.md` with status "draft", full template for complex architectural decision
 </example-1>
 
 <example-2>
-
-**Input**: /madr We decided to use Prettier for code formatting
-**Output**: Creates `decisions/0002-use-prettier-for-formatting.md` with minimal template documenting tool selection and setup consequences
-
+**Input**: /madr Accept ADR 0001
+**Action Detected**: Accept (explicit action + ADR number)
+**Output**: Updates `decisions/0001-choose-between-rest-and-graphql.md` status from "draft" to "accepted" with current date
 </example-2>
 
 <example-3>
-
-**Input**: /madr Update 0001 status to accepted
-**Output**: Updates `decisions/0001-use-graphql-for-api.md` status from "proposed" to "accepted" with timestamp
-
+**Input**: /madr Supersede 0001 with tRPC instead of GraphQL
+**Action Detected**: Supersede (keyword + ADR number + new decision)
+**Output**: 
+- Creates `decisions/0002-use-trpc-instead-of-graphql.md` as draft with "Supersedes: 0001"
+- Updates 0001 with "Superseded by [ADR-0002](0002-use-trpc-instead-of-graphql.md)"
 </example-3>
+
+<example-4>
+**Input**: /madr 0002 After team discussion, we should also consider gRPC as an option
+**Action Detected**: Update (ADR number + additional content)
+**Output**: Updates draft `decisions/0002-use-trpc-instead-of-graphql.md` adding gRPC to considered options
+</example-4>

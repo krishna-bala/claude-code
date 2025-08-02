@@ -9,21 +9,25 @@ Code reviews are a critical part of our development process, ensuring code quali
 ### What to Look For
 
 1. **Design & Architecture**
+
    - Is the code well-designed and appropriate for the system?
    - Does it follow established patterns and conventions?
    - Are there potential scalability or performance concerns?
 
 2. **Functionality**
+
    - Does the code do what it's supposed to do?
    - Are edge cases handled appropriately?
    - Is error handling comprehensive?
 
 3. **Code Quality**
+
    - Is the code readable and maintainable?
    - Could it be simplified without losing functionality?
    - Are there any code smells or anti-patterns?
 
 4. **Testing**
+
    - Are tests comprehensive and meaningful?
    - Do tests cover edge cases and error conditions?
    - Is the test coverage appropriate for the changes?
@@ -38,17 +42,20 @@ Code reviews are a critical part of our development process, ensuring code quali
 ### For Reviewers
 
 1. **Understand Context**
+
    - Read the PR description thoroughly
    - Understand the problem being solved
    - Check linked issues or tickets
 
 2. **Review Systematically**
+
    - Start with high-level design
    - Check critical paths first
    - Look for potential bugs or security issues
    - Verify tests are adequate
 
 3. **Provide Constructive Feedback**
+
    - Be specific and actionable
    - Suggest improvements, don't just criticize
    - Distinguish between must-fix and nice-to-have
@@ -62,6 +69,7 @@ Code reviews are a critical part of our development process, ensuring code quali
 ### For Authors
 
 1. **Prepare for Review**
+
    - Self-review before requesting others
    - Ensure CI/CD passes
    - Write clear PR description
@@ -99,8 +107,3 @@ Code reviews are a critical part of our development process, ensuring code quali
 - Let CI handle build and test verification
 - Focus human review on logic and design
 
-## Related Resources
-
-- PR Guidelines: `pr-guidelines.md`
-- Commit Guidelines: `commit-guidelines.md`
-- Testing Guide: `../testing.md`
