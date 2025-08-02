@@ -124,12 +124,13 @@ All commits complete!
 ## Implementation Notes
 
 ### Mode Selection
+
 - **Quick Mode**: Default for personal projects, simple changes, no sub-agents
 - **Think Mode**: Complex commits, partial staging, multiple related changes
 
 ### Technical Details
+
 - Strategy is saved in session context when manual steps are needed (think mode)
 - Resume validates saved strategy is still applicable
 - If files changed significantly, resume may suggest restarting
 - Quick mode bypasses agent orchestration for speed
-
