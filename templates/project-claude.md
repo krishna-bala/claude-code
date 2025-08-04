@@ -1,6 +1,8 @@
 # Project CLAUDE.md Template
 
-Template for creating project-specific `CLAUDE.md` files. Copy and customize for your project. Based on the project, you may deviate from this template as you see fit.
+Template for creating project-specific `CLAUDE.md` files.
+Copy and customize for your project.
+Based on the project, you may deviate from this template as you see fit.
 
 <template>
 
@@ -13,7 +15,7 @@ Project context for [PROJECT NAME]. This file helps Claude Code understand proje
 - `[BUILD_COMMAND]`: Build the project
 - `[TEST_COMMAND]`: Run tests
 - `[LINT_COMMAND]`: Run linting/formatting
-- `[DEV_COMMAND]`: Start development server
+- `[DEV_COMMAND]`: Start development container or server
 
 ## Project Overview
 

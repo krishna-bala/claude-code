@@ -71,7 +71,7 @@ Commands should be clear and focused:
 
   - `/docs/git/commit-guidelines.md` - How to write good commits
   - `/docs/testing/tdd.md` - TDD philosophy and principles
-  - `/docs/memory-framework/architecture.md` - System design
+  - `/docs/architecture.md` - System design
 
 - **Commands**: Specific workflows and execution instructions
   - `/commands/git-commit.md` - Interactive commit workflow
