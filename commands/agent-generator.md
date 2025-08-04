@@ -27,7 +27,7 @@ Creates specialized agents through an iterative refinement process with user app
    - Continue until approved or rejected
 
 4. **Agent Creation**
-   - Load agent template from @templates/agent-template.md
+   - Load agent template from `@templates/agent-template.md`
    - Generate agent file with approved specifications
    - Place in appropriate category (core, orchestrators, specialized, universal)
    - Update CLAUDE.md AI Team Configuration if needed
@@ -90,8 +90,7 @@ Proposes sensor-fusion-engineer after comparing with existing capabilities
 ## Context Integration
 
 - Agent template structure: @templates/agent-template.md
-- Memory framework architecture: @docs/memory-framework/architecture.md
-- Example specialized agents: @~/foxbots/.claude/agents/
+- User-level agents: @~/.claude/agents/
 
 ## Sub-agent Delegation
 
@@ -100,4 +99,3 @@ For complex agent generation tasks:
 - Use @agent-code-archaeologist to analyze existing codebase patterns
 - Use @agent-documentation-specialist to create comprehensive agent documentation
 - Use @agent-team-configurator to update team assignments after agent creation
-

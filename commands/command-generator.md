@@ -110,7 +110,7 @@ Initial proposal → User feedback: "Include test coverage tools" → Refined pr
 - Command template structure: @../templates/command-template.md
 - Command design principles: @../decisions/0005-command-system-design.md
 - Documentation organization: @../decisions/0006-documentation-organization-optimization.md
-- Memory framework architecture: @../docs/memory-framework/architecture.md
+- Memory framework architecture: @../docs/architecture.md
 
 ## Sub-agent Delegation
 

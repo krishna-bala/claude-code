@@ -1,8 +1,13 @@
-Orchestrates git commits with two modes: quick commits for personal projects (default) or comprehensive analysis with specialized agents (--think flag).
+Creates git commits with two modes: quick commits for small changes or personal projects (default) or comprehensive analysis with specialized agents (--think flag).
 
 ---
 
-Default mode performs quick commits for personal projects without deep analysis. The --think flag enables comprehensive commit orchestration using specialized agents for complex staging strategies.
+Default mode performs quick commits for personal projects without deep analysis.
+The --think flag enables comprehensive commit orchestration using specialized agents for complex staging strategies.
+
+- **Conventions**: @docs/git/commit-guidelines.md (commit format and atomic commits)
+- **Patterns**: @docs/git/git-patterns.md (analysis commands and workflows)
+- **Process**: Quick mode for simple commits, think mode for complex staging strategies
 
 ## Process
 

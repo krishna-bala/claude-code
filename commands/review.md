@@ -1,36 +1,14 @@
-The agent provides the same comprehensive functionality with more flexible interaction patterns.
+Comprehensive code review for PRs, changesets, or local changes with systematic evaluation of quality, design, and maintainability.
 
 ---
 
-Comprehensive code review workflow for reviewing changesets and merge requests.
+- **Standards**: @docs/git/code-review.md
 
-Review PRs, working tree changes, or specific changesets with structured feedback.
-Provides systematic evaluation of code quality, design, functionality, and maintainability with constructive suggestions.
+## Usage
 
-## Tool Usage
-
-- **Primary**: Read (code files), Bash (git operations), **gh/glab (repository context)**, TodoRead (check existing tasks), TodoWrite (track review progress)
-- **Repository**:
-  - Github: **gh pr view, gh pr checks, gh issue view**
-  - GitLab: **glab mr show, glab ci status**
-- **Secondary**: Grep (search patterns), Glob (find files)
-- **Avoid**: Edit, Write, MultiEdit (review only, no code changes)
-
-## Context
-
-- **Files**: @docs/git/code-review.md, @docs/git/commit-guidelines.md
-- **Platform**: **GitHub/GitLab PR context, CI status, linked issues, review history**
-- **Patterns**: Code quality standards, design principles, security practices, performance considerations
-- **Dependencies**: Project coding standards, team conventions, technology stack requirements, **platform-specific workflows**
-
-**Note**: This command benefits from focused execution. Consider using with Task tool for sub-agent delegation for deep analysis.
-
-Usage:
-
-- `/review PR #123` - **Fetches PR context via gh/glab, analyzes changes with platform metadata**
-- `/review https://github.com/owner/repo/pull/123` - **Direct PR URL review with full context**
-- `/review source: feature-branch target: main <additional-context>` - **Enhanced with repository context**
-- `/review <local changes description>` - **Local changes with repository context if available**
+- `/review PR #123` - Review PR with full context
+- `/review https://github.com/owner/repo/pull/123` - Direct PR URL
+- `/review` - Review local working changes
 
 ## Review Focus Areas
 

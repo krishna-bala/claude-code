@@ -1,50 +1,26 @@
-Set up `.claude/` directory structure for context-aware development in the current project.
+Set up `<project>/.claude/` directory structure for context-aware development in the current project.
 
 ---
 
 Initialize project memory framework with basic structure and CLAUDE.md template. Run from project root to quickly set up the memory framework with placeholders for manual customization.
 
-## Command Type
-
-workflow - [Complexity: simple]
-
-## Tool Usage
-
-- **Primary**: Write (create files), Bash (create directories)
-- **Secondary**: Read (template files), LS (check existing structure)
-- **Avoid**: Complex detection logic, auto-population of templates
-
-## Context
-
-- **Files**: `~/.claude/templates/project-claude.md` - Base project template
-- **Dependencies**: Project root directory
+- **Template**: @~/.claude/templates/project-claude.md
 
 ## Process
 
-1. **Check Existing Structure**
-   
-   - Look for existing `.claude/` directory
-   - Skip if already exists to avoid overwriting
-
-2. **Create Directory Structure**
+1. **Create Directory Structure**
 
    ```bash
-   mkdir -p .claude/{docs,commands,templates}
+   mkdir -p .claude/{agents,commands,docs,templates}
    ```
 
-3. **Copy Base CLAUDE.md Template**
+2. **Copy Base CLAUDE.md Template**
 
    - Copy template from `~/.claude/templates/project-claude.md`
    - Keep all placeholders for manual customization
    - No auto-detection or replacement
 
-4. **Create Basic README Files**
-
-   - Add basic README.md files to each subdirectory
-   - Keep them simple and focused
-
-5. **Provide Clear Next Steps**
-   - List created files
+3. **Provide Clear Next Steps**
    - Explain what needs customization
    - Give specific guidance on common patterns
 
@@ -58,18 +34,17 @@ workflow - [Complexity: simple]
 
 ```
 .claude/
+├── agents/
+├── commands/
 ├── CLAUDE.md           # Project context (customize this!)
 ├── docs/
-│   └── README.md      # Documentation index
-├── commands/
-│   └── README.md      # Command index  
 └── templates/
-    └── README.md      # Template index
 ```
 
 ### Next Steps (Required)
 
 1. **Edit `.claude/CLAUDE.md`** - Replace all `[PLACEHOLDERS]` with your project details:
+
    - `[PROJECT NAME]` - Your project name
    - `[BUILD_COMMAND]` - How to build (e.g., `npm run build`, `make`, `cargo build`)
    - `[TEST_COMMAND]` - How to run tests (e.g., `npm test`, `pytest`, `go test`)
@@ -77,11 +52,13 @@ workflow - [Complexity: simple]
    - `[DEV_COMMAND]` - Development server (e.g., `npm start`, `python manage.py runserver`)
 
 2. **Add Project Documentation** - Create files in `.claude/docs/` for:
+
    - Architecture overview
    - API documentation
    - Deployment guides
 
 3. **Create Project Commands** - Add `.md` files in `.claude/commands/` for:
+
    - Custom workflows
    - Project-specific shortcuts
 
@@ -113,9 +90,3 @@ workflow - [Complexity: simple]
 ```
 
 </example-1>
-
-## Related Commands
-
-- `/documentation` - Browse available documentation and guides
-- `/commands` - List available commands
-- `~/.claude/docs/project-setup/setup.md` - Detailed setup guide
