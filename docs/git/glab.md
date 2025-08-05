@@ -31,6 +31,9 @@ glab mr view 123 -c -P 1000
 ```bash
 # Fetch MR and filter context with jq
 glab mr view $MR_NUMBER --output json | jq -r '.title, .description, .source_branch, .target_branch, .state, .pipeline'
+
+# Fetch CI/Pipeline status
+glab mr view $MR_NUMBER --output json | jq -r '.pipeline'
 ```
 
 ## Common Use Cases

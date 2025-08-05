@@ -118,5 +118,4 @@ update code.         # Period, not imperative
 ## Related
 
 - Git Conventions in main `CLAUDE.md`
-- `commands/git-commit.md` for commit workflow
-- Project-specific git standards in `<project>/.claude/specs/`
+- Project-specific git standards

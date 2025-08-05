@@ -6,9 +6,9 @@ Create comprehensive PR documentation by analyzing branch changes, detecting lin
 Save the PR documentation to `<identifier>-pr-description.md`.
 Optionally include context after the command like `/generate-pr This PR adds dark mode support to the dashboard` to supplement the automated analysis.
 
-- **Documentation**: @docs/git/pr-guidelines.md (templates and conventions)
-- **Standards**: @docs/git/commit-guidelines.md (title format)
-- **Review**: @docs/git/code-review.md (checklist items)
+- **Documentation**: @/home/krishna/.claude/docs/git/pr-guidelines.md (templates and conventions)
+- **Standards**: @/home/krishna/.claude/docs/git/commit-guidelines.md (title format)
+- **Review**: @/home/krishna/.claude/docs/git/code-review.md (checklist items)
 
 ## Process
 
@@ -42,16 +42,6 @@ glab issue show $ISSUE_NUMBER --json
 2. Check if linked issue → Use issue title with type prefix
 3. Multiple commits → Analyze common scope and summarize
 4. User-provided context → Incorporate into generated title
-
-### CI Status
-
-```bash
-# GitHub
-gh pr checks --branch $(git branch --show-current)
-
-# GitLab
-glab ci status --branch $(git branch --show-current)
-```
 
 ## Output Example
 
@@ -125,7 +115,7 @@ Finds fixes for #123, #124, generates consolidated PR description linking both i
 
 For complex PRs, consider using specialized agents:
 
-- **@agent-code-archaeologist**: Deep analysis of large changesets
+- **@agent-code-explorer**: Deep analysis of large changesets
 - **@agent-documentation-specialist**: Generate comprehensive docs for API changes
 - **@agent-code-reviewer**: Pre-review before creating PR
 

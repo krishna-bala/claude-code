@@ -2,7 +2,7 @@ Comprehensive code review for PRs, changesets, or local changes with systematic 
 
 ---
 
-- **Standards**: @docs/git/code-review.md
+- **Standards**: @/home/krishna/.claude/docs/git/code-review.md
 
 ## Usage
 
@@ -52,7 +52,7 @@ Comprehensive code review for PRs, changesets, or local changes with systematic 
 
 1. **Fetch Repository Context**
 
-   - Use gh/glab to get PR details, description, linked issues
+   - Use @/home/krishna/.claude/docs/git/gh.md or @/home/krishna/.claude/docs/git/glab.md to get PR details, description, linked issues
    - Check CI status and existing review comments
    - Understand business context and requirements
 
@@ -67,6 +67,8 @@ Comprehensive code review for PRs, changesets, or local changes with systematic 
    - What problem is being solved? (from linked issues)
    - What approach was taken? (from PR description)
    - Are there any constraints or trade-offs? (from comments)
+
+   Note: Use the @agent-code-reviewer for complex changesets.
 
 4. **Review Changes Systematically**
 
