@@ -1,98 +1,57 @@
 ---
 name: agent-name
-description: Brief description of what this agent does and when to use it. To encourage more proactive subagent use, include phrases like “use PROACTIVELY” or “MUST BE USED” in your description field.
+description: Clear, actionable description focusing on what the agent produces and when to use it. Include specific outcomes and deliverables. For proactive use, include "PROACTIVELY" or "MUST BE USED" naturally in context.
 model: [opus, sonnet, haiku]
 ---
 
-You are an expert at [specific domain/task].
+You are an expert [role/domain specialist] who [primary action/outcome].
 
-## Immediate Actions
+## Core Mission
 
-When invoked:
+[1-2 sentences describing the agent's purpose and what value it delivers. Focus on outcomes, not process.]
 
-1. [First action to understand context]
-2. [Second action to analyze situation]
-3. [Third action to prepare for work]
+## Context Gathering
 
-## Core Principles
+[How the agent should understand the situation - what to analyze, explore, or discover. Remember agents can use tools to explore codebases, read files, search for patterns, etc.]
 
-**Main Principle**: [One sentence describing the agent's primary goal]
+## Approach
 
-### Evaluation Questions
+[Flexible guidance on how to tackle different scenarios. Avoid rigid step-by-step instructions. Instead, provide principles and considerations.]
 
-- "Question to determine approach?"
-- "Question to validate decisions?"
-- "Question to ensure quality?"
+Structure your response based on what's most helpful:
 
-## Decision Tree
+- [Scenario 1]: Focus on [specific aspects]
+- [Scenario 2]: Emphasize [different aspects]
+- [Scenario 3]: Consider [alternative approach]
 
-### 1. Simple Case
+## Key Deliverables
 
-If [condition for straightforward approach]:
+What your output should communicate:
 
-- [Action 1]
-- [Action 2]
-- [Report outcome]
+- [Primary deliverable - what the main agent needs to know]
+- [Supporting information - context and rationale]
+- [Actionable next steps - what happens after]
 
-### 2. Complex Case
+Include concrete details when relevant:
 
-If [condition requiring more nuanced approach]:
+- [Specific examples of what to include]
+- [Level of detail needed]
+- [Format considerations]
 
-- [Analysis step]
-- [Decision step]
-- [Execution step]
-- [Validation step]
-- [Report outcome]
+## Quality Indicators
 
-### 3. Manual Intervention Required
+Your work is successful when:
 
-If [condition where user action needed]:
+- [Outcome-based criterion]
+- [Value-based criterion]
+- [Clarity-based criterion]
 
-```
-MANUAL INTERVENTION REQUIRED:
-[Clear explanation of what's needed]
-[Step-by-step instructions for user]
-```
+## Edge Cases
 
-## Success Criteria
+When you encounter [specific situation]:
 
-- [Criterion 1 for successful completion]
-- [Criterion 2 for quality validation]
-- [Criterion 3 for user satisfaction]
+- [How to handle it]
+- [What to communicate back]
+- [Alternative approaches]
 
-## Process Flow
-
-1. [High-level step 1]
-2. [High-level step 2]
-3. [High-level step 3]
-4. [Validation step]
-5. [Reporting step]
-
-## Output Examples
-
-### Successful Completion
-
-```
-[Example of successful output format]
-
-Details:
-- [What was accomplished]
-- [Key decisions made]
-- [Next steps if any]
-```
-
-### Partial Success
-
-```
-[Example when some manual intervention needed]
-
-Completed:
-- [What was done automatically]
-
-Required Actions:
-- [What user needs to do]
-- [Why it couldn't be automated]
-```
-
-Focus on [primary goal], with clear communication when manual intervention is necessary.
-
+Remember: [One key principle that guides all decisions]
