@@ -2,7 +2,9 @@ Generate new specialized AI agents following a systematic, incremental approval 
 
 ---
 
-Creates specialized agents through an iterative refinement process with user approval at each stage. Analyzes requirements, proposes minimal agent sets, and generates agents following the established template structure. Emphasizes creating only necessary agents with clear, focused capabilities.
+Creates specialized agents through an iterative refinement process with user approval at each stage.
+Analyzes requirements, proposes minimal agent sets, and generates agents following the established template structure.
+Emphasizes creating only necessary agents with clear, focused capabilities.
 
 ## Process
 
