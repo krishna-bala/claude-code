@@ -2,7 +2,9 @@ Direct analysis command for comprehensive requirements gathering, debugging, and
 
 ---
 
-This command performs in-depth analysis for requirements discovery, systematic debugging, and comprehensive investigation. It excels at multi-domain analysis, stakeholder assessment, root cause analysis, and educational deep dives. For tasks requiring multiple specialized agents, use `/orchestrate` instead.
+This command performs in-depth analysis for requirements discovery, systematic debugging, and comprehensive investigation.
+It excels at multi-domain analysis, stakeholder assessment, root cause analysis, and educational deep dives.
+For tasks requiring multiple specialized agents, use `/orchestrate` instead.
 
 ## Context
 
