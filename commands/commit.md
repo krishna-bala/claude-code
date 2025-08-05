@@ -1,98 +1,69 @@
-Creates git commits with two modes: quick commits for small changes or personal projects (default) or comprehensive analysis with specialized agents (--think flag).
+Creates git commits with appropriate analysis based on the complexity of changes.
 
 ---
 
-Default mode performs quick commits for personal projects without deep analysis.
-The --think flag enables comprehensive commit orchestration using specialized agents for complex staging strategies.
+The agent automatically determines the level of analysis needed - from simple commits for straightforward changes to comprehensive analysis for complex staging strategies.
 
 - **Conventions**: @docs/git/commit-guidelines.md (commit format and atomic commits)
 - **Patterns**: @docs/git/git-patterns.md (analysis commands and workflows)
-- **Process**: Quick mode for simple commits, think mode for complex staging strategies
+- **Process**: Adaptive approach based on change complexity
 
 ## Process
 
-### Quick Mode (Default)
+### Adaptive Analysis
 
-For personal projects and straightforward commits:
-
-1. **Check Status** - Quick git status and diff review
-2. **Stage Changes** - Simple staging of modified files
-3. **Create Commit** - Generate commit with conventional format
-4. **No sub-agents used** - Direct execution for speed
-
-### Think Mode (--think flag)
-
-For complex commits requiring deep analysis:
+The agent evaluates the repository state and determines the appropriate approach:
 
 1. **Analyze Repository State**
 
-   - Understand current changes and context,
-     checking external context (tickets, PRDs, etc.) if relevant
+   - Review git status and diffs
+   - Assess complexity of changes
+   - Check for external context (tickets, PRDs, etc.) if relevant
 
-2. **Develop Commit Strategy**
+2. **Determine Strategy**
 
-   - Create a commit plan
-   - Strategy includes staging plan and commit messages
+   - **Simple changes**: Direct staging and commit
+   - **Complex changes**: Develop commit plan with staging strategy
+   - **Mixed changes**: Create atomic commits for logical units
 
 3. **Execute Commits**
    - Attempt automated execution where possible
-   - Return manual steps if intervention needed
-   - **Save strategy for resume capability**
-
-### Resume Flow (--resume)
-
-1. **Quick Validation**
-
-   - Brief check that repository state matches saved strategy
-   - Skip full archaeologist analysis
-
-2. **Continue Execution**
-   - Pick up where automation left off
-   - Complete remaining commits from saved strategy
+   - Provide clear manual steps if intervention needed
 
 ## Usage Examples
 
-### Quick Mode (Default - Personal Projects)
+### Basic Usage
 
 ```
 /git-commit
 ```
 
-Quick commit with message:
+With commit message:
 
 ```
 /git-commit "Add new feature"
 ```
 
-### Think Mode (Complex Staging)
+### With Context
+
+Provide context for more complex analysis:
 
 ```
-/git-commit --think
+/git-commit Working on JIRA-1234: Add user authentication
 ```
 
-With context for complex analysis:
-
-```
-/git-commit --think Working on JIRA-1234: Add user authentication
-```
-
-### Resume After Manual Steps (Think Mode)
-
-```
-/git-commit --resume
-```
 
 ## Output
 
-### Quick Mode Success
+### Simple Commit Success
 
 ```
-✓ Quick commit completed:
+✓ Commit completed:
   - feat: add user authentication
 Ready to push!
 ```
 
-### Think Mode Success
+### Multiple Commits Success
 
 ```
 ✓ Created 2 commits:
@@ -101,7 +72,7 @@ Ready to push!
 Ready to push!
 ```
 
-### Manual Intervention Required (Think Mode)
+### Manual Intervention Required
 
 ```
 MANUAL STEPS REQUIRED:
@@ -110,32 +81,25 @@ MANUAL STEPS REQUIRED:
    git add -p src/utils/helpers.js
    (select only the formatDate function)
 
-2. Run: /git-commit --resume
+2. Create commit:
+   git commit -m "feat(utils): add date formatting helper"
 
-SAVED STRATEGY:
-- feat(utils): add date formatting helper
-- feat(validation): add email validation
-```
-
-### Resume Success (Think Mode)
-
-```
-Resuming from saved strategy...
-✓ Created remaining commits:
-  - feat(validation): add email validation
-All commits complete!
+3. Stage remaining changes and commit:
+   git add src/validation/
+   git commit -m "feat(validation): add email validation"
 ```
 
 ## Implementation Notes
 
-### Mode Selection
+### Adaptive Approach
 
-- **Quick Mode**: Default for personal projects, simple changes, no sub-agents
-- **Think Mode**: Complex commits, partial staging, multiple related changes
+- Agent analyzes repository state and change complexity
+- Simple changes receive direct execution
+- Complex changes receive detailed analysis and staging strategies
+- Mixed changes are split into atomic commits
 
 ### Technical Details
 
-- Strategy is saved in session context when manual steps are needed (think mode)
-- Resume validates saved strategy is still applicable
-- If files changed significantly, resume may suggest restarting
-- Quick mode bypasses agent orchestration for speed
+- Clear manual steps provided when automation isn't possible
+- Focus on atomic commits for better history
+- Appropriate use of sub-agents based on complexity
