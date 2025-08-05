@@ -1,38 +1,40 @@
-Generate new specialized AI agents following a systematic, incremental approval process.
+Generate new specialized AI agents focusing on clear outcomes and flexible approaches.
 
 ---
 
-Creates specialized agents through an iterative refinement process with user approval at each stage.
-Analyzes requirements, proposes minimal agent sets, and generates agents following the established template structure.
-Emphasizes creating only necessary agents with clear, focused capabilities.
+Creates outcome-focused agents through collaborative refinement with the user.
+Emphasizes agents that deliver specific value rather than following rigid processes.
+Each agent should have a clear mission and adapt its approach to the context.
 
 ## Process
 
-1. **Requirements Analysis**
+1. **Understand the Need**
 
-   - Extract agent purpose and domain from user context
-   - Identify specific capabilities needed
-   - Determine if existing agents can be enhanced vs. creating new ones
+   - What specific outcomes does this agent need to deliver?
+   - What decisions or artifacts should it produce?
+   - How will the main agent use this agent's output?
 
-2. **Proposal Generation**
+2. **Design Philosophy**
 
-   - Create detailed agent proposal with justification
-   - Include specific examples of when the agent would be used
-   - Compare with existing agents to avoid duplication
-   - Present for yes/no approval
+   - Focus on WHAT the agent produces, not HOW it works
+   - Enable flexible approaches based on context
+   - Avoid overly prescriptive processes
+   - Make the description actionable for the main agent
 
-3. **Iterative Refinement**
+3. **Proposal Structure**
 
-   - Incorporate user feedback
-   - Refine scope and capabilities
-   - Re-present updated proposal
-   - Continue until approved or rejected
+   Present proposals that emphasize:
+
+   - Clear deliverables and outcomes
+   - When the main agent should invoke this agent
+   - What concrete value it provides
+   - How its output enables next steps
 
 4. **Agent Creation**
-   - Load agent template from `@templates/agent-template.md`
-   - Generate agent file with approved specifications
-   - Place in appropriate category (core, orchestrators, specialized, universal)
-   - Update CLAUDE.md AI Team Configuration if needed
+   - Use the flexible template from @/home/krishna/.claude/templates/agent-template.md
+   - Focus on mission and outcomes over process
+   - Write descriptions that help the main agent decide when to use it
+   - Place in appropriate category based on domain
 
 ## Output Example
 
@@ -40,25 +42,28 @@ Emphasizes creating only necessary agents with clear, focused capabilities.
 ## Agent Proposal: motion-planning-specialist
 
 **Category**: specialized/robotics
-**Purpose**: Deep expertise in motion planning, trajectory generation, and path optimization
+**Description**: Expert advisor on motion planning algorithms and trajectory optimization. Provides deep technical guidance on motion planning algorithms, analyzing and recommending optimal algorithms for specific robotic constraints.
 
-**Key Capabilities**:
-- Trajectory generation and optimization
-- Dynamic obstacle avoidance algorithms
-- Path planning with kinematic constraints
-- Safety field computation
-- Real-time replanning strategies
+**What This Agent Delivers**:
+- Technical analysis of motion planning problems
+- Algorithm recommendations (RRT*, A*, potential fields, MPC, etc.)
+- Debugging insights for path planning failures
+- Performance optimization strategies
+- Best practices for specific robotic constraints
 
-**When to Use**:
-- "Optimize trajectory generation for smoother forklift motion"
-- "Debug path planning failures in tight spaces"
-- "Implement adaptive safety fields for dynamic obstacles"
+**When the Main Agent Should Use This**:
+- Implementing or debugging motion planning algorithms
+- Choosing between different path planning approaches
+- Optimizing existing trajectory generation code
+- Solving complex navigation problems in constrained spaces
 
-**Justification**: Motion planning is a critical subsystem requiring specialized algorithmic knowledge beyond general robotics engineering
+**Value for Development**:
+Provides specialized expertise that goes beyond general robotics knowledge, helping teams make informed decisions about motion planning implementation and avoid common pitfalls.
 
 **Comparison with Existing Agents**:
-- robotics-backend-developer: Has general robotics skills but not deep planning expertise
-- backend-developer: Too generic, lacks motion planning domain knowledge
+- robotics-backend-developer: General robotics implementation skills
+- backend-developer: Lacks robotics domain knowledge
+- This agent: Deep motion planning expertise and algorithmic knowledge
 
 Approve this agent? (yes/no)
 ```
@@ -91,8 +96,8 @@ Proposes sensor-fusion-engineer after comparing with existing capabilities
 
 ## Context Integration
 
-- Agent template structure: @templates/agent-template.md
-- User-level agents: @~/.claude/agents/
+- Agent template structure: @/home/krishna/.claude/templates/agent-template.md
+- User-level agents: @/home/krishna/.claude/agents/
 
 ## Sub-agent Delegation
 
