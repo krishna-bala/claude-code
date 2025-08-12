@@ -59,6 +59,7 @@ glab mr view $MR_NUMBER --output json | jq -r '.pipeline'
 - Combine with `jq` for parsing JSON responses
 - Handle private repositories appropriately
 - Monitor API rate limits
+- DO NOT USE `glab ci status` — instead, use `glab mr view $MR_NUMBER --output json | jq -r '.pipelnine'`
 
 ## Error Handling
 
