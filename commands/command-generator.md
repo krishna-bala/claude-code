@@ -29,7 +29,7 @@ Emphasizes creating only necessary commands with clear, focused workflows.
    - Continue until approved or rejected
 
 4. **Command Creation**
-   - Load command template from @templates/command-template.md
+   - Load command template from @/home/krishna/.claude/templates/command-template.md
    - Generate command file with approved specifications
    - Include appropriate agent references and documentation links
    - Save to `~/.claude/commands/[command-name].md`
@@ -107,10 +107,10 @@ Initial proposal → User feedback: "Include test coverage tools" → Refined pr
 
 ## Context Integration
 
-- Command template structure: @../templates/command-template.md
-- Command design principles: @../decisions/0005-command-system-design.md
-- Documentation organization: @../decisions/0006-documentation-organization-optimization.md
-- Memory framework architecture: @../docs/architecture.md
+- Command template structure: @/home/krishna/.claude/templates/command-template.md
+- Command design principles: @/home/krishna/.claude/decisions/0005-command-system-design.md
+- Documentation organization: @/home/krishna/.claude/decisions/0006-documentation-organization-optimization.md
+- Memory framework architecture: @/home/krishna/.claude/docs/architecture.md
 
 ## Sub-agent Delegation
 
