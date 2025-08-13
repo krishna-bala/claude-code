@@ -94,9 +94,9 @@ Commands are a way to trigger lightweight workflows that can orchestrate agents 
 
 ### @-Reference System
 
-- **Example**: `@docs/testing.md` - Load documentation
-- **Example**: `@templates/bug-report.md` - Load templates
-- **Example**: `@decisions/0001-*.md` - Load decisions
+- **Example**: `@/home/krishna/.claude/docs/testing.md` - Load documentation
+- **Example**: `@/home/krishna/.claude/templates/bug-report.md` - Load templates
+- **Example**: `@/home/krishna/.claude/decisions/0001-*.md` - Load decisions
 - References work from commands, agents, and CLAUDE.md
 
 ## Best Practices
@@ -141,6 +141,6 @@ Commands are a way to trigger lightweight workflows that can orchestrate agents 
 - Context persists only for current session
 - Use built-in Tools (Glob, Grep, LS, Read) for initial search and exploration
 - Use Bash commands (`rg`, `fd`) for advanced search capabilities
-- Commands are located at `commands/<command-name>.md` and invoked with `/<command-name>`
+- Commands are located at `/home/krishna/.claude/commands/<command-name>.md` (user-level) or `<project>/.claude/commands/<command-name>.md` and invoked with `/<command-name>`
 - Prioritize understanding and consensus before implementation
 - Make assumptions explicit
