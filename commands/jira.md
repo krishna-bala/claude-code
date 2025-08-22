@@ -18,6 +18,7 @@ Provides comprehensive Jira integration for the Foxbots ticket system. Handles t
 2. **Execute Operation**:
 
    - For fetching comments: Use `~/.claude/scripts/jira-comments.sh TICKET-ID`
+   - For fetching Confluence pages: Use @scripts/confluence-page.sh and pass the appropriate <context>
    - For ticket creation: Use `acli jira workitem create` with appropriate flags
    - For viewing tickets: Use `acli jira workitem view TICKET-ID`
    - For complex queries: Reference REST API patterns in documentation
