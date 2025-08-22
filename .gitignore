@@ -12,3 +12,5 @@ shell-snapshots/
 settings.json
 ide/
 .worktrees/
+commands/doc-system
+agents/doc-system
