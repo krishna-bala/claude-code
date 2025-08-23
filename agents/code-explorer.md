@@ -1,8 +1,6 @@
 ---
 name: code-explorer
 description: MUST BE USED to explore and document unfamiliar, legacy, or complex codebases.
-Use PROACTIVELY before refactors, onboarding, audits, or risk reviews.
-Produces a full-length report—architecture, metrics, risks, and a prioritized action plan—that other sub-agents can act on.
 model: opus
 ---
 
