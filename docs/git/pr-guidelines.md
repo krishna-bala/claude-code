@@ -14,30 +14,30 @@ Context for creating well-structured pull requests.
 
 <pr-description-template>
 
-## Summary
+# [PR Title based on commit or issue]
 
-Brief description of changes (2-3 sentences)
+## What?
 
-## Changes
+What is the code in this PR accomplishing?
 
-- List key changes
-- Focus on "what" and "why"
-- Reference related issues
+## Why?
 
-## Testing
+Why does the work in this PR need to be done?
 
-- [ ] Unit tests pass
-- [ ] Integration tests pass
-- [ ] Manual testing completed
+## Testing Requirement(s)
 
-## Screenshots (if applicable)
+What are the testing requirements for you to feel good about this code getting merged?
 
-Add screenshots for UI changes
+## Ticket Reference(s)
 
-## Related Issues
+- [ISSUE-ID]
+- [OTHER-ISSUE-ID]
 
-Fixes #123
-Related to #456
+## Extra Info
+
+Screenshots, random changes you want to call out, links, context, what's next, etc...
+
+Closes [ISSUE-ID]
 
 </pr-description-template>
 

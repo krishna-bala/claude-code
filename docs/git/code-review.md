@@ -66,28 +66,10 @@ Code reviews are a critical part of our development process, ensuring code quali
    - Remember there's a person behind the code
    - Focus on the code, not the coder
 
-### For Authors
-
-1. **Prepare for Review**
-
-   - Self-review before requesting others
-   - Ensure CI/CD passes
-   - Write clear PR description
-   - Keep changes focused and atomic
-
-2. **Respond Professionally**
-   - Address all feedback
-   - Ask for clarification when needed
-   - Explain decisions when necessary
-   - Update code based on valid feedback
-
 ## Best Practices
 
 ### Effective Reviews
 
-- Review promptly (within 24 hours if possible)
-- Keep PRs small and focused
-- Use draft PRs for early feedback
 - Batch similar comments
 - Use code suggestions when appropriate
 
@@ -99,10 +81,3 @@ Code reviews are a critical part of our development process, ensuring code quali
   - **SHOULD**: Important improvements
   - **CONSIDER**: Suggestions for enhancement
   - **NIT**: Minor style or preference issues
-
-### Tools & Automation
-
-- Rely on automated tools for style/formatting
-- Use linters and static analysis
-- Let CI handle build and test verification
-- Focus human review on logic and design
