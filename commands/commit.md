@@ -4,8 +4,8 @@ Creates git commits with appropriate analysis based on the complexity of changes
 
 The agent automatically determines the level of analysis needed - from simple commits for straightforward changes to comprehensive analysis for complex staging strategies.
 
-- **Conventions**: @docs/git/commit-guidelines.md (commit format and atomic commits)
-- **Patterns**: @docs/git/git-patterns.md (analysis commands and workflows)
+- **Conventions**: @/home/krishna/.claude/docs/git/commit-guidelines.md (commit format and atomic commits)
+- **Patterns**: @/home/krishna/.claude/docs/git/git-patterns.md (analysis commands and workflows)
 - **Process**: Adaptive approach based on change complexity
 
 ## Process
@@ -51,7 +51,6 @@ Provide context for more complex analysis:
 ```
 /git-commit Working on JIRA-1234: Add user authentication
 ```
-
 
 ## Output
 

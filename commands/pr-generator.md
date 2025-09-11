@@ -19,7 +19,7 @@ Optionally include context after the command like `/generate-pr This PR adds dar
 5. **Generate PR title** from commits or issue title
 6. **Create description** with automated summary from changes
 7. **Check CI status** to ensure build readiness
-8. **Apply template** from @docs/git/pr-guidelines.md
+8. **Apply template** from @/home/krishna/.claude/docs/git/pr-guidelines.md
 
 ## Automated Detection
 
@@ -43,30 +43,64 @@ glab issue show $ISSUE_NUMBER --json
 3. Multiple commits → Analyze common scope and summarize
 4. User-provided context → Incorporate into generated title
 
+## PR Template Format
+
+The generated PR description follows this structure:
+
+```markdown
+# <PR Title based on commit or issue>
+
+## What?
+
+What is the code in this PR accomplishing?
+
+## Why?
+
+Why does the work in this PR need to be done?
+
+## Testing Requirement(s)
+
+What are the testing requirements for you to feel good about this code getting merged?
+
+## Ticket Reference(s)
+
+- <ISSUE-ID>
+
+## Extra Info
+
+Screenshots, random changes you want to call out, links, context, what's next, etc...
+
+Closes <ISSUE-ID>
+```
+
 ## Output Example
 
 ```markdown
-## Generated PR Documentation
+# fix(test): remove flaky timing assertions from RoadmapPlanner.ZoneToZone test
 
-**Title**: feat(auth): implement OAuth2 integration
+## What?
 
-**Auto-detected context**:
+Removes three timing assertions that were causing intermittent test failures on CI platforms.
 
-- Base branch: main
-- 5 commits, 12 files changed
-- Linked issue: #234 "Add OAuth2 support"
-- CI Status: ✓ All checks passing
+## Why?
 
-**Description**:
+The timing assertions expected replanning to be 5x faster than initial planning, but this doesn't hold on resource-constrained CI platforms.
 
-[Content generated from @docs/git/pr-guidelines.md template with:
+## Testing Requirement(s)
 
-- Summary synthesized from commits and issue
-- Changes extracted from git diff analysis
-- Testing checklist based on changed files
-- Auto-linked issues from commits]
+- Verified test passes consistently
+- Confirmed position validation checks remain intact
+- Test still validates trajectory generation and caching
 
-**Review checklist**: [Applied from template]
+## Ticket Reference(s)
+
+- AUTO-5572
+
+## Extra Info
+
+Timing logs remain for performance monitoring without hard assertions.
+
+Closes AUTO-5572
 ```
 
 ## Enhanced Features
