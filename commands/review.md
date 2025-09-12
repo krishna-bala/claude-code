@@ -1,198 +1,166 @@
-Comprehensive code review for PRs, changesets, or local changes with systematic evaluation of quality, design, and maintainability.
-
+---
+argument-hint: [PR/MR number, URL, source..target] [context...]
+description: Professional code review walkthrough that explains changes while highlighting concerns inline
 ---
 
+# Command: /review [PR/MR number, URL, source..target] [context...]
+
+Provides a narrative walkthrough of changesets that helps reviewers understand the implementation while identifying areas needing attention.
+
 - **Standards**: @/home/krishna/.claude/docs/git/code-review.md
-
-## Usage
-
-- `/review PR #123` - Review PR with full context
-- `/review https://github.com/owner/repo/pull/123` - Direct PR URL
-- `/review` - Review local working changes
-
-## Review Focus Areas
-
-### Design & Architecture
-
-- Is the code well-designed and appropriate for the system?
-- Does it fit well with existing architecture patterns?
-- Are design decisions well-motivated?
-
-### Functionality
-
-- Does the code behave as intended?
-- Is the behavior good for users?
-- Are edge cases handled properly?
-
-### Complexity
-
-- Could the code be made simpler?
-- Would other developers easily understand this code?
-- Is the complexity justified by the problem being solved?
-
-### Testing
-
-- Does the code have correct and well-designed tests?
-- Are test cases comprehensive?
-- Do tests actually validate the intended behavior?
-
-### Naming & Clarity
-
-- Are variable, class, and method names clear?
-- Are comments clear and useful?
-- Is the code self-documenting where possible?
-
-### Standards & Style
-
-- Does the code follow project style guides?
-- Are there any violations of team standards?
-- Is error handling appropriate and consistent?
+- **GitHub CLI**: @/home/krishna/.claude/docs/git/gh.md
+- **GitLab CLI**: @/home/krishna/.claude/docs/git/glab.md
+- **Jira CLI**: @/home/krishna/.claude/docs/tools/jira-foxbots.md
 
 ## Review Process
 
-1. **Fetch Repository Context**
+### 1. Detect Review Context
 
-   - Use @/home/krishna/.claude/docs/git/gh.md or @/home/krishna/.claude/docs/git/glab.md to get PR details, description, linked issues
-   - Check CI status and existing review comments
-   - Understand business context and requirements
+Automatically detect the review source:
 
-2. **Analyze Platform Metadata**
+- GitHub PR (via gh CLI) - if .git/config contains github.com
+- GitLab MR (via glab CLI) - if .git/config contains gitlab
+- Local uncommitted changes - if no PR/MR specified
+- Commit range - if specified like `main..feature-branch`
 
-   - Review check statuses and build results
-   - Examine existing review feedback
-   - Identify related issues and discussions
+### 2. Gather Full Context
 
-3. **Understand the Context**
+For PRs/MRs, collect:
 
-   - What problem is being solved? (from linked issues)
-   - What approach was taken? (from PR description)
-   - Are there any constraints or trade-offs? (from comments)
+- Description and linked issues
+- CI/build status
+- Existing comments and discussions
+- Base branch for comparison
+- Reference Jira tickets and documentation
 
-   Note: Use the @agent-code-reviewer for complex changesets.
+For local changes:
 
-4. **Review Changes Systematically**
+- Working directory modifications
+- Staged vs unstaged changes
+- Recent commit context
 
-   - Check overall structure with platform context
-   - Review individual changes with CI feedback
-   - Look for patterns and consistency with team standards
+### 3. Generate Narrative Walkthrough
 
-5. **Evaluate Against Standards**
+Create a professional narrative that:
 
-   - Code quality and maintainability
-   - Security considerations
-   - Performance implications
-   - Documentation completeness
+- Explains what changed and why
+- Describes how the implementation works
+- Highlights concerns inline as they arise
+- Identifies areas needing human judgment
 
-6. **Provide Constructive Feedback**
-   - Be specific and actionable
-   - Explain reasoning for suggestions
-   - Acknowledge good practices
-   - Suggest improvements, not just problems
+## Output Format
 
-## Review Guidelines
+### Change Overview
 
-### Be Constructive
+Brief summary of what this changeset accomplishes and which components it affects.
 
-- Focus on the code, not the person
-- Provide specific, actionable feedback
-- Explain the "why" behind suggestions
-- Acknowledge positive aspects
+### Implementation Walkthrough
 
-### Be Thorough
+#### [Component/Feature Area]
 
-- Review for correctness and style
-- Consider maintainability and readability
-- Check for security and performance issues
-- Verify tests are adequate
+Natural prose explanation of the changes in this area. The implementation [describe what it does and how], using [approach/pattern] to achieve [goal]. This integrates with existing [components] by [integration approach].
 
-### Be Respectful
+[CONCERN/RISK/LIMITATION tags inline where issues arise]
 
-- Use a collaborative tone
-- Ask questions to understand intent
-- Offer suggestions, not demands
-- Be open to discussion
+The approach [explain key decisions and tradeoffs]. This means [implications for the system].
 
-## Common Review Items
+#### [Next Component/Feature Area]
 
-### Security
+Continue the narrative through each logical section of changes...
 
-- Input validation and sanitization
-- Authentication and authorization
-- Data exposure and privacy
-- Injection vulnerabilities
+### Critical Paths
 
-### Performance
+Describe the key execution flows, request paths, or state transitions affected by these changes. Explain how data flows through the modified components and where edge cases or failure modes might occur.
 
-- Algorithmic efficiency
-- Resource usage
-- Caching strategies
-- Database query optimization
+### Areas Requiring Human Judgment
 
-### Maintainability
+🔍 **[Category]**: [Specific concern that needs human review]
+🔍 **[Category]**: [Another area needing attention]
 
-- Code organization and structure
-- Documentation and comments
-- Error handling and logging
-- Testability and modularity
+Categories might include: Safety/Reliability, Performance, Architecture, Business Logic, Error Handling, etc.
 
-## Output
+### Recommended Deep-Dive Areas
 
-Provides comprehensive code review with structured feedback on design, functionality, code quality, and specific improvement recommendations.
+List specific files or functions that warrant closer inspection, with brief explanations of why.
 
-<output-template>
+## Narrative Principles
 
-## Code Review
+1. **Professional Tone**: Factual and direct without superlatives
+2. **Natural Flow**: Complete paragraphs, not bullet points with line numbers
+3. **Integrated Analysis**: Concerns raised inline within explanation
+4. **Context Building**: Explain the whole before critiquing parts
+5. **Clear Markers**: Use [CONCERN], [RISK], [LIMITATION], [NOTE] consistently
 
-### Overview
+## Example Output Snippet
 
-- **Scope**: [What was reviewed]
-- **Platform Context**: [PR/MR metadata, linked issues, CI status]
-- **Overall assessment**: [High-level evaluation]
-- **Recommendation**: [Approve/Request changes/Needs discussion]
+```markdown
+### Authentication System Refactor
 
-### Strengths
+The authentication system now supports OAuth2 alongside the existing session-based
+approach. The OAuth2 flow in auth/oauth.py starts with an authorization endpoint
+that constructs provider URLs using hardcoded client credentials [CONCERN: should
+use environment variables]. When providers redirect back, the callback handler
+exchanges authorization codes for tokens and creates or updates user records.
 
-- **Design**: [Well-architected aspects]
-- **Implementation**: [Quality code practices]
-- **Testing**: [Good coverage or approach]
+The implementation links OAuth identities to existing users by email matching
+without verification [RISK: enables account takeover if attacker controls email].
+It reuses the existing User model rather than creating separate OAuth identity
+tables, which simplifies the data model but prevents users from linking multiple
+social accounts [LIMITATION: one provider per user].
 
-### Areas for Improvement
+The session system required minimal changes. A new auth_type field tracks how users
+authenticated, allowing the same middleware to handle both OAuth and password-based
+sessions transparently. This unification means OAuth users receive standard session
+timeouts rather than leveraging refresh tokens [LIMITATION: loses persistent auth benefit].
+```
 
-- **Critical**: [Must-fix issues]
-- **Important**: [Should-fix issues]
-- **Suggestions**: [Nice-to-have improvements]
+## Complex Changeset Handling
 
-### Specific Feedback
+For large or complex changesets, invoke the following specialized agents in parallel to analyze different aspects:
 
-- **File: [filename]**: [Specific comments]
-- **Security**: [Security-related observations]
-- **Performance**: [Performance considerations]
-- **CI/Platform**: [Build status, check results, platform-specific observations]
+- @agent-boundary-agent
+- @agent-structure-agent
+- @agent-information-agent
+- @agent-purpose-agent
+- @agent-behavior-agent
 
-### Next Steps
+**In order to launch agents in parallel, you MUST invoke multiple agents in a SINGLE command.**
 
-- **Required changes**: [Must be addressed]
-- **Recommendations**: [Suggested improvements]
-- **Follow-up**: [Future considerations]
+```
+Task: Analyze the architectural impact of this changeset
 
-</output-template>
+Context:
+- PR/MR Description: [from gh/glab]
+- Linked Issues: [from gh/glab]
+- CI Status: [from gh/glab]
 
-## Validation
+Analysis Focus:
+- Examine actual changes via git diff
+- Understand integration with existing patterns
+- Identify systemic implications
 
-- Review covers all major quality dimensions
-- Feedback is constructive and actionable
-- Security and performance considerations are addressed
-- Specific examples and suggestions are provided
-- Overall assessment is fair and helpful
+Parallel Analysis Areas:
+- System boundaries and external interactions
+- Data flow and state management
+- Performance and reliability implications
+- Safety considerations for robotics systems
+```
 
-## Examples
+## Usage Examples
 
-<example-1>
-**Input**: `/review source: feature-branch target: main Authentication refactor`
-**Output**: Comprehensive review of authentication changes with security focus and specific recommendations
-</example-1>
+```bash
+# Review a GitHub PR
+/review 1234
 
-<example-2>
-**Input**: `/review` (local changes)
-**Output**: Review of current working directory changes with quality and maintainability feedback
-</example-2>
+# Review a GitLab MR
+/review 567
+
+# Review local uncommitted changes
+/review
+
+# Review specific commit range
+/review main..feature-branch
+
+# Review with additional context
+/review 1234 Focus on the state machine changes
+```
