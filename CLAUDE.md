@@ -1,16 +1,8 @@
 # CLAUDE.md
 
-## Architecture
-
-@docs/architecture.md
-
 ## Git Conventions
 
-@docs/git/user-conventions.md
-
-## Decision Documentation
-
-@docs/decision-documentation.md
+@~/.claude/docs/git/user-conventions.md
 
 ## MCP Server Operations
 
@@ -18,4 +10,4 @@
 
 ## Critical Thinking
 
-@docs/critical-thinking.md
+@~/.claude/docs/critical-thinking.md

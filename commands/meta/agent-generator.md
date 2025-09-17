@@ -98,11 +98,3 @@ Proposes sensor-fusion-engineer after comparing with existing capabilities
 
 - Agent template structure: @/home/krishna/.claude/templates/agent-template.md
 - User-level agents: @/home/krishna/.claude/agents/
-
-## Sub-agent Delegation
-
-For complex agent generation tasks:
-
-- Use @agent-code-archaeologist to analyze existing codebase patterns
-- Use @agent-documentation-specialist to create comprehensive agent documentation
-- Use @agent-team-configurator to update team assignments after agent creation

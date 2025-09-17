@@ -145,14 +145,6 @@ Detects issue #234 from branch name, fetches "Add OAuth2 support" issue, generat
 
 Finds fixes for #123, #124, generates consolidated PR description linking both issues
 
-## Sub-agent Delegation
-
-For complex PRs, consider using specialized agents:
-
-- **@agent-code-explorer**: Deep analysis of large changesets
-- **@agent-documentation-specialist**: Generate comprehensive docs for API changes
-- **@agent-code-reviewer**: Pre-review before creating PR
-
 ## Platform Detection
 
 ```bash
