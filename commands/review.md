@@ -20,7 +20,8 @@ Automatically detect the review source:
 
 - GitHub PR (via gh CLI) - if .git/config contains github.com
 - GitLab MR (via glab CLI) - if .git/config contains gitlab
-- Local uncommitted changes - if no PR/MR specified
+- Current branch - if no PR/MR is specified but the branch name is `mr-XXXX`, extract the MR number from the branch name
+- Local uncommitted changes - if no PR/MR specified and branch name is not `mr-XXXX`
 - Commit range - if specified like `main..feature-branch`
 
 ### 2. Gather Full Context
